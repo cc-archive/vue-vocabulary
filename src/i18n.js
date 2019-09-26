@@ -17,7 +17,8 @@ function loadLocaleMessages () {
 }
 
 export default new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
+  // locale checks if language exists in local storage, if yes it gets language or uses what is next in the OR statement 
+  locale: localStorage.getItem('locale') || process.env.VUE_APP_I18N_LOCALE || 'en',
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
   messages: loadLocaleMessages()
 })
