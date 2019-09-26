@@ -3,6 +3,7 @@
     <SelectField
       v-model="$i18n.locale"
       v-bind="$attrs"
+      v-on:change="setLocale"
       color="orange"
       icon="globe"
       :option-list="localeOptions"/>
@@ -68,7 +69,15 @@
         }
       ]
       return {
+        language: '',
         locales: this.localeList || defaultLocales
+      }
+    },
+     methods: {
+      // The below method simply stores the selected locale in the localstorage 
+      setLocale () {
+        localStorage.setItem('locale', this.language)
+        this.$i18n.locale = this.language
       }
     },
     computed: {
