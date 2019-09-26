@@ -1,7 +1,7 @@
 <template>
   <div class="vocab locale">
     <SelectField
-      v-model="$i18n.locale"
+      v-model="language"
       v-bind="$attrs"
       v-on:change="setLocale"
       color="orange"
