@@ -1,11 +1,13 @@
 <template>
   <div class="vocab locale">
     <SelectField
-      v-model="$i18n.locale"
+      v-model="language"
       v-bind="$attrs"
       color="orange"
       icon="globe"
-      :option-list="localeOptions"/>
+      v-on:change="setLocale"
+      :option-list="localeOptions"
+    />
   </div>
 </template>
 
@@ -14,6 +16,7 @@
   import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
   import SelectField from '@/elements/SelectField/SelectField'
+  import { stringify } from 'querystring'
 
   library.add(faGlobe)
 
@@ -29,6 +32,7 @@
     components: {
       SelectField
     },
+
     props: {
       /**
        * _an array of locale objects defining the app's supported locales_
@@ -47,11 +51,10 @@
        */
       localeList: {
         type: Array,
-        validator: val => val.every(
-          locale => ['code', 'englishName', 'nativeName'].every(
-            key => key in locale
+        validator: val =>
+          val.every(locale =>
+            ['code', 'englishName', 'nativeName'].every(key => key in locale)
           )
-        )
       }
     },
     data: function () {
@@ -68,7 +71,15 @@
         }
       ]
       return {
+        language: '',
         locales: this.localeList || defaultLocales
+      }
+    },
+    methods: {
+      // The below method simply stores the selected locale in the localstorage 
+      setLocale () {
+        localStorage.setItem('locale', this.language)
+        this.$i18n.locale = this.language
       }
     },
     computed: {
