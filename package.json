@@ -19,7 +19,7 @@
   "private": true,
   "scripts": {
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit --watchAll --runInBand",
+    "test:unit": "vue-cli-service test:unit",
     "serve:website": "vue-cli-service serve",
     "serve:styleguide": "vue-cli-service styleguidist",
     "build:tokens": "theo ./src/tokens/tokens.yml --transform web --format styl,scss,raw.json --dest ./src/assets/tokens",
