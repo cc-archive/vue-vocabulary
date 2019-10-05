@@ -3,8 +3,8 @@ import { shallowMount } from '@vue/test-utils'
 import Shield from '@/elements/Shield/Shield'
 
 describe('Shield.vue', () => {
-  const LABEL_EXAMPLE = 'example'
-  const MESSAGE_EXAMPLE = 'message'
+  const LABEL_EXAMPLE = 'Example'
+  const MESSAGE_EXAMPLE = 'Message'
 
   it('renders the correct message', () => {
     const wrapper = shallowMount(Shield, {
@@ -12,7 +12,6 @@ describe('Shield.vue', () => {
         message: MESSAGE_EXAMPLE
       }
     })
-
     expect(wrapper.find('.message').text()).toContain(MESSAGE_EXAMPLE)
   })
 
@@ -22,7 +21,6 @@ describe('Shield.vue', () => {
         color: 'red'
       }
     })
-
     expect(wrapper.find('.shield').classes()).toContain('red-colored')
   })
 
@@ -32,8 +30,7 @@ describe('Shield.vue', () => {
         label: LABEL_EXAMPLE
       }
     })
-
-    expect(wrapper.find('.label').text().toLowerCase()).toEqual(LABEL_EXAMPLE)
+    expect(wrapper.find('.label').text()).toEqual(LABEL_EXAMPLE)
   })
 
   it('renders the correct indication', () => {
@@ -42,17 +39,15 @@ describe('Shield.vue', () => {
         indication: 'positive'
       }
     })
-
     expect(wrapper.find('.positive-indication')).toBeTruthy()
   })
 
-  it('lowercase-set works correctly', () => {
+  it('works correctly with lowercase-set', () => {
     const wrapper = shallowMount(Shield, {
       propsData: {
         lowercaseSet: [false, true]
       }
     })
-
     expect(wrapper.find('.label').classes()).not.toContain('lowercased')
     expect(wrapper.find('.message').classes()).toContain('lowercased')
   })
