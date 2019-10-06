@@ -87,6 +87,10 @@
           text: locale.nativeName
         }))
       }
+    },
+    created(){
+      this.$i18n.locale = localStorage.getItem('locale') || this.language
     }
+    
   }
 </script>
