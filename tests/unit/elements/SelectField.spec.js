@@ -28,7 +28,7 @@ describe('SelectField.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(SelectField, defaultConfig)
   }
 

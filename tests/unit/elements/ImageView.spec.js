@@ -25,7 +25,7 @@ describe('ImageView.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(ImageView, defaultConfig)
   }
 

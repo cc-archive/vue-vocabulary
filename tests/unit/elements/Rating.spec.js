@@ -19,11 +19,11 @@ describe('Rating.vue', () => {
 
   beforeEach(() => {
     defaultConfig = {
-      propsData: {},
+      propsData: {}
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(Rating, defaultConfig)
   }
 

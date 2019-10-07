@@ -20,7 +20,7 @@ describe('Statistic.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(Statistic, defaultConfig)
   }
 
