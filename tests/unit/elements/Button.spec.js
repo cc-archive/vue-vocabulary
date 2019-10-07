@@ -3,7 +3,6 @@ import { shallowMount } from '@vue/test-utils'
 import Button from '@/elements/Button/Button'
 
 describe('Button.vue', () => {
-    const VALUE = 'Hello World'
     const ROUNDNESS = 'complete'
     const COLOR = 'red'
     const ICON = 'vote-yea'

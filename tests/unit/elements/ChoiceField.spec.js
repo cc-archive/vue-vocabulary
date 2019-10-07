@@ -16,12 +16,11 @@ describe('ChoiceField.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(ChoiceField, defaultConfig)
   }
 
   it('emits the checked value correctly', () => {
-
     const wrapper = getWrapper()
 
     wrapper.find('input').element.value = VALUE
@@ -29,11 +28,9 @@ describe('ChoiceField.vue', () => {
     wrapper.find('input').trigger('change')
 
     expect(wrapper.emitted().change[0][0][0]).toBe(VALUE)
-
   })
 
   it('single select', () => {
-
     const wrapper = mount({
       template: `<div>
         <ChoiceField v-model="name" value="${VALUE}" is-single-select/>
@@ -43,7 +40,7 @@ describe('ChoiceField.vue', () => {
       components: {
         ChoiceField
       },
-      data() {
+      data () {
         return {
           name: ''
         }
@@ -54,7 +51,6 @@ describe('ChoiceField.vue', () => {
     ChoiceField1.element.checked = true
     ChoiceField1.trigger('change')
     expect(wrapper.vm.$data.name).toBe(VALUE)
-
   })
 
   it('renders the correct color', () => {
