@@ -92,7 +92,18 @@ module.exports = {
   template: {
     head: {
       meta: [
-        { name: 'viewport', content: viewportMeta }
+        { name: 'viewport', content: viewportMeta },
+        //Open Graph
+        { property: 'og:title', content: 'vo·cab·u·lar·y' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://creativecommons.github.io/cc-vocabulary/' },
+        { property: 'og:description', content: 'A cohesive design system to unite the web-facing Creative Commons' },
+        { property: 'og:image', content: 'https://creativecommons.github.io/cc-vocabulary/titlecard.png' },
+        // Twitter
+        { name: 'twitter:title', content: 'vo·cab·u·lar·y' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:description', content: 'A cohesive design system to unite the web-facing Creative Commons' },
+        { name: 'twitter:image', content: 'https://creativecommons.github.io/cc-vocabulary/titlecard.png' }
       ],
       links: [
         { rel: 'stylesheet', href: rootCss },
