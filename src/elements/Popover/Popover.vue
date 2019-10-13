@@ -14,6 +14,7 @@ import Invertible from "@/mixins/invertible";
 
 export default {
   name: "Popover",
+
   mixins: [Colored, Rounded, Simplified, Invertible],
   props: {
     direction: {

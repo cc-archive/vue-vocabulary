@@ -1,4 +1,5 @@
 Here's a sample Popover. If you intuitively feel to click it, it's working for all directions `to-top`, `to-bottom`, `to-left` and `to-right`.
+*Important to know:* the Popover is attached to its first Perent element, for example: if you have a Popover inside a span, then its attached to that span.
 
 ```jsx
 const PopoverStyle = "padding: 10px"
