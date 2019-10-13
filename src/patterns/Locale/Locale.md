@@ -2,7 +2,32 @@ The locale switcher in the standard form looks like this.
 
 ```jsx
 <Locale/>
-``` 
+```
+### RTL compatibility
+
+Once you switch into one of the languages :`Arabic`, `Hebrew` or `Farsi(Persian)`, your page direction will be switched to `Right To Left`.
+
+```jsx
+let localeList = [
+  {
+    code: 'en',
+    englishName: 'English',
+    nativeName: 'English'
+  },
+  {
+    code: 'ar',
+    englishName: 'Arabic',
+    nativeName: 'العربية'
+  },
+  {
+    code: 'hi',
+    englishName: 'Hindi',
+    nativeName: 'हिन्दी'
+  },
+];
+
+<Locale :locale-list="localeList"/>
+```
 
 ### Locale set
 
