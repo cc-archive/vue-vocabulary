@@ -1,0 +1,145 @@
+@import "~@/assets/tokens/tokens.styl"
+
+@import "~@/styles/colors.styl"
+@import "~@/styles/font-reset.styl"
+@import "~@/styles/sizes.styl"
+
+.has-popover
+    outline none
+    position relative
+
+.popover-click
+    .popup
+        opacity 1
+        z-index 1
+
+.popover-hover
+    &:hover
+        .popup
+            opacity 1
+            z-index 1
+
+.popup
+    width 200px
+    padding: 10px
+    position absolute
+    left 0
+    top 0
+    font-weight normal
+    border 1px solid
+    opacity 0
+    transition 0.2s opacity, 0s z-index
+    white-space normal
+    z-index -9999
+
+    // Color palette
+
+    --box-shadow-color $color-tone-grey-lighter
+
+    &.inverted
+        --box-shadow-color $color-tone-near-black
+
+    --popover-primary $color-tone-white
+
+    &.inverted
+        --popover-primary $color-tone-black
+
+    colors('--popover-primary')
+
+    --popover-secondary $color-tone-black
+
+    &.inverted
+        --popover-secondary $color-tone-white
+
+    --popover-overlay $color-overlay-black-low
+
+    &.inverted
+        --popover-overlay $color-overlay-white-low
+
+    sizes('font-size')
+
+    // Color
+
+    --popover-background-color var(--popover-primary)
+    --popover-text-color var(--popover-secondary)
+    --popover-border-color var(--popover-primary)
+    --popover-background-overlay linear-gradient(
+        var(--popover-overlay),
+        var(--popover-overlay)
+    )
+
+    &.slightly-simple
+        --popover-background-color $color-tone-white
+        --popover-text-color var(--popover-primary)
+    
+    &.extremely-simple
+        --popover-background-color $color-tone-white
+        --popover-text-color var(--popover-primary)
+        --popover-border-color $color-tone-white
+
+    // Border radius
+
+    --popover-border-radius $radius-zero
+
+    &.slightly-rounded
+        --popover-border-radius $radius-large
+
+    &.completely-rounded
+        --popover-border-radius $radius-pill
+
+    // Rules
+
+    color var(--popover-text-color)
+    border-radius var(--popover-border-radius)
+    background-color var(--popover-background-color)
+    border-color var(--popover-border-color)
+    border-color var(--popover-border-color)
+	
+    box-shadow 0px 0px 10px var(--box-shadow-color)
+
+    .triangle
+        background-color var(--popover-background-color)
+        border-color var(--popover-border-color)
+
+.triangle
+    position absolute
+    border-bottom none
+    width 10px
+    height 10px
+    margin auto
+    transform translateX(-50%) rotate(45deg)
+    z-index 1
+
+.to-left
+    top 0
+    bottom 0 
+    right 0
+    margin auto
+    margin-right -12px
+    border-top 1px solid
+    border-right 1px solid
+
+.to-top
+    top 0
+    left 0 
+    right 0
+    margin-top -6px
+    border-left 1px solid
+    border-top 1px solid
+
+.to-right
+    top 0
+    bottom 0 
+    left 0
+    margin auto
+    margin-left -1px
+    border-left 1px solid
+    border-bottom 1px solid
+
+.to-bottom
+    bottom 0
+    left 0 
+    right 0
+    margin-bottom -6px
+    border-bottom 1px solid
+    border-right 1px solid
