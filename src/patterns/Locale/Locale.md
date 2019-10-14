@@ -3,6 +3,7 @@ The locale switcher in the standard form looks like this.
 ```jsx
 <Locale/>
 ```
+
 ### RTL compatibility
 
 Once you switch into one of the languages :`Arabic`, `Hebrew` or `Farsi(Persian)`, your page direction will be switched to `Right To Left`.
