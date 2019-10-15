@@ -18,6 +18,7 @@ import ProgressBar from './elements/ProgressBar/ProgressBar'
 import Rating from './elements/Rating/Rating'
 import SelectField from './elements/SelectField/SelectField'
 import Shield from './elements/Shield/Shield'
+import Slider from './elements/Slider/Slider'
 import Statistic from './elements/Statistic/Statistic'
 import SwitchField from './elements/SwitchField/SwitchField'
 
@@ -60,6 +61,7 @@ export {
   Rating,
   SelectField,
   Shield,
+  Slider,
   Statistic,
   SwitchField,
 
