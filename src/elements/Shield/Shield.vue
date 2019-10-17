@@ -23,6 +23,7 @@
   import Scaled from '@/mixins/scaled'
 
   import Invertible from '@/mixins/invertible'
+  import Simplified from '@/mixins/simplified'
 
   /**
    * ### Shields are informative badges.
@@ -38,6 +39,7 @@
       Indicating,
       Rounded,
       Scaled,
+      Simplified,
 
       Invertible
     ],
@@ -69,6 +71,7 @@
           ...this.indicatingClasses,
           ...this.roundedClasses,
           ...this.scaledClasses,
+          ...this.simplifiedClasses,
 
           ...this.invertibleClasses
         ]

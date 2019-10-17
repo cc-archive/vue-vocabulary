@@ -42,6 +42,25 @@
   &.completely-rounded
     --shield-border-radius $radius-pill
 
+  --shield-label-text-color var(--shield-text-color)
+  --shield-message-text-color var(--shield-text-color)
+  --shield-message-fill-color var(--shield-message-color)   
+ 
+  &.slightly-simple
+    border-style dotted
+    border-width 1px   
+    border-color var(--shield-message-color)  
+    --shield-label-text-color var(--shield-message-color)
+    --shield-message-text-color var(--shield-label-color)
+
+   &.extremely-simple
+    border-style dotted 
+    border-width 1px 
+    border-color var(--shield-message-color)  
+    --shield-label-text-color var(--shield-message-color)
+    --shield-message-text-color var(--shield-text-color)
+    --shield-message-fill-color transparant 
+
   // Rules
 
   display inline-flex
@@ -64,10 +83,13 @@
 
     &.label
       background-color var(--shield-label-color)
+      color var(--shield-label-text-color)
+      border-color var(--shield-label-border-color)
 
     &.message
-      background-color var(--shield-message-color)
+      background-color var(--shield-message-fill-color)
       font-weight $weight-bold
-
+      color var(--shield-message-text-color)
+  
     &.lowercased
       text-transform lowercase
