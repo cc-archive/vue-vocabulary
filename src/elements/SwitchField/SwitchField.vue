@@ -45,6 +45,7 @@
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
+  import Simplified from '@/mixins/simplified'
 
   library.add(faCheck, faTimes)
 
@@ -65,6 +66,7 @@
       Indicating,
       Rounded,
       Scaled,
+      Simplified,
 
       Invertible,
       Unactionable
@@ -125,6 +127,7 @@
           ...this.indicatingClasses,
           ...this.roundedClasses,
           ...this.scaledClasses,
+          ...this.simplifiedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses,

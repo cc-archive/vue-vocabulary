@@ -184,6 +184,105 @@ design but looks really good.
 </Grid>
 ```
 
+The switch field can be defined so that it does not attract attention. The switch field may not be conspicuous so as not to distract attention from a text.
+
+```jsx
+<Grid>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="slight"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="slight"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+    color="purple"
+      simplicity="slight"
+      roundness="slight"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="slight"
+      roundness="slight"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="slight"
+      roundness="complete"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="slight"
+      roundness="complete"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="extreme"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="extreme"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+    color="purple"
+      simplicity="extreme"
+      roundness="slight"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="extreme"
+      roundness="slight"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="extreme"
+      roundness="complete"
+      is-inverted
+      :value="false"/>
+  </GridCell>
+  <GridCell :span-set="[6, 4, 4, 2, 2]">
+    <SwitchField
+      color="purple"
+      simplicity="extreme"
+      roundness="complete"
+      is-inverted
+      :value="true"/>
+  </GridCell>
+</Grid>
+```
+
 ### Add-on set
 
 A switch may indicate the state with on/off icons for clarity. If the standard

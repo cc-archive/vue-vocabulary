@@ -68,6 +68,21 @@
     &:not(.checked)
       --switch-field-text-color $color-context-negative-dark
 
+   &.slightly-simple
+    --switch-field-off-background-color var(--switch-field-secondary)
+    --switch-field-on-background-color var(--switch-field-secondary)
+    --switch-field-handle-color var(--switch-field-primary)
+
+  &.slightly-simple
+    &:not(.checked)
+     --switch-field-handle-color var(--switch-field-tertiary) 
+     
+  &.extremely-simple
+    height 0.2em
+    --switch-field-off-background-color var(--switch-field-tertiary)
+    --switch-field-on-background-color var(--switch-field-primary)
+    --switch-field-handle-color var(--switch-field-secondary) 
+   
   // Cursor
 
   --switch-field-cursor pointer
