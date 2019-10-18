@@ -168,23 +168,21 @@ can go against the CC design aesthetic and make it completely rounded.
   roundness="complete"/>
 ```  
 
-A simple version, which is not too much easily seen
-
+A shield can be made slightly simple version, which is not too much prominent
+or extremely simple, which is even less eye-catching.
 
 ```jsx
 <Shield
-  color="purple"
-  label="simple"
+  color="magenta"
+  label="Simplicity"
   message="Slight"
-  simplicity="slight"
-  is-inverted/>
+  simplicity="slight"/>
 <br/><br/>
 <Shield
-  color="blue"
-  label="simple"
+  color="magenta"
+  label="Simplicity"
   message="Extreme"
-  simplicity="extreme"
-  is-inverted/>
+  simplicity="extreme"/>
 ```  
 
 
