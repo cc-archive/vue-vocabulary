@@ -42,10 +42,10 @@
   import Indicating from '@/mixins/indicating'
   import Rounded from '@/mixins/rounded'
   import Scaled from '@/mixins/scaled'
+  import Simplified from '@/mixins/simplified'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
-  import Simplified from '@/mixins/simplified'
 
   library.add(faCheck, faTimes)
 
