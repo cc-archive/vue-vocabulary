@@ -1,8 +1,25 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
+
+  // Radio buttons
+.vocab.choice-field.blue-colored.normal-sized.slightly-simple
+  width 3em
+  height 3em
+ 
+  //  Color set orange
+.vocab.choice-field.orange-colored.normal-sized    
+  &[type="checkbox"]
+    height $height-control
+    width $width-control
+    box-sizing $box-sizing-control
+
+  //  Selection type set orange
+  &[type="radio"]
+    width 3em
+    height 3em
 
 .vocab.choice-field
   // Color palette
@@ -76,11 +93,9 @@
 
     background-color var(--choice-field-background-color)
 
-    height 1.5em
-    width 1.5em
-
-    box-sizing content-box
-
+    height $height-control
+    width $width-control
+    box-sizing $box-sizing-control
     border 1px solid var(--choice-field-border-color)
 
     &::before
@@ -91,6 +106,8 @@
       position absolute
       top $space-small
       left $space-small
+      margin 4px
+      padding 7px
 
       display inline-block
 
@@ -98,7 +115,7 @@
 
       width 1em
       height 1em
-
+      
     &:checked::before
       opacity 1
 
@@ -107,7 +124,8 @@
 
     &::before
       mask url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/></svg>")
-
+      left 6em
+      padding 4px
   &[type="radio"]
     border-radius $radius-ellipse
 

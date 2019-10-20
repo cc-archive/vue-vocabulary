@@ -1,8 +1,19 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
+@import "~@/patterns/LicenseBadge/LicenseBadge.styl"
+
+
+ // Logo Assign CC BY-SA
+ 
+.vocab.license-badge
+  width 2.5em
+  height 35px
+  position relative
+  right 0.5rem
+  bottom 9px
 
 .vocab.button
   // Color palette
@@ -99,6 +110,10 @@
 
   color var(--button-text-color)
 
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
+
   font-reset()
   sizes('font-size')
   font-weight $weight-bold
@@ -110,7 +125,7 @@
   background-color var(--button-background-color)
 
   padding $space-zero
-
+  
   border-top-width var(--button-top-border-width)
   border-right-width var(--button-right-border-width)
   border-bottom-width var(--button-bottom-border-width)
@@ -123,17 +138,16 @@
   transition-duration $duration-shortest
 
   // Children
-
   & > .content
-    padding $space-normal
-
+    padding $space-zero
+    padding-bottom 7px
     &.has-addons
       border-left 1px solid var(--button-border-color)
-
+      
   & > .addons
     &.padded
       padding $space-normal
-
+      
   // States
 
   &:hover

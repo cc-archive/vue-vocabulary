@@ -1,7 +1,7 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
 
 .vocab.progress-bar
   // Color palette
@@ -61,6 +61,11 @@
   align-items center
 
   sizes('font-size')
+
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
+
 
   // Children
 

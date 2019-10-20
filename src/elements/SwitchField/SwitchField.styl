@@ -3,6 +3,7 @@
 @import "~@/styles/colors.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
 
 .vocab.switch-field
   // Color palette
@@ -105,8 +106,9 @@
 
   background-color var(--switch-field-off-background-color)
 
-  width 3em
-  height 1.25em
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
 
   border-width $space-small
   border-style solid

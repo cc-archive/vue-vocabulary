@@ -1,8 +1,8 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
 
 .vocab.input-field
   // Color palette
@@ -129,7 +129,10 @@
 
   cursor var(--input-field-cursor)
 
-  width 20em
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
+  
 
   border-top-width var(--input-field-top-border-width)
   border-right-width var(--input-field-right-border-width)

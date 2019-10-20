@@ -1,7 +1,7 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
 
 .vocab.shield
   // Color
@@ -51,6 +51,10 @@
   color var(--shield-text-color)
 
   sizes('font-size')
+
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
 
   border-radius var(--shield-border-radius)
   overflow hidden

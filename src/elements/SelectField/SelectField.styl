@@ -1,8 +1,8 @@
 @import "~@/assets/tokens/tokens.styl"
-
 @import "~@/styles/colors.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
+@import "~@/styles/control.styl"
 
 .vocab.select-field
   // Color palette
@@ -93,6 +93,11 @@
   font-reset()
   sizes('font-size')
   font-weight $weight-bold
+
+  height $height-control
+  width $width-control
+  box-sizing $box-sizing-control
+
 
   white-space nowrap
 
