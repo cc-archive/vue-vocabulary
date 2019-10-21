@@ -35,6 +35,11 @@
     style="margin-right: 1em;">
     <img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
   </a>
+  <a 
+    href="https://cc-vocabulary.netlify.com"
+    style="margin-right: 1em;">
+    <img alt="Netlify" src="https://img.shields.io/netlify/fcee0dba-9c91-450d-96e5-82494e6b3af9"/>
+  </a>
 </p>
 
 In essence Vocabulary is a collection of UI components, which are parts of 
@@ -53,13 +58,11 @@ A lot of features available via `npm` packages might not be supported via UMD.
 
 ### Demo
 
-A **[demo](https://codepen.io/dhruvkb/pen/dxRJYV)** of Vocabulary is hosted on
-CodePen. It does show some components in action so I guess you should check
-it out.
-
-However, the showcase of the true extent of Vocabulary can be found in the
-**[live styleguide](https://creativecommons.github.io/cc-vocabulary/)** for the
-library, showcasing the components therein and variants thereof, on GitHub
+The showcase of the true extent of Vocabulary can be found in the
+**[live styleguide](https://creativecommons.github.io/cc-vocabulary/styleguide)**
+and the
+**[interactive storybook](https://creativecommons.github.io/cc-vocabulary/storybook)**
+for the library, showcasing the components therein and variants thereof, on GitHub
 Pages. Search for a particular component using the search field or just explore
 the collection of components. If you find one that catches your fancy, play with
 it on the playground and tweak its knobs.
@@ -69,6 +72,13 @@ it doesn't and you think more people would love to have this feature open an
 issue. If something peculiar happens, open a bug report. If you just love it,
 contribute in some way.
 
+<p align="center">
+  <a href="https://www.netlify.com">
+    <img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>
+  </a>
+  <br/>
+  Documentation powered by Netlify.
+</p>
 
 ### Contributing
 

@@ -87,6 +87,11 @@
               {{ $t('vocabulary') }}</a> <!-- for the fullstops -->
           </i18n>
           <br/>
+          <i18n path="panel.deploysby" tag="span">
+            <a href="https://netlify.com/">
+              {{ $t('panel.netlify') }}</a> <!-- for the fullstops -->
+          </i18n>
+          <br/>
           <i18n path="panel.iconsby" tag="span">
             <a href="https://fontawesome.com/">
               {{ $t('panel.fa') }}</a> <!-- for the fullstops -->
@@ -133,9 +138,8 @@
       Quote
     },
     data: function () {
-      const baseUrl = 'https://creativecommons.github.io/cc-vocabulary'
-      const styleguideHref = `${baseUrl}/styleguide`
-      const storybookHref = `${baseUrl}/storybook`
+      const styleguideHref = 'styleguide'
+      const storybookHref = 'storybook'
 
       let alternativeLinks = [
         {
@@ -154,11 +158,11 @@
       let alternativeContacts = [
         {
           key: 'contacts.report',
-          href: 'https://github.com/creativecommons/cc-vocabulary/issues/new?template=bug_report.md&title='
+          href: 'https://github.com/creativecommons/cc-vocabulary/issues/new?labels=improvement%3A+bug&template=bug_report.md&title='
         },
         {
           key: 'contacts.request',
-          href: 'https://github.com/creativecommons/cc-vocabulary/issues/new?template=feature_request.md&title='
+          href: 'https://github.com/creativecommons/cc-vocabulary/issues/new?labels=improvement%3A+feature&template=feature_request.md&title='
         }
       ]
       return {

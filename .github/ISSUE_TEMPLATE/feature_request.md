@@ -1,20 +1,22 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
+labels: 'improvement: feature'
 title: ''
 ---
 
-**Describe the feature**
-A clear and concise description of what the feature is.
+**Description**
+<!-- A clear and concise description of what the feature is. -->
 
-**Describe any problem solved by the feature**
-A clear and concise description of what the problem is. [e.g. I'm always frustrated when ...]
+**Problems solved**
+<!-- A clear and concise description of what the problem is. -->
 
-**Describe alternatives**
-A clear and concise description of any alternative solutions or features you've considered.
+**Alternatives**
+<!-- A clear and concise description of any alternative solutions or features you've considered. -->
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+<!-- Add any other context or screenshots about the feature request here. -->
 
 **Want to take up?**
-Are you interested in and capable of tackling this issue? [yes|no]
+<!-- Are you interested in tackling this issue yourself? -->
+[Yes|No]
