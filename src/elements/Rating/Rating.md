@@ -144,9 +144,19 @@ icon names. This array will be extended or cropped depending on whether the
 array length is less or more than prop `max`.
 
 ```jsx
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faAccessibleIcon);
+
 <Rating
   color="green"
   :icon-set="['heart']"
+  :value="3"/>
+<br/><br/>
+<Rating
+  color="blue"
+  :icon-set="[['fab', 'accessible-icon']]"
   :value="3"/>
 ```
 
