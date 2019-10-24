@@ -61,7 +61,7 @@ export {
   Rating,
   SelectField,
   Shield,
-  Slider,
+  DoubleSlider,
   Statistic,
   SwitchField,
 
@@ -106,7 +106,7 @@ export default {
     Vue.component('Rating', Rating)
     Vue.component('SelectField', SelectField)
     Vue.component('Shield', Shield)
-    Vue.component('Slider', Slider)
+    Vue.component('DoubleSlider', DoubleSlider)
     Vue.component('Statistic', Statistic)
     Vue.component('SwitchField', SwitchField)
 

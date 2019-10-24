@@ -1,40 +1,21 @@
 <template>
-  <div class="vocab input-field" :class="inputFieldClasses">
-    <!-- Attach label with ID when using -->
-    <input
-      v-bind="$attrs"
-      class="field"
-      :class="fieldClasses"
-      :disabled="isDisabled"
-      :readonly="isReadOnly"
-      :size="charCount"
-      @input="emitInput">
-
-    <div
-      v-if="hasLeftAddons"
-      class="left addons"
-      :class="leftAddonClasses">
-      <!-- @slot Left-side addons go here -->
-      <slot name="leftAddons">
-        <FontAwesomeIcon
-          v-if="iconSet[0]"
-          :icon="['fas', iconSet[0]]"
-          fixed-width/>
-      </slot>
-    </div>
-
-    <div
-      v-if="hasRightAddons"
-      class="right addons"
-      :class="rightAddonClasses">
-      <!-- @slot Right-side addons go here -->
-      <slot name="rightAddons">
-        <FontAwesomeIcon
-          v-if="iconSet[1]"
-          :icon="['fas', iconSet[1]]"
-          fixed-width/>
-      </slot>
-    </div>
+  <div id="DoubleSlider" :style="cssVars">
+    <div id="left-progressBar"></div>
+    <div id="right-progressBar"></div>
+    <input id="faderLeft" type="range" v-model="faderLeftValue"
+      v-bind:min="sliderMin"
+      v-bind:max="sliderMax"
+      v-bind:step="sliderStep"
+      v-bind:aria-valuemin="sliderMin"
+      v-bind:aria-valuemax="sliderMax"
+      v-bind:aria-valuenow="faderLeftValue">
+    <input id="faderRight" type="range" v-model="faderRightValue"
+      v-bind:min="sliderMin"
+      v-bind:max="sliderMax"
+      v-bind:step="sliderStep"
+      v-bind:aria-valuemin="sliderMin"
+      v-bind:aria-valuemax="sliderMax"
+      v-bind:aria-valuenow="faderRightValue">
   </div>
 </template>
 
@@ -56,16 +37,45 @@
   library.add(faKeyboard)
 
   /**
-   * ### Inputs fields accept user input, duh!
-   *
-   * Input fields form the basis of forms, the primary method of receiving input
-   * from the user, be it text, email addresses, passwords, dates or numbers.
+   * ### The double range slider is a input field very much like the regular range slider.
+   * the big diffrence is a double range slider allows users
+   * to select both a min and max.
+   * exp. The range slider can be useful for allowing users to select 
+   * a specific price range when browsing products.
    */
   export default {
-    name: 'InputField',
-    components: {
+  name: 'DoubleSlider',
+  data: function (){
+      return {
+        faderLeftValue: 90,
+        faderRightValue: 100
+      }
+    },
+  components: {
       FontAwesomeIcon
     },
+  props: {
+    sliderMax: {
+      type: Number,
+      default: 100
+    },
+    sliderMin: {
+      type: Number,
+      default: 0
+    },
+    sliderStep: {
+      type: Number,
+      default: 1
+    },
+    nobColor: {
+      type: String,
+      default: '#ff0000'
+    },
+    sliderColor: {
+      type: String,
+      default: "#000000"
+    }
+  },
     mixins: [
       Colored,
       Indicating,
@@ -77,107 +87,48 @@
       Invertible,
       Unactionable
     ],
-    inheritAttrs: false,
-    model: {
-      prop: 'value',
-      event: 'input'
-    },
-    props: {
-      /**
-       * _an array specifying the left and right icon to use as add-ons_
-       *
-       * Use '' to omit the icon.
-       */
-      iconSet: {
-        type: Array,
-        validator: val => val.length === 2,
-        default: () => [null, null]
+  methods: {
+    reverseNum: function(numToReverse){
+      let reversedNumberRange = []
+      let reversed = 0;
+      for (let i = 101; i > -1; i--){
+        reversedNumberRange.push(i);
+        reversed = reversedNumberRange[numToReverse];
+      }
+      return reversed
+    }
+  }, 
+  watch: {
+      faderLeftValue: function leftFaderCollision(){
+        const leftFader = parseInt(this.faderLeftValue);
+        const rightFader = parseInt(this.faderRightValue);
+        let behind = rightFader - 4;
+        
+
+        if(leftFader >= behind) {
+          this.faderRightValue = Math.min(leftFader + 5, 100);
+        } 
       },
-      /**
-       * _whether to pad the left and right add-ons_
-       */
-      isAddonPaddedSet: {
-        type: Array,
-        validator: val => val.length === 2,
-        default: () => [true, true]
-      },
-      /**
-       * _whether to increase the coloration of the input field_
-       */
-      isInfused: {
-        type: Boolean,
-        default: false
-      },
-      /**
-       * _this is the renamed `size` attribute from the HTML spec_
-       */
-      charCount: {
-        type: Number,
-        default: 1
+      faderRightValue: function rightFaderCollision(){
+        const leftFader = parseInt(this.faderLeftValue);
+        const rightFader = parseInt(this.faderRightValue);
+        let infront = leftFader + 4;
+
+        if(rightFader <= infront) {
+          this.faderLeftValue = Math.max(rightFader - 5, 0);
+        }
       }
     },
-    computed: {
-      inputFieldClasses: function () {
-        return [
-          ...this.coloredClasses,
-          ...this.indicatingClasses,
-          ...this.joinClasses,
-          ...this.roundedClasses,
-          ...this.scaledClasses,
-          ...this.simplifiedClasses,
-
-          ...this.invertibleClasses,
-          ...this.unactionableClasses,
-
-          {
-            'infused': this.isInfused
-          }
-        ]
-      },
-      fieldClasses: function () {
-        return [
-          {
-            'has-left-addons': this.hasLeftAddons,
-            'has-right-addons': this.hasRightAddons
-          }
-        ]
-      },
-      leftAddonClasses: function () {
-        return [
-          {
-            'padded': this.isAddonPaddedSet[0]
-          }
-        ]
-      },
-      rightAddonClasses: function () {
-        return [
-          {
-            'padded': this.isAddonPaddedSet[1]
-          }
-        ]
-      },
-
-      hasLeftAddons: function () {
-        return this.iconSet[0] || this.$slots.leftAddons
-      },
-      hasRightAddons: function () {
-        return this.iconSet[1] || this.$slots.rightAddons
-      }
-    },
-    methods: {
-      emitInput: function (event) {
-        /**
-         * _event emitted when input given to field_
-         *
-         * The value of the field is passed back.
-         *
-         * @type {string}
-         */
-        this.$emit('input', event.target.value)
+        computed: {
+      cssVars() {
+        return {
+          '--leftFaderX': '.01' * parseFloat(this.faderLeftValue),
+          '--rightFaderX': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue))),
+        }
       }
     }
   }
 </script>
 
-<style lang="stylus" src="./InputField.styl">
+<style lang="stylus" src="./DoubleSlider.styl">
 </style>
