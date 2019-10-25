@@ -99,7 +99,7 @@
       }
     },
     watch: {
-      faderLeftValue: function leftFaderCollision () {
+      faderLeftValue: function() {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let behind = rightFader - 4
@@ -108,7 +108,7 @@
           this.faderRightValue = Math.min(leftFader + 5, 100)
         }
       },
-      faderRightValue: function rightFaderCollision () {
+      faderRightValue: function() {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let infront = leftFader + 4
