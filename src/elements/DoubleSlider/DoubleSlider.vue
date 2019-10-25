@@ -20,21 +20,6 @@
 </template>
 
 <script>
-  import { library } from '@fortawesome/fontawesome-svg-core'
-  import { faKeyboard } from '@fortawesome/free-solid-svg-icons'
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-  import Colored from '@/mixins/colored'
-  import Indicating from '@/mixins/indicating'
-  import Joined from '@/mixins/joined'
-  import Rounded from '@/mixins/rounded'
-  import Scaled from '@/mixins/scaled'
-  import Simplified from '@/mixins/simplified'
-
-  import Invertible from '@/mixins/invertible'
-  import Unactionable from '@/mixins/unactionable'
-
-  library.add(faKeyboard)
 
   /**
    * ### The double range slider is a input field very much like the regular range slider.
@@ -51,6 +36,9 @@
         faderRightValue: 100
       }
     },
+    mixins: [
+      Colored
+    ]
     props: {
       sliderMax: {
         type: Number,
