@@ -1,5 +1,5 @@
 <template>
-  <div id="DoubleSlider" :style="cssVars">
+  <div class="vocab slider" :style="cssVars">
     <div id="left-progressBar"></div>
     <div id="right-progressBar"></div>
     <input id="faderLeft" type="range" v-model="faderLeftValue"
