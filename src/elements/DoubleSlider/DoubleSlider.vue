@@ -51,9 +51,6 @@
         faderRightValue: 100
       }
     },
-    components: {
-      FontAwesomeIcon
-    },
     props: {
       sliderMax: {
         type: Number,
@@ -76,17 +73,6 @@
         default: '#000000'
       }
     },
-    mixins: [
-      Colored,
-      Indicating,
-      Joined,
-      Rounded,
-      Scaled,
-      Simplified,
-
-      Invertible,
-      Unactionable
-    ],
     methods: {
       reverseNum: function (numToReverse) {
         let reversedNumberRange = []
