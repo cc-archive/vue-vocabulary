@@ -40,42 +40,42 @@
    * ### The double range slider is a input field very much like the regular range slider.
    * the big diffrence is a double range slider allows users
    * to select both a min and max.
-   * exp. The range slider can be useful for allowing users to select 
+   * exp. The range slider can be useful for allowing users to select
    * a specific price range when browsing products.
    */
   export default {
-  name: 'DoubleSlider',
-  data: function (){
+    name: 'DoubleSlider',
+    data: function () {
       return {
         faderLeftValue: 90,
         faderRightValue: 100
       }
     },
-  components: {
+    components: {
       FontAwesomeIcon
     },
-  props: {
-    sliderMax: {
-      type: Number,
-      default: 100
+    props: {
+      sliderMax: {
+        type: Number,
+        default: 100
+      },
+      sliderMin: {
+        type: Number,
+        default: 0
+      },
+      sliderStep: {
+        type: Number,
+        default: 1
+      },
+      nobColor: {
+        type: String,
+        default: '#ff0000'
+      },
+      sliderColor: {
+        type: String,
+        default: '#000000'
+      }
     },
-    sliderMin: {
-      type: Number,
-      default: 0
-    },
-    sliderStep: {
-      type: Number,
-      default: 1
-    },
-    nobColor: {
-      type: String,
-      default: '#ff0000'
-    },
-    sliderColor: {
-      type: String,
-      default: "#000000"
-    }
-  },
     mixins: [
       Colored,
       Indicating,
@@ -87,43 +87,42 @@
       Invertible,
       Unactionable
     ],
-  methods: {
-    reverseNum: function(numToReverse){
-      let reversedNumberRange = []
-      let reversed = 0;
-      for (let i = 101; i > -1; i--){
-        reversedNumberRange.push(i);
-        reversed = reversedNumberRange[numToReverse];
+    methods: {
+      reverseNum: function (numToReverse) {
+        let reversedNumberRange = []
+        let reversed = 0
+        for (let i = 101; i > -1; i--) {
+          reversedNumberRange.push(i)
+          reversed = reversedNumberRange[numToReverse]
+        }
+        return reversed
       }
-      return reversed
-    }
-  }, 
-  watch: {
-      faderLeftValue: function leftFaderCollision(){
-        const leftFader = parseInt(this.faderLeftValue);
-        const rightFader = parseInt(this.faderRightValue);
-        let behind = rightFader - 4;
-        
+    },
+    watch: {
+      faderLeftValue: function leftFaderCollision () {
+        const leftFader = parseInt(this.faderLeftValue)
+        const rightFader = parseInt(this.faderRightValue)
+        let behind = rightFader - 4
 
-        if(leftFader >= behind) {
-          this.faderRightValue = Math.min(leftFader + 5, 100);
-        } 
+        if (leftFader >= behind) {
+          this.faderRightValue = Math.min(leftFader + 5, 100)
+        }
       },
-      faderRightValue: function rightFaderCollision(){
-        const leftFader = parseInt(this.faderLeftValue);
-        const rightFader = parseInt(this.faderRightValue);
-        let infront = leftFader + 4;
+      faderRightValue: function rightFaderCollision () {
+        const leftFader = parseInt(this.faderLeftValue)
+        const rightFader = parseInt(this.faderRightValue)
+        let infront = leftFader + 4
 
-        if(rightFader <= infront) {
-          this.faderLeftValue = Math.max(rightFader - 5, 0);
+        if (rightFader <= infront) {
+          this.faderLeftValue = Math.max(rightFader - 5, 0)
         }
       }
     },
-        computed: {
-      cssVars() {
+    computed: {
+      cssVars () {
         return {
           '--leftFaderX': '.01' * parseFloat(this.faderLeftValue),
-          '--rightFaderX': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue))),
+          '--rightFaderX': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue)))
         }
       }
     }
