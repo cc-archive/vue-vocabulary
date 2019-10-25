@@ -9,6 +9,7 @@ import SlotRenderer from './utils/SlotRenderer/SlotRenderer'
 
 import Button from './elements/Button/Button'
 import ChoiceField from './elements/ChoiceField/ChoiceField'
+import DoubleSlider from './elements/DoubleSlider/DoubleSlider'
 import Heading from './elements/Heading/Heading'
 import ImageView from './elements/ImageView/ImageView'
 import InputField from './elements/InputField/InputField'
@@ -20,7 +21,7 @@ import SelectField from './elements/SelectField/SelectField'
 import Shield from './elements/Shield/Shield'
 import Statistic from './elements/Statistic/Statistic'
 import SwitchField from './elements/SwitchField/SwitchField'
-import DoubleSlider from './elements/DoubleSlider/DoubleSlider'
+
 import Container from './layouts/Container/Container'
 import Grid from './layouts/Grid/Grid'
 import GridCell from './layouts/Grid/GridCell'
@@ -51,6 +52,7 @@ export {
 
   Button,
   ChoiceField,
+  DoubleSlider,
   Heading,
   ImageView,
   InputField,
@@ -60,7 +62,6 @@ export {
   Rating,
   SelectField,
   Shield,
-  DoubleSlider,
   Statistic,
   SwitchField,
 
@@ -96,6 +97,7 @@ export default {
 
     Vue.component('Button', Button)
     Vue.component('ChoiceField', ChoiceField)
+    Vue.component('DoubleSlider', DoubleSlider)
     Vue.component('Heading', Heading)
     Vue.component('ImageView', ImageView)
     Vue.component('InputField', InputField)
@@ -105,7 +107,6 @@ export default {
     Vue.component('Rating', Rating)
     Vue.component('SelectField', SelectField)
     Vue.component('Shield', Shield)
-    Vue.component('DoubleSlider', DoubleSlider)
     Vue.component('Statistic', Statistic)
     Vue.component('SwitchField', SwitchField)
 
