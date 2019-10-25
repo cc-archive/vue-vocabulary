@@ -121,8 +121,8 @@
     computed: {
       cssVars () {
         return {
-          '--leftFaderX': '.01' * parseFloat(this.faderLeftValue),
-          '--rightFaderX': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue)))
+          '--right-fader-x': '.01' * parseFloat(this.faderLeftValue),
+          '--left-fader-x': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue)))
         }
       }
     }

@@ -3,7 +3,7 @@ An input field looks like this.
 ```jsx
 let value="It is awesome";
 
-<InputField
+<DoubleSlider
   v-model="value"
   color="orange"
   :icon-set="['keyboard', '']"
@@ -18,7 +18,7 @@ let value="It is awesome";
 An input field without color is black.
 
 ```jsx
-<InputField
+<DoubleSlider
   :icon-set="['keyboard', '']"
   type="text"
   placeholder="Answer..."/>
@@ -30,63 +30,63 @@ provided by CC Vocabulary. Grey is nobody's favourite.
 ```jsx
 <Grid>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="blue"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="green"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="magenta"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="olive"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="orange"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="purple"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="red"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="sand"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="yellow"
       :icon-set="['keyboard', '']"
       type="text"
@@ -101,7 +101,7 @@ to accentuate the color.
 ```jsx
 <Grid>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="blue"
       shade="light"
       :icon-set="['keyboard', '']"
@@ -109,14 +109,14 @@ to accentuate the color.
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="blue"
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="blue"
       shade="dark"
       :icon-set="['keyboard', '']"
@@ -124,7 +124,7 @@ to accentuate the color.
       placeholder="Answer..."/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="blue"
       shade="darker"
       :icon-set="['keyboard', '']"
@@ -139,14 +139,14 @@ For use on dark or non-white backgrounds, we provided an inverted variant.
 ```jsx { "props": { "className": "dark-background" } }
 <Grid>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."
       is-inverted/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       :icon-set="['keyboard', '']"
       type="text"
       placeholder="Answer..."
@@ -154,7 +154,7 @@ For use on dark or non-white backgrounds, we provided an inverted variant.
       simplicity="slight"/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="magenta"
       :icon-set="['keyboard', '']"
       type="text"
@@ -162,7 +162,7 @@ For use on dark or non-white backgrounds, we provided an inverted variant.
       is-inverted/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       color="magenta"
       :icon-set="['keyboard', '']"
       type="text"
@@ -179,19 +179,19 @@ A field can also contain two icons, one on the left and right side each. Note
 that the icon must be added to the FontAwesome library by the application.
 
 ```jsx
-<InputField
+<DoubleSlider
   color="red"
   :icon-set="['keyboard', '']"
   type="text"
   placeholder="Left"/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="red"
   :icon-set="['', 'keyboard']"
   type="text"
   placeholder="Right"/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="red"
   :icon-set="['keyboard', 'keyboard']"
   type="text"
@@ -202,7 +202,7 @@ If you'd like your own something there, you can override the left and the right
 add-on slots with something you like.
 
 ```jsx
-<InputField
+<DoubleSlider
   color="green"
   type="text"
   placeholder="License iconography">
@@ -212,9 +212,9 @@ add-on slots with something you like.
   <template #rightAddons>
     <LicenseIconography :icon-list="['by']"/>
   </template>
-</InputField>
+</DoubleSlider>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="green"
   type="text"
   placeholder="Not even icons">
@@ -228,7 +228,7 @@ add-on slots with something you like.
       <strong>:‑D</strong>
     </div>
   </template>
-</InputField>
+</DoubleSlider>
 ```
 
 ### Style set
@@ -240,7 +240,7 @@ absolutely what the user wanted.
 ```jsx
 <Grid>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       type="text"
       :icon-set="['keyboard', '']"
       color="orange"
@@ -248,7 +248,7 @@ absolutely what the user wanted.
       simplicity="slight"/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       type="text"
       :icon-set="['keyboard', '']"
       color="orange"
@@ -262,7 +262,7 @@ An input field can be defined to color the text inside as well adding an
 additional streak of color to the field.
 
 ```jsx
-<InputField
+<DoubleSlider
   type="text"
   :icon-set="['keyboard', '']"
   color="orange"
@@ -306,7 +306,7 @@ let style = {
       :icon="['fas', 'arrow-right']"
       fixed-width/>
   </Button>
-  <InputField
+  <DoubleSlider
     color="blue" 
     shade="dark"
     :icon-set="['arrow-left', 'arrow-right']"
@@ -328,7 +328,7 @@ layouts. Or it can be completely rounded if that is something you like.
 ```jsx
 <Grid>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       type="text"
       :icon-set="['keyboard', '']"
       color="blue"
@@ -336,7 +336,7 @@ layouts. Or it can be completely rounded if that is something you like.
       placeholder="Answer"/>
   </GridCell>
   <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <InputField
+    <DoubleSlider
       type="text"
       :icon-set="['keyboard', '']"
       color="blue"
@@ -353,55 +353,55 @@ Styles can be combined.
 Input fields come in all sizes, from small to mega.
 
 ```jsx
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="small"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="big"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="large"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="huge"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="enormous"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="gigantic"
   type="text"
   placeholder="Answer..."/>
 <br/><br/>
-<InputField
+<DoubleSlider
   color="purple"
   :icon-set="['keyboard', '']"
   size="mega"
@@ -420,7 +420,7 @@ probably.
 ```jsx
 let value = 'Any answer';
 
-<InputField
+<DoubleSlider
   v-model="value"
   :icon-set="['keyboard', '']"
   :indication="value === 'Right answer' ? 'positive' : value === 'Wrong answer' ? 'negative' : 'probably'"
@@ -433,7 +433,7 @@ let value = 'Any answer';
 A field may be disabled to prevent input altogether.
 
 ```jsx
-<InputField
+<DoubleSlider
   :icon-set="['keyboard', '']"
   type="text"
   placeholder="Answer..."
@@ -444,7 +444,7 @@ A field may be made read-only to prevent input while preserving readability as
 an output component.
 
 ```jsx
-<InputField
+<DoubleSlider
   :icon-set="['keyboard', '']"
   type="text"
   placeholder="Answer..."
@@ -455,13 +455,13 @@ an output component.
 ### Attributes
 
 All attributes that you could pass to an `input` tag can be passed to the 
-`InputField` component. You've already seen the `placeholder` attribute in use 
+`DoubleSlider` component. You've already seen the `placeholder` attribute in use 
 above.
 
 An initial `value` can be provided for the field.
 
 ```jsx
-<InputField
+<DoubleSlider
   color="sand"
   type="text"
   placeholder="Placeholder"
@@ -471,39 +471,39 @@ An initial `value` can be provided for the field.
 The `type` attribute works as you would expect.
 
 ```jsx
-<InputField
+<DoubleSlider
   color="blue"
   type="email"
   placeholder="Email address...">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="purple"
   type="url"
   placeholder="Website URL...">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="green"
   type="number"
   placeholder="Age in years..."
   min="0"
   max="122">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="magenta"
   type="date">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="orange"
   type="time">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="red"
   type="range"
   max="5"
   min="0">
-</InputField><br/><br/>
-<InputField
+</DoubleSlider><br/><br/>
+<DoubleSlider
   color="yellow"
   type="file">
-</InputField>
+</DoubleSlider>
 ```

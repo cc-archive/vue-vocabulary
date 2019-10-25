@@ -5,10 +5,10 @@
 @import "~@/styles/sizes.styl"
 
   .slider {
-    --leftFaderX: 1;
-    --rightFaderX: 1;
+    --left-fader-x: 1;
+    --right-fader-x: 1;
     --slider-width: 400px;
-    --nobColor: red;
+    --nob-color: red;
     padding-bottom: 10px;
     background-color: white;
     padding: 20px;
@@ -27,7 +27,7 @@
     background-color: black;
     border-top: 8px solid white;
     border-bottom: 8px solid white;
-    transform: scale(var(--leftFaderX), 1);
+    transform: scale(var(--left-fader-x), 1);
     transform-origin: left;
   }
 
@@ -43,7 +43,7 @@
     background-color: black;
     border-top: 8px solid white;
     border-bottom: 8px solid white;
-    transform: scale(var(--rightFaderX), 1);
+    transform: scale(var(--right-fader-x), 1);
     transform-origin: right;
   }
 
@@ -68,7 +68,7 @@
     width:20px;
     height: 20px;
     border-radius: 50%;
-    background: var(--nobColor);
+    background: var(--nob-color);
     position: relative;
     -webkit-appearance: none;
     z-index: 20;
