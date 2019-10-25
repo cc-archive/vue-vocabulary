@@ -7,6 +7,7 @@
     "ChoiceField",
     "Heading",
     "ImageView",
+    "DoubleSlider",
     "InputField",
     "LicenseIconography",
     "Paragraph",
