@@ -12,11 +12,13 @@ describe('Statistic.vue', () => {
   const INDICATION = 'positive'
   const IS_INVERTIBLE = true
   const SLOT = '<strong class="test-my-slot">Hello World</strong>'
+
   let defaultConfig = null
 
   beforeEach(() => {
     defaultConfig = {
-      propsData: {}
+      propsData: {},
+      slots: {}
     }
   })
 
@@ -63,6 +65,18 @@ describe('Statistic.vue', () => {
     expect(wrapper.find('.addons.label *[icon*="vote-yea"]').exists()).toBe(true)
   })
 
+  it('renders the correct slot for value addons', () => {
+    defaultConfig.slots.valueAddons = SLOT
+    const wrapper = getWrapper()
+    expect(wrapper.find('.value.addons').html()).toContain(SLOT)
+  })
+
+  it('renders the correct slot for label addons', () => {
+    defaultConfig.slots.labelAddons = SLOT
+    const wrapper = getWrapper()
+    expect(wrapper.find('.label.addons').html()).toContain(SLOT)
+  })
+
   it('renders the correct color', () => {
     defaultConfig.propsData.color = COLOR
     const wrapper = getWrapper()
@@ -78,22 +92,6 @@ describe('Statistic.vue', () => {
   it('renders the correct indication', () => {
     defaultConfig.propsData.indication = INDICATION
     const wrapper = getWrapper()
-    expect(wrapper.find('.statistic').classes()).toContain('positive-indicating')
-  })
-
-  it('renders the correct slot for value addons', () => {
-    defaultConfig.slots = {
-      valueAddons: SLOT
-    }
-    const wrapper = getWrapper()
-    expect(wrapper.find('.value.addons').html()).toContain(SLOT)
-  })
-
-  it('renders the correct slot for label addons', () => {
-    defaultConfig.slots = {
-      labelAddons: SLOT
-    }
-    const wrapper = getWrapper()
-    expect(wrapper.find('.label.addons').html()).toContain(SLOT)
+    expect(wrapper.find('.statistic').classes()).toContain(`${INDICATION}-indicating`)
   })
 })

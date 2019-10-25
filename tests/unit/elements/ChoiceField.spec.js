@@ -8,6 +8,7 @@ describe('ChoiceField.vue', () => {
   const SIZE = 'mega'
   const INDICATION = 'positive'
   const IS_INVERTIBLE = true
+
   let defaultConfig = null
 
   beforeEach(() => {
@@ -16,7 +17,7 @@ describe('ChoiceField.vue', () => {
     }
   })
 
-  function getWrapper () {
+  function getWrapper() {
     return shallowMount(ChoiceField, defaultConfig)
   }
 
@@ -40,7 +41,7 @@ describe('ChoiceField.vue', () => {
       components: {
         ChoiceField
       },
-      data () {
+      data() {
         return {
           name: ''
         }
@@ -59,16 +60,10 @@ describe('ChoiceField.vue', () => {
     expect(wrapper.find('.choice-field').classes()).toContain(`${COLOR}-colored`)
   })
 
-  it('renders the correct invertion', () => {
-    defaultConfig.propsData.isInverted = IS_INVERTIBLE
-    const wrapper = getWrapper()
-    expect(wrapper.find('.choice-field').classes()).toContain('inverted')
-  })
-
   it('renders the correct indication', () => {
     defaultConfig.propsData.indication = INDICATION
     const wrapper = getWrapper()
-    expect(wrapper.find('.choice-field').classes()).toContain('positive-indicating')
+    expect(wrapper.find('.choice-field').classes()).toContain(`${INDICATION}-indicating`)
   })
 
   it('renders the correct scale/size', () => {
@@ -81,5 +76,11 @@ describe('ChoiceField.vue', () => {
     defaultConfig.propsData.simplicity = 'slight'
     const wrapper = getWrapper()
     expect(wrapper.find('.choice-field').classes()).toContain('slightly-simple')
+  })
+
+  it('renders the correct invertion', () => {
+    defaultConfig.propsData.isInverted = IS_INVERTIBLE
+    const wrapper = getWrapper()
+    expect(wrapper.find('.choice-field').classes()).toContain('inverted')
   })
 })

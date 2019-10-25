@@ -12,20 +12,20 @@ describe('ImageView.vue', () => {
   const IS_HOVERABLE = true
   const SIZE = 'mega'
   const SLOT = '<strong>Hello World</strong>'
+
   let defaultConfig = null
 
   beforeEach(() => {
     defaultConfig = {
       propsData: {
-
         source: SOURCE,
         alternateText: ALTERNATE_TEXT
-
-      }
+      },
+      slots: {}
     }
   })
 
-  function getWrapper () {
+  function getWrapper() {
     return shallowMount(ImageView, defaultConfig)
   }
 
@@ -77,18 +77,9 @@ describe('ImageView.vue', () => {
     expect(wrapper.find(`.hoverable`).exists()).toBe(true)
   })
 
-  it('renders the correct size', () => {
-    defaultConfig.propsData.size = SIZE
-    const wrapper = getWrapper()
-
-    expect(wrapper.find(`.${SIZE}-sized`).exists()).toBe(true)
-  })
-
   it('renders the topAddons correctly', () => {
     defaultConfig.propsData.isHoverable = IS_HOVERABLE
-    defaultConfig.slots = {
-      topAddons: SLOT
-    }
+    defaultConfig.slots.topAddons = SLOT
 
     const wrapper = getWrapper()
 
@@ -97,12 +88,17 @@ describe('ImageView.vue', () => {
 
   it('renders the bottomAddons correctly', () => {
     defaultConfig.propsData.isHoverable = IS_HOVERABLE
-    defaultConfig.slots = {
-      bottomAddons: SLOT
-    }
+    defaultConfig.slots.bottomAddons = SLOT
 
     const wrapper = getWrapper()
 
     expect(wrapper.find(`.addons.bottom`).html()).toContain(SLOT)
+  })
+
+  it('renders the correct size', () => {
+    defaultConfig.propsData.size = SIZE
+    const wrapper = getWrapper()
+
+    expect(wrapper.find(`.${SIZE}-sized`).exists()).toBe(true)
   })
 })

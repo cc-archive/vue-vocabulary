@@ -5,50 +5,54 @@ import Shield from '@/elements/Shield/Shield'
 describe('Shield.vue', () => {
   const LABEL_EXAMPLE = 'Example'
   const MESSAGE_EXAMPLE = 'Message'
+  const COLOR = 'red'
+  const INDICATION = 'positive'
+
+  let defaultConfig = null
+
+  beforeEach(() => {
+    defaultConfig = {
+      propsData: {}
+    }
+  })
+
+  function getWrapper () {
+    return shallowMount(Shield, defaultConfig)
+  }
 
   it('renders the correct message', () => {
-    const wrapper = shallowMount(Shield, {
-      propsData: {
-        message: MESSAGE_EXAMPLE
-      }
-    })
+    defaultConfig.propsData.message = MESSAGE_EXAMPLE
+    const wrapper = getWrapper()
+
     expect(wrapper.find('.message').text()).toContain(MESSAGE_EXAMPLE)
   })
 
-  it('renders the correct color', () => {
-    const wrapper = shallowMount(Shield, {
-      propsData: {
-        color: 'red'
-      }
-    })
-    expect(wrapper.find('.shield').classes()).toContain('red-colored')
+  it('works correctly with lowercase-set', () => {
+    defaultConfig.propsData.lowercaseSet = [false, true]
+    const wrapper = getWrapper()
+
+    expect(wrapper.find('.label').classes()).not.toContain('lowercased')
+    expect(wrapper.find('.message').classes()).toContain('lowercased')
   })
 
   it('renders the correct label', () => {
-    const wrapper = shallowMount(Shield, {
-      propsData: {
-        label: LABEL_EXAMPLE
-      }
-    })
+    defaultConfig.propsData.label = LABEL_EXAMPLE
+    const wrapper = getWrapper()
+
     expect(wrapper.find('.label').text()).toEqual(LABEL_EXAMPLE)
   })
 
-  it('renders the correct indication', () => {
-    const wrapper = shallowMount(Shield, {
-      propsData: {
-        indication: 'positive'
-      }
-    })
-    expect(wrapper.find('.positive-indication')).toBeTruthy()
+  it('renders the correct color', () => {
+    defaultConfig.propsData.color = COLOR
+    const wrapper = getWrapper()
+
+    expect(wrapper.find('.shield').classes()).toContain(`${COLOR}-colored`)
   })
 
-  it('works correctly with lowercase-set', () => {
-    const wrapper = shallowMount(Shield, {
-      propsData: {
-        lowercaseSet: [false, true]
-      }
-    })
-    expect(wrapper.find('.label').classes()).not.toContain('lowercased')
-    expect(wrapper.find('.message').classes()).toContain('lowercased')
+  it('renders the correct indication', () => {
+    defaultConfig.propsData.indication = INDICATION
+    const wrapper = getWrapper()
+
+    expect(wrapper.find(`.${INDICATION}-indication`)).toBeTruthy()
   })
 })

@@ -56,33 +56,6 @@ describe('Rating.vue', () => {
     expect(iconElement.exists()).toBe(true)
   })
 
-  it('single select', () => {
-    defaultConfig.propsData.isSingleSelect = IS_SINGLE_SELECTED
-    const wrapper = mount(Rating, defaultConfig)
-
-    wrapper.findAll('.icon.unit').at(2)
-      .trigger('click')
-
-    wrapper.findAll('.icon.unit').at(2)
-      .trigger('click')
-
-    expect(wrapper.findAll('.active').length).toBe(1)
-  })
-
-  it('renders the correct size', () => {
-    defaultConfig.propsData.size = SIZE
-    const wrapper = getWrapper()
-
-    expect(wrapper.find(`.${SIZE}-sized`).exists()).toBe(true)
-  })
-
-  it('renders the correct color', () => {
-    defaultConfig.propsData.color = COLOR
-    const wrapper = getWrapper()
-
-    expect(wrapper.find(`.${COLOR}-colored`).exists()).toBe(true)
-  })
-
   it('sets icons as expected', () => {
     defaultConfig.propsData.iconSet = ICON_SET
     defaultConfig.propsData.max = 3
@@ -98,18 +71,17 @@ describe('Rating.vue', () => {
       .toBe(1)
   })
 
-  it('renders the correct indication', () => {
-    defaultConfig.propsData.indication = INDICATION
-    const wrapper = getWrapper()
+  it('single select', () => {
+    defaultConfig.propsData.isSingleSelect = IS_SINGLE_SELECTED
+    const wrapper = mount(Rating, defaultConfig)
 
-    expect(wrapper.find('.rating').classes()).toContain('positive-indicating')
-  })
+    wrapper.findAll('.icon.unit').at(2)
+      .trigger('click')
 
-  it('renders the correct invertion', () => {
-    defaultConfig.propsData.isInverted = IS_INVERTIBLE
-    const wrapper = getWrapper()
+    wrapper.findAll('.icon.unit').at(2)
+      .trigger('click')
 
-    expect(wrapper.find('.rating').classes()).toContain('inverted')
+    expect(wrapper.findAll('.active').length).toBe(1)
   })
 
   it('doesnt emit on disabled mode ', () => {
@@ -130,5 +102,33 @@ describe('Rating.vue', () => {
       .trigger('click')
 
     expect(wrapper.emitted('input')).toBe(undefined)
+  })
+
+  it('renders the correct color', () => {
+    defaultConfig.propsData.color = COLOR
+    const wrapper = getWrapper()
+
+    expect(wrapper.find(`.${COLOR}-colored`).exists()).toBe(true)
+  })
+
+  it('renders the correct size', () => {
+    defaultConfig.propsData.size = SIZE
+    const wrapper = getWrapper()
+
+    expect(wrapper.find(`.${SIZE}-sized`).exists()).toBe(true)
+  })
+
+  it('renders the correct indication', () => {
+    defaultConfig.propsData.indication = INDICATION
+    const wrapper = getWrapper()
+
+    expect(wrapper.find('.rating').classes()).toContain(`${INDICATION}-indicating`)
+  })
+
+  it('renders the correct invertion', () => {
+    defaultConfig.propsData.isInverted = IS_INVERTIBLE
+    const wrapper = getWrapper()
+
+    expect(wrapper.find('.rating').classes()).toContain('inverted')
   })
 })
