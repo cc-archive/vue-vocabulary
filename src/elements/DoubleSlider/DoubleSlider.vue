@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import Colored from '@/mixins/colored'
 
   /**
    * ### The double range slider is a input field very much like the regular range slider.
@@ -38,7 +39,7 @@
     },
     mixins: [
       Colored
-    ]
+    ],
     props: {
       sliderMax: {
         type: Number,
