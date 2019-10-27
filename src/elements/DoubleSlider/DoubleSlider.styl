@@ -19,7 +19,7 @@
     position: relative;
 
 
-  .left-progressBar
+  .left-progressBar, .right-progressBar
     z-index: var(--z-index-top);
     position: absolute;
     width: var(--slider-width);
@@ -34,23 +34,6 @@
     transform: scale(var(--left-fader-x), 1);
     transform-origin: left;
   
-
-  .right-progressBar
-    z-index: var(--z-index-top);
-    position: absolute;
-    width: 400px;
-    height: 2px;
-    top: 14px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: var(--slider-color);
-    border-top: 8px solid var(--slider-backgrond-color);
-    border-bottom: 8px solid var(--slider-backgrond-color);
-    transform: scale(var(--right-fader-x), 1);
-    transform-origin: right;
-  
-
   input[type=range] 
     z-index: var(--z-index-bottom);
     box-sizing: border-box;
@@ -61,7 +44,7 @@
     background-color: var(--slider-color);
     height: 6px;
     position: absolute;
-    width: 400px;
+    width: var(--slider-width);
     left: 0;
     right: 0;
     margin: auto;
@@ -76,6 +59,5 @@
     border-radius: 50%;
     colors('--nob-color')
     position: relative;
-    -webkit-appearance: none;
     z-index: 20;
   
