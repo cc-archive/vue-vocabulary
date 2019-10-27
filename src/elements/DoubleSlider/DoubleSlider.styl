@@ -7,9 +7,11 @@
     --left-fader-x: 1;
     --right-fader-x: 1;
     --slider-width: 400px;
-    --nob-color: blue;
+    --slider-color: $color-overlay-black-high;
+    --nob-color: $color-red;
+    --slider-backgrond-color: $color-tone-white;
     padding-bottom: 10px;
-    background-color: white;
+    background-color: var(--slider-backgrond-color);
     padding: 20px;
     position: relative;
 
@@ -23,9 +25,9 @@
     left: 0;
     right: 0;
     margin: auto;
-    background-color: black;
-    border-top: 8px solid white;
-    border-bottom: 8px solid white;
+    background-color: var(--slider-color);
+    border-top: 8px solid var(--slider-backgrond-color);
+    border-bottom: 8px solid var(--slider-backgrond-color);
     transform: scale(var(--left-fader-x), 1);
     transform-origin: left;
   
@@ -39,9 +41,9 @@
     left: 0;
     right: 0;
     margin: auto;
-    background-color: black;
-    border-top: 8px solid white;
-    border-bottom: 8px solid white;
+    background-color: var(--slider-color);
+    border-top: 8px solid var(--slider-backgrond-color);
+    border-bottom: 8px solid var(--slider-backgrond-color);
     transform: scale(var(--right-fader-x), 1);
     transform-origin: right;
   
@@ -52,7 +54,7 @@
     position: absolute;
     cursor: pointer;
     -webkit-appearance: none;
-    background-color: black;
+    background-color: var(--slider-color);
     height: 6px;
     position: absolute;
     width: 400px;
