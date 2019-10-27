@@ -1,10 +1,9 @@
 @import "~@/assets/tokens/tokens.styl"
 
 @import "~@/styles/colors.styl"
-@import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
 
-  .slider {
+.vocab.slider 
     --left-fader-x: 1;
     --right-fader-x: 1;
     --slider-width: 400px;
@@ -13,9 +12,9 @@
     background-color: white;
     padding: 20px;
     position: relative;
-  }
 
-  #left-progressBar{
+
+  .left-progressBar{
     z-index: 10;
     position: absolute;
     width: var(--slider-width);
@@ -31,7 +30,7 @@
     transform-origin: left;
   }
 
-    #right-progressBar{
+  .right-progressBar{
     z-index: 10;
     position: absolute;
     width: 400px;

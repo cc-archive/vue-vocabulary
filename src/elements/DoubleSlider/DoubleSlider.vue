@@ -1,15 +1,15 @@
 <template>
   <div class="vocab slider" :style="cssVars">
-    <div id="left-progressBar"></div>
-    <div id="right-progressBar"></div>
-    <input id="faderLeft" type="range" v-model="faderLeftValue"
+    <div class="left-progressBar"></div>
+    <div class="right-progressBar"></div>
+    <input class="faderLeft" type="range" v-model="faderLeftValue"
       v-bind:min="sliderMin"
       v-bind:max="sliderMax"
       v-bind:step="sliderStep"
       v-bind:aria-valuemin="sliderMin"
       v-bind:aria-valuemax="sliderMax"
       v-bind:aria-valuenow="faderLeftValue">
-    <input id="faderRight" type="range" v-model="faderRightValue"
+    <input class="faderRight" type="range" v-model="faderRightValue"
       v-bind:min="sliderMin"
       v-bind:max="sliderMax"
       v-bind:step="sliderStep"
@@ -52,14 +52,6 @@ import Colored from '@/mixins/colored'
       sliderStep: {
         type: Number,
         default: 1
-      },
-      nobColor: {
-        type: String,
-        default: '#ff0000'
-      },
-      sliderColor: {
-        type: String,
-        default: '#000000'
       }
     },
     methods: {
@@ -94,10 +86,11 @@ import Colored from '@/mixins/colored'
       }
     },
     computed: {
-      cssVars () {
+      sliderClasses () {
         return {
           '--right-fader-x': '.01' * parseFloat(this.faderLeftValue),
-          '--left-fader-x': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue)))
+          '--left-fader-x': '.01' * this.reverseNum(Math.max(parseInt(this.faderRightValue))),
+          ...this.coloredClasses
         }
       }
     }
