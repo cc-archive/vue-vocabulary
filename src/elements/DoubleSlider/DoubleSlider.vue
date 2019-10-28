@@ -3,24 +3,24 @@
     <div class="left-progressBar"></div>
     <div class="right-progressBar"></div>
     <input class="faderLeft" type="range" v-model="faderLeftValue"
-      v-bind:min="sliderMin"
-      v-bind:max="sliderMax"
-      v-bind:step="sliderStep"
-      v-bind:aria-valuemin="sliderMin"
-      v-bind:aria-valuemax="sliderMax"
-      v-bind:aria-valuenow="faderLeftValue">
+      :min="sliderMin"
+      :max="sliderMax"
+      :step="sliderStep"
+      :aria-valuemin="sliderMin"
+      :aria-valuemax="sliderMax"
+      :aria-valuenow="faderLeftValue">
     <input class="faderRight" type="range" v-model="faderRightValue"
-      v-bind:min="sliderMin"
-      v-bind:max="sliderMax"
-      v-bind:step="sliderStep"
-      v-bind:aria-valuemin="sliderMin"
-      v-bind:aria-valuemax="sliderMax"
-      v-bind:aria-valuenow="faderRightValue">
+      :min="sliderMin"
+      :max="sliderMax"
+      :step="sliderStep"
+      :aria-valuemin="sliderMin"
+      :aria-valuemax="sliderMax"
+      :aria-valuenow="faderRightValue">
   </div>
 </template>
 
 <script>
-  import Colored from '@/mixins/colored'
+import Colored from '@/mixins/colored'
 
   /**
    * ### The double range slider is a input field very much like the regular range slider.
@@ -30,13 +30,13 @@
    * a specific price range when browsing products.
    */
   export default {
-    name: 'DoubleSlider',
     data: function () {
       return {
         faderLeftValue: 90,
         faderRightValue: 100
       }
     },
+    name: 'DoubleSlider',
     mixins: [
       Colored
     ],
@@ -66,7 +66,7 @@
       }
     },
     watch: {
-      faderLeftValue: function () {
+      faderLeftValue: function() {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let behind = rightFader - 4
@@ -75,7 +75,7 @@
           this.faderRightValue = Math.min(leftFader + 5, 100)
         }
       },
-      faderRightValue: function () {
+      faderRightValue: function() {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let infront = leftFader + 4
