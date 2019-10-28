@@ -11,12 +11,14 @@
     --right-fader-x: 1;
     --slider-width: 400px;
     --slider-color: $color-overlay-black-high;
-    --nob-color: $color-red;
+    --nobe-n-border-color: $color-red;
     --slider-backgrond-color: $color-tone-white;
     padding-bottom: 10px;
     background-color: var(--slider-backgrond-color);
     padding: 20px;
     position: relative;
+    border
+
 
 
   .left-progressBar, .right-progressBar
@@ -35,6 +37,7 @@
     transform-origin: left;
   
   input[type=range] 
+    border: 5px solid var(--nobe-n-border-color);
     z-index: var(--z-index-bottom);
     box-sizing: border-box;
     appearance: none;
