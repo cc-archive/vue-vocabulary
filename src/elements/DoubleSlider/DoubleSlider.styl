@@ -37,8 +37,8 @@
     transform-origin: left;
   
   input[type=range] 
-    border: 5px solid var(--nobe-n-border-color);
-    z-index: var(--z-index-bottom);
+    border: 5px solid var(--z-index-bottom);
+    z-index: var(--z-index-top);
     box-sizing: border-box;
     appearance: none;
     position: absolute;
@@ -55,7 +55,7 @@
   
 
   input[type=range]::-webkit-slider-thumb 
-    z-index: var(--z-index-bottom);
+    z-index: var(--z-index-top);
     -webkit-appearance: none;
     width:20px;
     height: 20px;
