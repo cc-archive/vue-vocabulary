@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Colored from '@/mixins/colored'
+  import Colored from '@/mixins/colored'
 
   /**
    * ### The double range slider is a input field very much like the regular range slider.
@@ -66,7 +66,7 @@ import Colored from '@/mixins/colored'
       }
     },
     watch: {
-      faderLeftValue: function() {
+      faderLeftValue: function () {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let behind = rightFader - 4
@@ -75,7 +75,7 @@ import Colored from '@/mixins/colored'
           this.faderRightValue = Math.min(leftFader + 5, 100)
         }
       },
-      faderRightValue: function() {
+      faderRightValue: function () {
         const leftFader = parseInt(this.faderLeftValue)
         const rightFader = parseInt(this.faderRightValue)
         let infront = leftFader + 4
