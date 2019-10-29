@@ -13,11 +13,12 @@ $z-index-top: 900;
     z-index: $z-index-low-lv1;
 }
 
-//only use thes in case where you want
+//only use these to stack ontop of other page content 
 @mixin z-index-low-lv2 {
     z-index: $z-index-low-lv2;
 }
 
+//extra level for page cotent
 @mixin z-index-low-lv3 {
     z-index: $z-index-low-lv3;
 }
