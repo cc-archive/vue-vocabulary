@@ -1,0 +1,36 @@
+
+# Z-index levels
+
+props:
+  level_low:
+    value: 1
+    uses: buttons,input fields you want most content to be in this level
+    comment: Lowest stacking level
+  level_lowLv2:
+    value: 2
+    uses: anything that needs to stack directly over anything on the first level
+    comment: second level of lowest stacking level
+  level_lowLv3:
+    value: 3
+    uses: Highest stacking order that does not go over sticky elements
+    comment: Very rare use case. Third level to stacking order 
+  level_lowLv4:
+    value: 100
+    uses: Sticky elements, headers, footers and the occasional ad.
+    comment: Bolder-than-normal font weight
+  level_highLv1:
+    value: 800
+    uses: Modals, Popovers, Notifications or Tooltips
+    comment: Slightly bolder-than-normal font weight
+  level_highLv2:
+    value: 810
+    uses: Modal content and/or anything that needs to stack over modal like elments
+    comment: Normal font weight
+  level_top:
+    value: 900
+    uses: If it it something hyper important that need to be seen no matter what
+    comment: To infinity and beyond
+
+global:
+  type: number
+  category: z-index
