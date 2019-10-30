@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import GitHubCorner from '@/assets/GitHubCorner/GitHubCorner'
+  import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
 
   const log = () => console.log('Welcome to storybook!')
   export default {
