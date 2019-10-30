@@ -1,10 +1,12 @@
 <template>
-  <Card
-    class="vocab layer"
-    :heading="properName"
-    :subheading="comment"
-    is-decked
-    is-raised>
+  <Section
+  color="red"
+  roundness="rounded"
+  is-raised>
+  <Heading :level="1" color="red">Z-index stack</Heading>
+  <Paragraph color="blue" shade="dark">
+    This is an example of 
+  </Paragraph>
     <div class="demo" :style="demoStyles">
       When we share, everyone wins.
     </div>
@@ -12,7 +14,7 @@
       <code>{{ value }}</code><br/>
       <code>${{ styleName }}</code>
     </template>
-  </Card>
+   </Section>
 </template>
 
 <script>

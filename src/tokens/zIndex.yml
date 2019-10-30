@@ -17,7 +17,7 @@ props:
   level_lowLv4:
     value: 100
     uses: Sticky elements, headers, footers and the occasional ad.
-    comment: Bolder-than-normal font weight
+    comment: Important stacking level but not too important
   level_highLv1:
     value: 800
     uses: Modals, Popovers, Notifications or Tooltips
@@ -25,7 +25,7 @@ props:
   level_highLv2:
     value: 810
     uses: Modal content and/or anything that needs to stack over modal like elments
-    comment: Normal font weight
+    comment: for things that stack on top of modal elments
   level_top:
     value: 900
     uses: If it it something hyper important that need to be seen no matter what

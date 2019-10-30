@@ -1,37 +1,9 @@
-//Z-index stack mixins, use to keep elements in a consistent hierarchy
+@import "~@/assets/tokens/tokens.styl"
 
-$z-index-low-lv1 = 1
-$z-index-low-lv2 = 2
-$z-index-low-lv3 = 3
-$z-index-mid = 100
-$z-index-high-lv1 = 800
-$z-index-high-lv2 = 810
-$z-index-top = 900
+.vocab.color
+  .swatch
+    min-height 5em
+    height 100%
 
-//for basic page content for exp: buttons, input fields and other common elements
-z-index-low-lv1()
-    z-index: $z-index-low-lv1
-
-//only use these to stack ontop of other page content 
-z-index-low-lv2()
-    z-index: $z-index-low-lv2
-
-//extra level for page cotent
-z-index-low-lv3()
-    z-index: $z-index-low-lv3
-
-//for STICKY elements things like sticky footers and headers
-z-index-mid()
-    z-index: $z-index-mid
-
-//for modal elements, popups and tooltips 
-z-index-high-lv1()
-    z-index: $z-index-high-lv1
-
-//for the content of modal elements or things that you want to stack on top of modal
-z-index-high-lv2()
-    z-index: $z-index-high-lv2
-
-//to infinity and beyond use these only for special use cases
-z-index-top()
-    z-index: $z-index-top
+  code
+    font-size 13px
