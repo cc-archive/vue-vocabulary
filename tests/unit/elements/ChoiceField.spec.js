@@ -17,17 +17,15 @@ describe('ChoiceField.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(ChoiceField, defaultConfig)
   }
 
   it('emits the checked value correctly', () => {
     const wrapper = getWrapper()
-
     wrapper.find('input').element.value = VALUE
     wrapper.find('input').element.checked = true
     wrapper.find('input').trigger('change')
-
     expect(wrapper.emitted().change[0][0][0]).toBe(VALUE)
   })
 
@@ -41,13 +39,12 @@ describe('ChoiceField.vue', () => {
       components: {
         ChoiceField
       },
-      data() {
+      data () {
         return {
           name: ''
         }
       }
     })
-
     const ChoiceField1 = wrapper.findAll('input').at(0)
     ChoiceField1.element.checked = true
     ChoiceField1.trigger('change')

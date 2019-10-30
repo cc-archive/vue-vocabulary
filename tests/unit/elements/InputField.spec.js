@@ -21,11 +21,11 @@ describe('InputField.vue', () => {
     }
   })
 
-  function getWrapper() {
+  function getWrapper () {
     return shallowMount(InputField, defaultConfig)
   }
 
-  function type(wrapper, value) {
+  function type (wrapper, value) {
     wrapper.element.value = value
     wrapper.trigger('input')
   }
@@ -33,9 +33,7 @@ describe('InputField.vue', () => {
   it('renders the correct value on typing', () => {
     defaultConfig.propsData.value = VALUE
     const wrapper = getWrapper()
-
     type(wrapper.find('input'), VALUE)
-
     expect(wrapper.emitted().input[0][0]).toBe(VALUE)
   })
 

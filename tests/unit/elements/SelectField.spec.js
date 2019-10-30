@@ -1,7 +1,4 @@
-import {
-  config,
-  shallowMount
-} from '@vue/test-utils'
+import { config, shallowMount } from '@vue/test-utils'
 
 import SelectField from '@/elements/SelectField/SelectField'
 
