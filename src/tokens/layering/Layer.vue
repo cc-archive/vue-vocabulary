@@ -1,5 +1,5 @@
 <template>
-  <Section
+  <Section>
   color="red"
   roundness="rounded"
   is-raised>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+  import Section from 'layouts/Section/Section'
+
   import startCase from 'lodash/startCase'
 
   import Card from '@/patterns/Card/Card'
