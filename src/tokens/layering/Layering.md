@@ -9,24 +9,11 @@
 </Paragraph>
 ```
 
-### Size set
+### Stack level
 
-Vocabulary provides a number of font sizes calculated using a harmonic scale 
-that scales `4em` over 6 harmonics.
-
-The examples below demonstrate font sizes on 'Fira Sans'.
+Vocabulary provides a number of z index levels. these levels go with the different priorities that elments have
 
 ```jsx noeditor
 <Layer property="zIndex"/>
 ```
 
-### Weight set
-
-In each of these sizes, Vocabulary uses provides three distinct font weights, 
-namely light, normal and bold.
-
-The examples below demonstrate font weights on 'Fira Sans'.
-
-```jsx noeditor
-<Fonts property="weight"/>
-```

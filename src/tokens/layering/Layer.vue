@@ -31,7 +31,7 @@
     },
     props: {
       /**
-       * _the font property being showcased_
+       * _the layer property being showcased_
        */
       property: {
         type: String,
