@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 # Z-index tokens
+=======
+
+# Z-index levels
+>>>>>>> b615a244d28130ca0757171c1fdf887aed409f2d
 
 props:
   level_low:
