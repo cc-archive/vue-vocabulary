@@ -17,7 +17,7 @@ that scales `4em` over 6 harmonics.
 The examples below demonstrate font sizes on 'Fira Sans'.
 
 ```jsx noeditor
-<Fonts property="size"/>
+<Layer property="zIndex"/>
 ```
 
 ### Weight set
