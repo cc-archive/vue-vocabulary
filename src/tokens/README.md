@@ -8,7 +8,7 @@
 
 &nbsp;
 
-Design tokens are the atoms of the system. They are used instead of hardcoded 
+. They are used instead of hardcoded 
 values to ensure a better consistency across platforms.
 
 A token is the equivalent of a constant, that Theo, a token management and 
@@ -45,16 +45,21 @@ import Font from './Fonts/Font';
 import Space from './Spaces/Space';
 import Radius from './Radii/Radius';
 import Shadow from './Shadows/Shadow';
+import Layer from './Layers/Layer';
 
 Vue.component('Color', Color);
 Vue.component('Font', Font);
 Vue.component('Space', Space);
 Vue.component('Radius', Radius);
 Vue.component('Shadow', Shadow);
+Vue.component('Layer', Layer);
 
 let spanSet = [12, 3, 3, 3, 3];
 
 <Grid density="sparse">
+  <GridCell :span-set="spanSet">
+    <layer/>
+  </GridCell>
   <GridCell :span-set="spanSet">
     <Color
       category="color-group-oxford"

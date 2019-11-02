@@ -524,7 +524,7 @@
     "weight_thin": {
       "type": "number",
       "category": "font-weight",
-      "value": 100,
+      "value": 100, 
       "comment": "Extremely thinner-than-normal font weight",
       "originalValue": 100,
       "name": "weight_thin"
