@@ -1,15 +1,23 @@
 @import "~@/assets/tokens/tokens.styl"
 
 .vocab.layer
-  --stack-box-color: white;
-  --left: 2; 
-  --top: 2;
-  --bottom: 2;
-  --right: 2;
-  background: var(--stack-box-color);
+  --stack-box-color: $color-blue;
+  --border-and-font-color: $color-tone-near-black 
+  --left: 2px; 
+  --top: 50px;
+  --bottom: 2px;
+  --right: 2px;
+  postition: absolute 
+  position: relative;
+  background: var(--stack-box-color)
+  left: var(--left)
+  top: var(--top)
+  bottom: var(--bottom)
+  right: var(--right)
   width:100px;
   height:100px;
-  border: 3px solid black;
+  color: var(--border-and-font-color);
+  border: 3px solid var(--border-and-font-color);
   padding: 10px;
 
   .zindex-bottom

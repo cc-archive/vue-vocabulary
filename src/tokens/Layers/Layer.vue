@@ -1,9 +1,12 @@
 <template>
     <div class="vocab layer">
-      <Heading
-        :level="6">
-        This is level five
+      <Heading :level="6">
+        {{name}}
       </Heading>
+      <template #foot>
+        <code>{{ value }}</code><br/>
+        <code>${{ zindexValue }}</code>
+      </template>
     </div>
 </template>
 
@@ -15,13 +18,6 @@
     name: 'Layer',
     props: {
       /**
-       * _the layer property being showcased_
-       */
-      property: {
-        type: String,
-        required: true
-      },
-      /**
        * _the name of the value being showcased_
        */
       name: {
@@ -29,10 +25,10 @@
         required: true
       },
       /**
-       * _the value being showcased_
+       * _the Z index value being showcased_
        */
       value: {
-        type: [String, Number],
+        type: Number,
         required: true
       },
       /**
@@ -40,6 +36,25 @@
        */
       comment: {
         type: String,
+        required: true
+      },
+      /**
+       * _postioning of element_
+       */
+      left: {
+        type: Number,
+        required: true
+      },
+      right: {
+        type: Number,
+        required: true
+      },
+      top: {
+        type: Number,
+        required: true
+      },
+      bottom: {
+        type: Number,
         required: true
       }
     },
@@ -53,9 +68,9 @@
         )
       },
       /**
-       * the stylesheet variable name for this value
+       * the variable name for this value
        */
-      styleName: function () {
+      zindexValue: function () {
         return this.name.replace(/_/g, '-')
       },
       /**
@@ -70,5 +85,5 @@
   }
 </script>
 
-<style lang="stylus" src="./Layering.styl">
+<style lang="stylus" src="./Layer.styl">
 </style>
