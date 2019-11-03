@@ -2,10 +2,28 @@
 
 .vocab.layer
   --stack-box-color: white;
-  --stack-box-color: white;
+  --left: 2; 
+  --top: 2;
+  --bottom: 2;
+  --right: 2;
   background: var(--stack-box-color);
   width:100px;
   height:100px;
   border: 3px solid black;
   padding: 10px;
+
+  .zindex-bottom
+    z-index: $z-index-bottom; 
+  .zindex-bottom2
+    z-index: $z-index-bottom2; 
+  .zindex-bottom3
+    z-index: $z-index-bottom3; 
+  .zindex-mid
+    z-index: $z-index-mid; 
+  .zindex-high
+    z-index: $z-index-high;
+  .zindex-high2
+    z-index: $z-index-high2;
+  .zindex-top
+    z-index: $z-index-top;
 
