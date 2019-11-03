@@ -1,21 +1,18 @@
 <template>
-    <div class="square">
-      hello
-    </div>  
+    <div class="vocab layer">
+      <Heading
+        :level="6">
+        This is level five
+      </Heading>
+    </div>
 </template>
 
 <script>
 
   import startCase from 'lodash/startCase'
 
-  import Card from '@/patterns/Card/Card'
-
   export default {
     name: 'Layer',
-    components: {
-      Card,
-      Container
-    },
     props: {
       /**
        * _the layer property being showcased_
