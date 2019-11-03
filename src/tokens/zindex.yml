@@ -1,0 +1,31 @@
+# Z-index system
+
+props:
+  level_bottom:
+    value: 1
+    comment: lowest of the low
+    uses: page-content
+  level_bottom2:
+    value: 2
+    comment: stack on top of other page elemnts
+    uses: page-content
+  level_bottom3:
+    value: 3
+    comment: a high stack for page content but respects sticky elements
+    uses: page-content
+  level_mid:
+    value: 100
+    comment: not too high, not too low
+    uses: stickey-content
+  level_high:
+    value: 800
+    comment: 
+    uses: modals, tooltips and notifications
+  level_high2:
+    value: 810
+    comment: things that go on top of high elements
+    uses: modal content
+  level_top:
+    value: 900
+    comment: Top of the world, will be seen over all other elements
+    uses: special use cases for things that just HAVE to be seen 
