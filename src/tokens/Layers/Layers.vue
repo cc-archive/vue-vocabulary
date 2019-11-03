@@ -28,8 +28,8 @@
    * ### Layers show you what you want to see when you want to see it.
    *
    * CC Vocabulary is the design system of Creative Commons, and all of its
-   * page content has a stacking prority. This priority is defined by the css
-   * property z-index. There is a diffrent level for all page content and when 
+   * page content has spatial relationships. These realationships our defined by the css
+   * property z-index. There is a diffrent stacking level for all page content and when 
    * layers our used you wont need to worry about elements disappering from view or
    * stacking on top of other elements where they dont belong.  
    */
