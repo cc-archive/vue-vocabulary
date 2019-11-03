@@ -1,27 +1,7 @@
 <template>
-  <Card
-    class="vocab layer"
-    :heading="properName"
-    :subheading="comment"
-    is-decked
-    is-raised>
-    <div
-      class="square"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <div
-      class="square"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <div
-      class="square"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <template #foot>
-      <code>{{ value }}</code><br/>
-      <code>${{ styleName }}</code>
-    </template>
-  </Card>
+    <div class="square">
+      hello
+    </div>  
 </template>
 
 <script>
@@ -33,7 +13,8 @@
   export default {
     name: 'Layer',
     components: {
-      Card
+      Card,
+      Container
     },
     props: {
       /**
