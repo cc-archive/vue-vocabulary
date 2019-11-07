@@ -64,28 +64,11 @@
         default: true
       },
       /**
-      * _the background color of the corner (SVG's fill value)_
-      */
-      // bgColor: {
-      //   type: String,
-      //   default: '#151513'
-      // },
-      /**
-       * _the color of the GitHub octocat (SVG's color value)_
-       */
-      // color: {
-      //   type: String,
-      //   default: '#fff'
-      // },
-      /**
        * _the position of corner (left or right)_
        */
       position: {
         type: String,
         default: 'right',
-        // validator (value) {
-        //   return (value === 'left') || (value === 'right')
-        // }
         validator: val => ['left', 'right'].includes(val)
       }
     },
@@ -97,39 +80,11 @@
         return [
           ...this.coloredClasses,
 
-          ...this.invertibleClasses
+          ...this.invertibleClasses,
+          this.position === 'left' ? 'position-left' : 'position-right'
 
         ]
       },
-      svgClasses: function () {
-        return [
-          ...this.coloredClasses,
-
-          ...this.invertibleClasses
-
-        ]
-      },
-      // svgStyle () {
-      //   let positionStyles = {}
-      //   if (this.position === 'left') {
-      //     positionStyles = {
-      //       left: 0,
-      //       transform: 'scale(-1, 1)'
-      //     }
-      //   } else {
-      //     positionStyles = {
-      //       right: 0
-      //     }
-      //   }
-      //   return {
-      //     fill: this.bgColor,
-      //     color: this.color,
-      //     position: 'absolute',
-      //     border: 0,
-      //     top: 0,
-      //     ...positionStyles
-      //   }
-      // },
       opensInNewTabAttr () {
         return this.opensInNewTab ? '_blank' : null
       },
