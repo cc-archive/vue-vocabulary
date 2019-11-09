@@ -149,4 +149,3 @@ inverted variant.
   </GridCell>
 </Grid>
 ```
-
