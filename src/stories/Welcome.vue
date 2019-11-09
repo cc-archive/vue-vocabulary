@@ -1,8 +1,13 @@
 <template>
   <div class="welcome-story">
-    <GitHubCorner repo="creativecommons/cc-vocabulary"> </GitHubCorner>
-    <p align="center">
-      <a href="https://creativecommons.org/" class="readme-cc-logo">
+    <GitHubCorner
+      repo="creativecommons/cc-vocabulary"
+      position="absolute">
+    </GitHubCorner>
+    <p>
+      <a
+        href="https://creativecommons.org/"
+        class="readme-cc-logo">
         <img
           alt="Creative Commons logo"
           src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/cc_logo.png"
@@ -10,8 +15,10 @@
         />
       </a>
     </p>
-    <p align="center">
-      <a href="https://creativecommons.github.io/cc-vocabulary/" class="readme-vocabulary-logo">
+    <p>
+      <a
+        href="https://creativecommons.github.io/cc-vocabulary/"
+        class="readme-vocabulary-logo">
         <img
           alt="Vocabulary logo"
           src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
@@ -27,22 +34,14 @@
 <script>
   import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
 
-  const log = () => console.log('Welcome to storybook!')
   export default {
     name: 'welcome',
     components: {
       GitHubCorner
     },
-    props: {
-      showApp: {
-        type: Function,
-        default: log
-      }
-    },
-    methods: {
-      onClick (event) {
-        event.preventDefault()
-        this.showApp()
+    data () {
+      return {
+        msg: 'Welcome to storybook!'
       }
     }
   }
