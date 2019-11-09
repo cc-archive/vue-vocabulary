@@ -14,82 +14,16 @@
 
   colors('--github-corner-primary')
 
-  &.positive-indicating.positive-indicating
-    --github-corner-primary $color-context-positive
-
-  &.probably-indicating.probably-indicating
-    --github-corner-primary $color-context-probably
-
-  &.negative-indicating.negative-indicating
-    --github-corner-primary $color-context-negative
-
   --github-corner-secondary $color-tone-white
 
   &.inverted
     --github-corner-secondary $color-tone-black
 
-  --github-corner-overlay $color-overlay-white-low
-
-  &.inverted
-    --github-corner-overlay $color-overlay-black-low
-
   // Color
 
   --github-corner-background-color var(--github-corner-primary)
   --github-corner-text-color var(--github-corner-secondary)
-  --github-corner-border-color var(--github-corner-primary)
-  --github-corner-background-overlay linear-gradient(
-    var(--github-corner-overlay),
-    var(--github-corner-overlay)
-  )
 
-  &.slightly-simple
-    --github-corner-background-color transparent
-    --github-corner-text-color var(--github-corner-primary)
-
-    &:hover
-      --github-corner-background-color var(--github-corner-primary)
-      --github-corner-text-color var(--github-corner-secondary)
-
-  &.extremely-simple
-    --github-corner-border-color transparent
-    --github-corner-background-color transparent
-    --github-corner-text-color var(--github-corner-primary)
-
-  &.call-to-action
-    --github-corner-border-color transparent
-
-  // Cursor
-
-  --github-corner-cursor pointer
-
-  &.disabled
-    --github-corner-cursor not-allowed
-
-  // Border widths
-
-  --github-corner-top-border-width 1px
-  --github-corner-right-border-width 1px
-  --github-corner-bottom-border-width 1px
-  --github-corner-left-border-width 1px
-
-  &.left-joined,
-  &.both-joined
-    --github-corner-left-border-width 0px
-
-  &.right-joined,
-  &.both-joined
-    --github-corner-right-border-width 0px
-
-  // Border radius
-
-  --github-corner-border-radius $radius-zero
-
-  &.slightly-rounded
-    --github-corner-border-radius $radius-large
-
-  &.completely-rounded
-    --github-corner-border-radius $radius-pill
 
   // Rules
 
@@ -98,68 +32,21 @@
   align-items center
 
   color var(--github-corner-text-color)
-
-  font-reset()
-  sizes('font-size')
-  font-weight $weight-bold
-  position absolute
-  // border 0
   top $space-zero
-  // right $space-zero
-
-  white-space nowrap
-
-  cursor var(--github-corner-cursor)
-
   fill var(--github-corner-background-color)
 
-  padding $space-zero
-
-  // border-top-width var(--github-corner-top-border-width)
-  // border-right-width var(--github-corner-right-border-width)
-  // border-bottom-width var(--github-corner-bottom-border-width)
-  // border-left-width var(--github-corner-left-border-width)
-  // border-style solid
-  // border-color var(--github-corner-border-color)
-  // border-radius var(--github-corner-border-radius)
-
-  transition-property color, background-color, border-color
-  transition-duration $duration-shortest
-
-  // Children
-
-  & > .content
-    padding $space-normal
-
-    &.has-addons
-      border-left 1px solid var(--github-corner-border-color)
-
-  & > .addons
-    &.padded
-      padding $space-normal
-
-  // States
-
-  &:hover
-    background-image var(--github-corner-background-overlay)
-
-  &:active
-    background-image none
-
-  // Styles
-
-  &.disabled
-    opacity 0.6
-
-    text-decoration line-through
-    background-image none
-
-  &.position-left
+  &.left-corner
     left 0
     transform scale(-1, 1)
 
-  &.position-right
+  &.right-corner
     right 0
+
+  &.position-relative
+    position relative
+
+  &.position-absolute
+    position absolute
 
 
   &:hover

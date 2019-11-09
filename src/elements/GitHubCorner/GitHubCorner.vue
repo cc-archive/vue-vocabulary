@@ -33,16 +33,17 @@
 
   import Invertible from '@/mixins/invertible'
 
+  const GITHUB_BASE_URL = 'https://github.com'
+
   /**
-   * ### GitHub Corners provides a link to the GitHub repository .
+   * ### GitHub Corners provides a interractive link to your GitHub repository.
    *
-   * A GitHub Corner is an interractive link on the left or right corner of a visited page
+   * A GitHub Corner is an interractive link on the left or right corner of a visited page.
    * Its visuals tells the user that clicking leads to the page's GitHub repository
    */
 
-  const GITHUB_BASE_URL = 'https://github.com'
   export default {
-    name: 'GitHubCorners',
+    name: 'GitHubCorner',
     mixins: [
       Colored,
 
@@ -64,12 +65,20 @@
         default: true
       },
       /**
-       * _the position of corner (left or right)_
+       * _the end of the page the github corner is placed (left or right)_
        */
-      position: {
+      corner: {
         type: String,
         default: 'right',
         validator: val => ['left', 'right'].includes(val)
+      },
+      /**
+       * _the positioning of github corner (absolute or relative)_
+       */
+      position: {
+        type: String,
+        default: 'relative',
+        validator: val => ['absolute', 'relative'].includes(val)
       }
     },
     computed: {
@@ -81,7 +90,8 @@
           ...this.coloredClasses,
 
           ...this.invertibleClasses,
-          this.position === 'left' ? 'position-left' : 'position-right'
+          this.corner === 'left' ? 'left-corner' : 'right-corner',
+          this.position === 'absolute' ? 'position-absolute' : 'position-relative'
 
         ]
       },
