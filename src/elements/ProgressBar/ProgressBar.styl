@@ -91,7 +91,11 @@
     // States
 
     &[value]
-      &::-moz-progress-bar,
+      &::-moz-progress-bar
+        background-color var(--progress-bar-bar-color)
+
+        transition width $duration-shortest
+        
       &::-webkit-progress-value
         background-color var(--progress-bar-bar-color)
 
