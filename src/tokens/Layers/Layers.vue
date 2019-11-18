@@ -39,14 +39,59 @@
       GridCell,
       Grid,
       Layer
-    },
-    computed: {
-      spanSet: function () {
-        if (this.category === 'context') {
-          return [12, 6, 4, 4, 4]
-        } else {
-          return [12, 6, 3, 3, 3]
-        }
+  },
+  props: {
+    /**
+     * _the substring of the category to filter based on_
+     *
+     * ∈ {`'hue'`, `'tone'`, `'context'`, `'overlay'`}
+     */
+    category: {
+      type: String,
+      validator: val => ['hue', 'tone', 'context', 'overlay'].includes(val),
+      required: true
+    }
+  },
+  data: function () {
+    return {
+      colors: this.extractColors(designTokens.props)
+    }
+  },
+  computed: {
+    spanSet: function () {
+      if (this.category === 'context') {
+        return [12, 6, 4, 4, 4]
+      } else {
+        return [12, 6, 3, 3, 3]
+      }
+    }
+  },
+    methods: {
+      extractColors: function (data) {
+        return sortBy(
+          data,
+          [
+            'category',
+            function (color) {
+              let shadeLevels = [
+                'tone_white', 'near_white', 'lighter', 'light',
+                'white_low', 'white_high',
+                'normal',
+                'black_high', 'black_low',
+                'dark', 'darker', 'near_black', 'tone_black'
+              ]
+              for (let i = 0; i < shadeLevels.length; i++) {
+                if (color.name.endsWith(shadeLevels[i])) {
+                  return i
+                }
+              }
+              return Math.floor(shadeLevels.length / 2)
+            }
+          ]
+        ).filter(
+          token => token.type === 'color' &&
+            token.category.includes(`color-group-${this.category}`)
+        )
       }
     }
   }
