@@ -6,10 +6,6 @@
       <Heading :level="6">
         {{name}}
       </Heading>
-      <template #foot>
-        <code>{{ value }}</code><br/>
-        <code>${{ zindexValue }}</code>
-      </template>
     </div>
 </template>
 
