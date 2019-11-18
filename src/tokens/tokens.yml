@@ -8,7 +8,7 @@ imports:
   - ./radius.yml
   - ./box-shadow.yml
   - ./duration.yml
-  - ./layer.yml
+  - ./zindex.yml
 
 global:
   type: z-index

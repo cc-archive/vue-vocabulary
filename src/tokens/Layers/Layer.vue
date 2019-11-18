@@ -1,12 +1,12 @@
-<template> 
-    <div 
+<template>  
+    <Card 
             class="vocab layer"
             :heading="properName"
             :zindex="level"              >
       <Heading :level="6">
         {{name}}
       </Heading>
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -26,7 +26,7 @@
       /**
        * _the Z index value being showcased_
        */
-      value: {
+      zindex: {
         type: Number,
         required: true
       },
