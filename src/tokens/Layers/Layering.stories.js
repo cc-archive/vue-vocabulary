@@ -7,5 +7,5 @@ const stories = storiesOf('Tokens/Layer', module)
 stories
   .add('Layer', () => ({
     components: { Layer },
-    template: '<Layer property="layer"/>'
+    template: '<Layer property="zindex"/>'
   }))

@@ -1,5 +1,8 @@
-<template>
-    <div class="vocab layer">
+<template> 
+    <div 
+            class="vocab layer"
+            :heading="properName"
+            :zindex="level"              >
       <Heading :level="6">
         {{name}}
       </Heading>
@@ -39,7 +42,7 @@
         required: true
       },
       /**
-       * _postioning of element_
+       * _postioning of element being showcased_
        */
       left: {
         type: Number,
