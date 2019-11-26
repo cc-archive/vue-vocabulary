@@ -25,7 +25,7 @@
   import designTokens from '@/assets/tokens/tokens.raw.json'
 
   /**
-   * ### Layers show you what you want to see when you want to see it.
+   * ### Layers show you what you want to see when you want to see them.
    *
    * CC Vocabulary is the design system of Creative Commons, and all of its
    * page content has spatial relationships. These realationships our defined by the css
@@ -34,7 +34,7 @@
    * stacking on top of other elements where they dont belong.  
    */
   export default {
-    name: 'Layers',
+    name: 'Layer',
     components: {
       GridCell,
       Grid,
