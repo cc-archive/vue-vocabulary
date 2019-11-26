@@ -42,11 +42,11 @@
     /**
      * _the substring of the category to filter based on_
      *
-     * ∈ {`'level'`}
+     * ∈ {`'layer'`}
      */
     category: {
       type: String,
-      validator: val => ['level'].includes(val),
+      validator: val => ['layer'].includes(val),
       required: true
     }
   },
@@ -63,7 +63,7 @@
             'value'
           ]
         ).filter(
-          token => token.category.includes(`level-${this.property}`)
+          token => token.category.includes(`layer-${this.property}`)
         )
       }
     }
