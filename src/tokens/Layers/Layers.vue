@@ -5,12 +5,10 @@
       v-for="(prop, index) in values"
       :key="index">
       <layer
+        :property="property"
+        :name="prop.name"
         :value="prop.value"
-        :comment="prop.comment"
-        :left="prop.left"
-        :right="prop.right"
-        :top="prop.top"
-        :bottom="prop.bottom"/>
+        :comment="prop.comment"/>
     </GridCell>
   </Grid>
 </template>
@@ -44,53 +42,28 @@
     /**
      * _the substring of the category to filter based on_
      *
-     * ∈ {`'hue'`, `'tone'`, `'context'`, `'overlay'`}
+     * ∈ {`'level'`}
      */
     category: {
       type: String,
-      validator: val => ['hue', 'tone', 'context', 'overlay'].includes(val),
+      validator: val => ['level'].includes(val),
       required: true
     }
   },
   data: function () {
     return {
-      colors: this.extractColors(designTokens.props)
-    }
-  },
-  computed: {
-    spanSet: function () {
-      if (this.category === 'context') {
-        return [12, 6, 4, 4, 4]
-      } else {
-        return [12, 6, 3, 3, 3]
-      }
+      layers: this.extractLayers(designTokens.props)
     }
   },
     methods: {
-      extractColors: function (data) {
+      extractLayers: function (data) {
         return sortBy(
           data,
           [
-            'category',
-            function (color) {
-              let shadeLevels = [
-                'tone_white', 'near_white', 'lighter', 'light',
-                'white_low', 'white_high',
-                'normal',
-                'black_high', 'black_low',
-                'dark', 'darker', 'near_black', 'tone_black'
-              ]
-              for (let i = 0; i < shadeLevels.length; i++) {
-                if (color.name.endsWith(shadeLevels[i])) {
-                  return i
-                }
-              }
-              return Math.floor(shadeLevels.length / 2)
-            }
+            'value'
           ]
         ).filter(
-          token => token.type === 'color' &&
-            token.category.includes(`color-group-${this.category}`)
+          token => token.category.includes(`font-${this.property}`)
         )
       }
     }
