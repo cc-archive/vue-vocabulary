@@ -63,7 +63,7 @@
             'value'
           ]
         ).filter(
-          token => token.category.includes(`font-${this.property}`)
+          token => token.category.includes(`level-${this.property}`)
         )
       }
     }
