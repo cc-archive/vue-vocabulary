@@ -1,12 +1,14 @@
 ```jsx
 <Heading
-  :level="1">
+  :level="1"
+  color="green"
+  shade="dark">
   Hello World!
 </Heading>
 <Paragraph>
-  The heading above uses <strong>bold</strong> weight and <strong>mega</strong>
-  size.
-</Paragraph>
+  The heading above is colored a <strong>dark</strong> shade of 
+  <strong>green</strong>.
+</Paragraph> 
 ```
 
 ### Stack level

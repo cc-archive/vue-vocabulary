@@ -22,7 +22,7 @@
   import Card from '@/patterns/Card/Card'
 
   export default {
-    name: 'Color',
+    name: 'Layer',
     components: {
       Card
     },
@@ -33,28 +33,28 @@
     },
     props: {
       /**
-       * _the category of the color being showcased_
+       * _the category of the Layer being showcased_
        */
       category: {
         type: String,
         required: true
       },
       /**
-       * _the name of the color being showcased_
+       * _the name of the layer being showcased_
        */
       name: {
         type: String,
         required: true
       },
       /**
-       * _the color being showcased_
+       * _the layer being showcased_
        */
       value: {
         type: String,
         required: true
       },
       /**
-       * _some description of the color being showcased_
+       * _some description of the layer being showcased_
        */
       comment: {
         type: String,
@@ -67,11 +67,11 @@
        */
       properName: function () {
         return startCase(
-          this.name.replace(/_/g, ' ').replace(/color/g, '')
+          this.name.replace(/_/g, ' ').replace(/layer/g, '')
         )
       },
       /**
-       * the stylesheet variable name for this color
+       * the stylesheet variable name for this layer
        */
       styleName: function () {
         return this.name.replace(/_/g, '-')
