@@ -5,7 +5,7 @@ props:
     value: 1
     comment: lowest of the low
     uses: page-content
-  level_bottom2:
+  level_bottom2: 
     value: 2
     comment: stack on top of other page elemnts
     uses: page-content
@@ -19,7 +19,7 @@ props:
     uses: stickey-content
   level_high:
     value: 800
-    comment: 
+    comment: things that go on top of high elements 
     uses: modals, tooltips and notifications
   level_high2:
     value: 810
