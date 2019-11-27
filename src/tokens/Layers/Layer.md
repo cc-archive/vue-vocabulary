@@ -16,7 +16,7 @@
 Vocabulary provides a number of z index levels. these levels go with the different priorities that elments have for most layouts
 ```jsx
   <Card
-    class="vocab Layer"
+    class="vocab Layer zindex-top"
     heading="Top Layer"
     subheading="Top of the world, will be seen over all other elements"
     is-decked
@@ -31,7 +31,7 @@ Vocabulary provides a number of z index levels. these levels go with the differe
     </template>
   </Card>
     <Card
-    class="vocab Layer"
+    class="vocab Layer zindex-high"
     heading="High Layer"
     subheading="Things that go on top of high elements"
     is-decked
@@ -46,8 +46,8 @@ Vocabulary provides a number of z index levels. these levels go with the differe
     </template>
   </Card>
     <Card
-    class="vocab Layer"
-    heading="Mid"
+    class="vocab Layer zindex-mid"
+    heading="Mid Layer"
     subheading="Not too high, not too low"
     is-decked
     is-raised>
@@ -61,8 +61,8 @@ Vocabulary provides a number of z index levels. these levels go with the differe
     </template>
   </Card>
     <Card
-    class="vocab Layer"
-    heading="Bottom"
+    class="vocab Layer zindex-bottom"
+    heading="Bottom Layer"
     subheading="lowest of the low"
     is-decked
     is-raised>
