@@ -123,7 +123,7 @@
   import Quote from '@/patterns/Quote/Quote'
 
   /**
-   * ### Index is the homepage of CC Vocabulary.
+   * ### Index is the homepage of Vue Vocabulary.
    *
    * When people visit the CC Vocabulary homepage, they will see this page.
    */
