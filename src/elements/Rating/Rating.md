@@ -145,9 +145,9 @@ array length is less or more than prop `max`.
 
 ```jsx
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAccessibleIcon } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faAccessibleIcon);
+library.add(faTwitter);
 
 <Rating
   color="green"
@@ -155,8 +155,8 @@ library.add(faAccessibleIcon);
   :value="3"/>
 <br/><br/>
 <Rating
-  color="blue"
-  :icon-set="[['fab', 'accessible-icon']]"
+  color="green"
+  :icon-set="[['fab', 'twitter']]"
   :value="3"/>
 ```
 

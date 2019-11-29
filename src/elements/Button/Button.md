@@ -131,7 +131,7 @@ library.add(faReadme);
 </Button>
 <br/><br/>
 <Button
-  color="red"
+  color="tomato"
   :icon="['fab', 'readme']">
   Read me
 </Button>

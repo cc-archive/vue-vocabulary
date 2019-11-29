@@ -148,7 +148,7 @@ library.add(faGithub);
   placeholder="Both"/>
 <br/><br/>
 <InputField
-  color="red"
+  color="tomato"
   :icon-set="[['fab', 'github']]"
   type="text"
   placeholder="Brand Icon"/>

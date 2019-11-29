@@ -119,7 +119,7 @@ library.add(faAccessibleIcon);
   is-percent-visible/>
 <br/><br/>
 <ProgressBar
-  color="red"
+  color="tomato"
   :icon="['fab', 'accessible-icon']"
   :value="20"
   is-percent-visible/>

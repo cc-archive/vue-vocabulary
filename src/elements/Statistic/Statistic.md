@@ -169,7 +169,7 @@ library.add(faFontAwesomeFlag);
   </GridCell>
   <GridCell :span-set="[12, 12, 6, 3, 3]">
     <Statistic
-      color="red"
+      color="tomato"
       :icon-set="['', ['fab', 'font-awesome-flag']]"
       label="Icon"
       value="Any"

@@ -176,7 +176,7 @@ let optionList = [
   :option-list="optionList"/>
 <br/><br/>
 <SelectField
-  color="red"
+  color="tomato"
   :icon="['fab', 'git-alt']"
   :option-list="optionList"/>
 ```
