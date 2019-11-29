@@ -1,10 +1,10 @@
 <template>
     <a
-      :href="url"
-      :target="opensInNewTabAttr"
-      :rel="relAttr"
       class="vocab github-corner"
-      :class="githubCornerClasses"
+      :class="gitHubCornerClasses"
+      :href="url"
+      :target="target"
+      :rel="rel"
       aria-label="View source on GitHub">
         <svg
           width="80"
@@ -33,15 +33,12 @@
 
   import Invertible from '@/mixins/invertible'
 
-  const GITHUB_BASE_URL = 'https://github.com'
-
   /**
-   * ### GitHub Corners provides a interractive link to your GitHub repository.
+   * ### GitHub corners provides a interactive link to your GitHub repository.
    *
-   * A GitHub Corner is an interractive link on the left or right corner of a visited page.
-   * Its visuals tells the user that clicking leads to the page's GitHub repository
+   * A GitHub corner is an interactive link on the left or right corner of a
+   * page that takes the user to the page's GitHub repository.
    */
-
   export default {
     name: 'GitHubCorner',
     mixins: [
@@ -58,14 +55,16 @@
         required: true
       },
       /**
-      * _this specifies if linked document should open on a new tab for <a> link_
+      * _whether linked document should open in a new tab_
       */
       opensInNewTab: {
         type: Boolean,
         default: true
       },
       /**
-       * _the end of the page the github corner is placed (left or right)_
+       * _the side of the page the GitHub corner is placed
+       *
+       * ∈ {`'blue'`, `'green'`}
        */
       corner: {
         type: String,
@@ -73,7 +72,9 @@
         validator: val => ['left', 'right'].includes(val)
       },
       /**
-       * _the positioning of github corner (absolute or relative)_
+       * _the positioning of GitHub corner_
+       *
+       * ∈ {`'absolute'`, `'relative'`}
        */
       position: {
         type: String,
@@ -82,23 +83,24 @@
       }
     },
     computed: {
-      url () {
+      url: function () {
+        const GITHUB_BASE_URL = 'https://github.com'
         return `${GITHUB_BASE_URL}/${this.repo}`
       },
-      githubCornerClasses: function () {
+      gitHubCornerClasses: function () {
         return [
           ...this.coloredClasses,
 
           ...this.invertibleClasses,
-          this.corner === 'left' ? 'left-corner' : 'right-corner',
-          this.position === 'absolute' ? 'position-absolute' : 'position-relative'
 
+          `${this.corner}-cornered`,
+          `${this.position}ly-positioned`
         ]
       },
-      opensInNewTabAttr () {
+      target: function () {
         return this.opensInNewTab ? '_blank' : null
       },
-      relAttr () {
+      rel: function () {
         return this.opensInNewTab ? 'noopener noreferrer' : null
       }
     }

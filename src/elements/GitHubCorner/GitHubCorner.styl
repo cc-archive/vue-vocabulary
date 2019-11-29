@@ -24,7 +24,6 @@
   --github-corner-background-color var(--github-corner-primary)
   --github-corner-text-color var(--github-corner-secondary)
 
-
   // Rules
 
   display inline-flex
@@ -35,33 +34,32 @@
   top $space-zero
   fill var(--github-corner-background-color)
 
-  &.left-corner
+  &.left-cornered
     left 0
     transform scale(-1, 1)
 
-  &.right-corner
+  &.right-cornered
     right 0
 
-  &.position-relative
+  &.relatively-positioned
     position relative
 
-  &.position-absolute
+  &.absolutely-positioned
     position absolute
 
-
   &:hover
-      .octo-arm
-          animation octocat-wave 560ms ease-in-out
-  
+    .octo-arm
+      animation octocat-wave 560ms ease-in-out
+
 
 @keyframes octocat-wave {
-    0%, 100% {
-        transform:rotate(0)
-    }    
-    20%, 60% {
-        transform:rotate(-25deg)
-    } 
-    40%, 80% {
-        transform:rotate(10deg)
-    }
-}   
+  0%, 100% {
+    transform: rotate(0)
+  }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg)
+  }
+}
