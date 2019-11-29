@@ -15,8 +15,6 @@
   </a>
 </p>
 
-**[See Repository on GitHub](https://github.com/creativecommons/cc-vocabulary")**
-
 > Vocabulary is a cohesive design system to unite the web facing Creative 
 > Commons. Vocabulary makes it easier to develop Creative Commons apps while
 > ensuring a consistently familiar experience.
@@ -82,6 +80,9 @@ contribute in some way.
 </p>
 
 ### Contributing
+
+
+**[GitHub repository](https://github.com/creativecommons/vue-vocabulary")**
 
 We're always looking for contributors to help us find and fix bugs, build new 
 features, help us improve the project documentation or translate the project to
