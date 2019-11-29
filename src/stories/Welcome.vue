@@ -1,7 +1,7 @@
 <template>
   <div class="welcome-story">
     <GitHubCorner
-      repo="creativecommons/cc-vocabulary"
+      repo="creativecommons/vue-vocabulary"
       position="absolute">
     </GitHubCorner>
     <p>
@@ -10,24 +10,25 @@
         class="readme-cc-logo">
         <img
           alt="Creative Commons logo"
-          src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/cc_logo.png"
+          src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/cc_logo.png"
           height="62px"
         />
       </a>
     </p>
     <p>
       <a
-        href="https://creativecommons.github.io/cc-vocabulary/"
+        href="https://creativecommons.github.io/vue-vocabulary/"
         class="readme-vocabulary-logo">
         <img
           alt="Vocabulary logo"
-          src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
+          src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
           height="65px"/>
       </a>
     </p>
-    <h4>
-      This is an interractive playground for vocabulary components.
-    </h4>
+    <p>
+      This is an interactive playground for Vue components implementing the
+      Vocabulary design system.
+    </p>
   </div>
 </template>
 
@@ -38,11 +39,6 @@
     name: 'welcome',
     components: {
       GitHubCorner
-    },
-    data () {
-      return {
-        msg: 'Welcome to storybook!'
-      }
     }
   }
 </script>
