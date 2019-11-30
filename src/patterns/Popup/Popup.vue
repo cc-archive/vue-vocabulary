@@ -21,8 +21,9 @@
 </template>
 
 <script>
+  import { debounce } from 'lodash'
+
   import Section from '@/layouts/Section/Section'
-  import debounce from 'lodash/debounce'
 
   /**
    * ### Popups reveal hidden content.
@@ -64,6 +65,9 @@
           'click'
         ].includes(val)
       },
+      /**
+       * _the number of milliseconds by which to delay the popup state change_
+       */
       delay: {
         type: Number,
         default: 0,

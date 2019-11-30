@@ -100,6 +100,9 @@ let actionOptions = [
 </div>
 ```
 
+The popup can be delayed by a specified number of milliseconds. This is useful
+in the case of hover-triggered popups.
+
 ```jsx
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
