@@ -22,6 +22,7 @@
 
 <script>
   import Section from '@/layouts/Section/Section'
+  import debounce from 'lodash/debounce'
 
   /**
    * ### Popups reveal hidden content.
@@ -62,6 +63,11 @@
           'hover',
           'click'
         ].includes(val)
+      },
+      delay: {
+        type: Number,
+        default: 0,
+        validator: val => (val >= 0)
       }
     },
     data: function () {
@@ -75,18 +81,18 @@
 
         if (this.action === 'click') {
           return {
-            click: function () {
+            click: debounce(() => {
               vm.isVisible = !vm.isVisible
-            }
+            }, this.delay)
           }
         } else { // this.action === 'hover'
           return {
-            mouseover: function () {
+            mouseover: debounce(() => {
               vm.isVisible = true
-            },
-            mouseleave: function () {
+            }, this.delay),
+            mouseleave: debounce(() => {
               vm.isVisible = false
-            }
+            }, this.delay)
           }
         }
       },
