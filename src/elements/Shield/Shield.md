@@ -18,7 +18,7 @@ A shield without any given color is grey.
 ```
 
 The message part of the shield can be colored with any color from the set
-provided by Vue Vocabulary. No one likes grey.
+provided by Vocabulary. No one likes grey.
 
 Also you may use one of the four shades, namely `lighter`, `light`, `dark` and `darker`, 
 to accentuate the color.
