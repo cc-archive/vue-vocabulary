@@ -19,51 +19,51 @@ Vocabulary provides a number of z index levels. these levels go with the differe
 
 ```jsx
 <template>
-  <Grid density="sparse">
+  <Grid density="dense">
       <GridCell 
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="top"/>
       </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="high"/>
     </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="high2"/>
     </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="mid"/>
     </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="bottom3"/> 
     </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
           <Layer level="bottom2"/> 
     </GridCell>
     <GridCell
-        v-for="index in 12"
+        v-for="index in 6"
         :key="index"
         :style="style"
         :span-set="spanSet"/>
