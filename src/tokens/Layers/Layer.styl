@@ -1,38 +1,37 @@
 @import "~@/assets/tokens/tokens.styl"
 
 .vocab.Layer
-  display: none;
-  --stack-box-color: $color-blue;
   --border-and-font-color: $color-tone-near-black 
-  --left: 2px; 
-  --top: 100px;
-  --bottom: 2px;
-  --right: 2px;
-  postition: absolute 
-  position: relative;
+  // --left: 0; 
+  // --top: 0;
+  // --bottom: 0;
+  // --right: 0;
+  --background-color: $color-white;
+  height auto
+  width 20px
   background: var(--stack-box-color)
-  left: var(--left)
-  top: var(--top)
-  bottom: var(--bottom)
-  right: var(--right)
-  width:100px;
-  height:100px;
-  color: var(--border-and-font-color);
-  border: 3px solid var(--border-and-font-color);
-  padding: 10px;
+      // left: var(--left)
+      // top: var(--top)
+      // bottom: var(--bottom)
+      // right: var(--right)
+      
+  .wrapper
+    position relative
+    background-color black;
 
-  .zindex-bottom
+  .zindex-Bottom
     z-index: $z-index-bottom; 
-  .zindex-bottom2
+    display none
+  .zindex-Bottom2
     z-index: $z-index-bottom2; 
-  .zindex-bottom3
+  .zindex-Bottom3
     z-index: $z-index-bottom3; 
-  .zindex-mid
+  .zindex-Mid
     z-index: $z-index-mid; 
-  .zindex-high
+  .zindex-High
     z-index: $z-index-high;
-  .zindex-high2
+  .zindex-High2
     z-index: $z-index-high2;
-  .zindex-top
+  .zindex-Top
     z-index: $z-index-top;
 

@@ -1,7 +1,7 @@
 <template>  
-    <Card
+    <Card 
       class="vocab layer"
-      :heading="properName"
+      :heading="level"
       :subheading="comment"
       is-decked
       is-raised>
@@ -9,10 +9,34 @@
         class="swatch"
         :style="swatchStyles"
         @click="toggleOverlay"></div>
-      <template #foot>
-        <code>{{ value }}</code><br/>
-        <code>${{ styleName }}</code>
+      <template #foot v-if="level === 'top'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 1</code>
       </template>
+       <template #foot v-else-if="level === 'high'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 2</code>
+       </template>
+       <template #foot v-else-if="level === 'high2'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 3</code>
+       </template>
+       <template #foot v-else-if="level === 'mid'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 100</code>
+       </template>
+       <template #foot v-else-if="level === 'bottom3'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 800</code>
+       </template>
+       <template #foot v-else-if="level === 'bottom2'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 810</code>
+       </template>
+       <template #foot v-else-if="level === 'bottom'">
+        <code>{{ level }}</code><br/>
+        <code>Z-index: 900</code>
+       </template>
   </Card>
 </template>
 
@@ -26,74 +50,30 @@
     components: {
       Card
     },
+    props: {
+      /**
+       * _the property of the font being showcased_
+       *
+       * ∈ {`'level'`}
+       */
+      level: {
+        type: String,
+        required: true
+      }
+    },
     data: function () {
       return {
         showOverlay: true
-      }
-    },
-    props: {
-      /**
-       * _the category of the Layer being showcased_
-       */
-      category: {
-        type: String,
-        required: true
-      },
-      /**
-       * _the name of the layer being showcased_
-       */
-      name: {
-        type: String,
-        required: true
-      },
-      /**
-       * _the layer being showcased_
-       */
-      value: {
-        type: String,
-        required: true
-      },
-      /**
-       * _some description of the layer being showcased_
-       */
-      comment: {
-        type: String,
-        required: true
       }
     },
     computed: {
       /**
        * the capitalised name to show to the viewer
        */
-      properName: function () {
+      whichLayer: function () {
         return startCase(
           this.name.replace(/_/g, ' ').replace(/layer/g, '')
         )
-      },
-      /**
-       * the stylesheet variable name for this layer
-       */
-      styleName: function () {
-        return this.name.replace(/_/g, '-')
-      },
-      /**
-       * the JSS style dictionary to apply to the swatch
-       */
-      swatchStyles: function () {
-        let styleDict = {}
-        if (this.category !== 'overlay') {
-          styleDict.backgroundColor = this.value
-        } else {
-          styleDict.backgroundColor = 'rgb(0, 38, 77)'
-          if (this.showOverlay) {
-            styleDict.backgroundImage = 'linear-gradient(' +
-              '135deg,' +
-              `transparent 50%, ` +
-              `${this.value} 50%` +
-              ')'
-          }
-        }
-        return styleDict
       }
     },
     methods: {

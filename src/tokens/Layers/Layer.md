@@ -1,4 +1,5 @@
 ```jsx
+<div class="square">
 <Heading
   :level="1"
   color="green"
@@ -9,72 +10,21 @@
   The heading above is colored a <strong>dark</strong> shade of 
   <strong>green</strong>.
 </Paragraph> 
+</div>
 ```
 
 ### Stack level
 
 Vocabulary provides a number of z index levels. these levels go with the different priorities that elments have for most layouts
 ```jsx
-  <Card
-    class="vocab Layer zindex-top"
-    heading="Top Layer"
-    subheading="Top of the world, will be seen over all other elements"
-    is-decked
-    is-raised>
-    <div
-      class="swatch"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <template #foot>
-      <code>Z-index:900</code><br/>
-      <code>$layer-top</code>
-    </template>
-  </Card>
-    <Card
-    class="vocab Layer zindex-high"
-    heading="High Layer"
-    subheading="Things that go on top of high elements"
-    is-decked
-    is-raised>
-    <div
-      class="swatch"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <template #foot>
-      <code>Z-index:800</code><br/>
-      <code>$layer-high</code>
-    </template>
-  </Card>
-    <Card
-    class="vocab Layer zindex-mid"
-    heading="Mid Layer"
-    subheading="Not too high, not too low"
-    is-decked
-    is-raised>
-    <div
-      class="swatch"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <template #foot>
-      <code>Z-index:100</code><br/>
-      <code>$layer-mid</code>
-    </template>
-  </Card>
-    <Card
-    class="vocab Layer zindex-bottom"
-    heading="Bottom Layer"
-    subheading="lowest of the low"
-    is-decked
-    is-raised>
-    <div
-      class="swatch"
-      :style="swatchStyles"
-      @click="toggleOverlay"></div>
-    <template #foot>
-      <code>Z-index:1</code><br/>
-      <code>$layer-bottom</code>
-    </template>
-  </Card>    
+  <Layer level="top"/>
+  <Layer level="high"/>
+  <Layer level="high2"/>
+  <Layer level="mid"/>
+  <Layer level="bottom3"/> 
+  <Layer level="bottom2"/> 
+  <Layer level="bottom"/>
+</Section> 
 ```
 
 ## Top
