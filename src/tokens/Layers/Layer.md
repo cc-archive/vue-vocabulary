@@ -16,15 +16,61 @@
 ### Stack level
 
 Vocabulary provides a number of z index levels. these levels go with the different priorities that elments have for most layouts
+
 ```jsx
-  <Layer level="top"/>
-  <Layer level="high"/>
-  <Layer level="high2"/>
-  <Layer level="mid"/>
-  <Layer level="bottom3"/> 
-  <Layer level="bottom2"/> 
-  <Layer level="bottom"/>
-</Section> 
+<template>
+  <Grid density="sparse">
+      <GridCell 
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="top"/>
+      </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="high"/>
+    </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="high2"/>
+    </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="mid"/>
+    </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="bottom3"/> 
+    </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="bottom2"/> 
+    </GridCell>
+    <GridCell
+        v-for="index in 12"
+        :key="index"
+        :style="style"
+        :span-set="spanSet"/>
+          <Layer level="bottom"/> 
+      <Layer level="bottom"/>
+    </GridCell>
+</template>
 ```
 
 ## Top
