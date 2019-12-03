@@ -8,8 +8,8 @@ let viewportMeta = [
   'viewport-fit=cover'
 ].join(', ')
 let titleMeta = 'vo·cab·u·lar·y'
-let urlMeta = 'https://creativecommons.github.io/cc-vocabulary/'
-let descriptionMeta = 'A cohesive design system to unite the web-facing Creative Commons'
+let urlMeta = 'https://creativecommons.github.io/vue-vocabulary/'
+let descriptionMeta = 'A cohesive design system to unite the web facing Creative Commons'
 let imageMeta = `${urlMeta}titlecard.png`
 
 let rootCss = 'https://unpkg.com/@creativecommons/vocabulary/css/root.css'
@@ -122,7 +122,10 @@ module.exports = {
     const name = path.basename(componentPath, '.vue')
     return `import { ${name} } from '@creativecommons/vocabulary'`
   },
-  renderRootJsx: path.join(__dirname, 'styleguidist/styleguide.root.js'),
+  renderRootJsx: path.join(
+    __dirname,
+    'styleguidist/components/styleguide.root.js'
+  ),
 
   // Organisation
   defaultExample: false,

@@ -1,10 +1,10 @@
 {
-  "name": "cc-vocabulary",
+  "name": "vue-vocabulary",
   "verboseName": "CC Vocabulary",
   "description": "A cohesive design system to unite the web facing Creative Commons",
-  "homepage": "https://creativecommons.github.io/cc-vocabulary/",
-  "repository": "github:creativecommons/cc-vocabulary",
-  "bugs": "https://github.com/creativecommons/cc-vocabulary/issues/",
+  "homepage": "https://creativecommons.github.io/vue-vocabulary/",
+  "repository": "github:creativecommons/vue-vocabulary",
+  "bugs": "https://github.com/creativecommons/vue-vocabulary/issues/",
   "license": "MIT",
   "author": "Dhruv Bhanushali (https://dhruvkb.github.io/)",
   "keywords": [
@@ -36,7 +36,7 @@
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.0.0"
+    "vue-i18n": "^8.15.0"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",

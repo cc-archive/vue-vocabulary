@@ -2,20 +2,20 @@
   <a href="https://creativecommons.org/" class="readme-cc-logo">
     <img 
       alt="Creative Commons logo" 
-      src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/cc_logo.png" 
+      src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/cc_logo.png"
       height="62px"/>
   </a>
 </p>
 <p align="center">
-  <a href="https://creativecommons.github.io/cc-vocabulary/" class="readme-vocabulary-logo">
+  <a href="https://creativecommons.github.io/vue-vocabulary/" class="readme-vocabulary-logo">
     <img 
       alt="Vocabulary logo" 
-      src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true" 
+      src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
       height="65px"/>
   </a>
 </p>
 
-As CC Vocabulary grows, so does the effort for maintaining code quality and 
+As Vocabulary grows, so does the effort for maintaining code quality and
 keeping technical debt to a minimum. Having a set of rules makes sure that some
 semblance of order is maintained in the chaos that is developing and maintaining
 a component library.

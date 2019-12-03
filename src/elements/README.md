@@ -2,7 +2,7 @@
 
 <center>
 <img
-  src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/src/assets/icons/ds_nomenclature/element.svg?sanitize=true"
+  src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/src/assets/icons/ds_nomenclature/element.svg?sanitize=true"
   width="64px"/>
 </center>
 
@@ -58,12 +58,12 @@ let indication = (value) => {
 <Heading
   color="green"
   :level="4">
-  Submit the <em>'Right answer'</em>
+  Try entering <em>'Right answer'</em>
 </Heading>
 <Heading
-  color="red"
+  color="tomato"
   :level="4">
-  But do try the <em>'Wrong answer'</em>
+  Try entering <em>'Wrong answer'</em>
 </Heading>
 <InputField
   v-model="value"

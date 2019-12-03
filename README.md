@@ -2,15 +2,15 @@
   <a href="https://creativecommons.org/" class="readme-cc-logo">
     <img 
       alt="Creative Commons logo" 
-      src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/cc_logo.png" 
+      src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/cc_logo.png"
       height="62px"/>
   </a>
 </p>
 <p align="center">
-  <a href="https://creativecommons.github.io/cc-vocabulary/" class="readme-vocabulary-logo">
+  <a href="https://creativecommons.github.io/vue-vocabulary/" class="readme-vocabulary-logo">
     <img 
       alt="Vocabulary logo" 
-      src="https://raw.githubusercontent.com/creativecommons/cc-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true" 
+      src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
       height="65px"/>
   </a>
 </p>
@@ -21,17 +21,17 @@
 
 <p align="center">
   <a 
-    href="https://github.com/creativecommons/cc-vocabulary/blob/master/LICENSE"
+    href="https://github.com/creativecommons/vue-vocabulary/blob/master/LICENSE"
     style="margin-right: 1em;">
-    <img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/cc-vocabulary.svg?color=brightgreen"/>
+    <img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/vue-vocabulary.svg?color=brightgreen"/>
   </a>
   <a 
-    href="https://circleci.com/gh/creativecommons/cc-vocabulary/tree/master"
+    href="https://circleci.com/gh/creativecommons/vue-vocabulary/tree/master"
     style="margin-right: 1em;">
-    <img alt="Circle CI" src="https://circleci.com/gh/creativecommons/cc-vocabulary/tree/master.svg?style=shield"/>
+    <img alt="Circle CI" src="https://circleci.com/gh/creativecommons/vue-vocabulary/tree/master.svg?style=shield"/>
   </a>
   <a 
-    href="https://github.com/creativecommons/cc-vocabulary/blob/master/CONTRIBUTING.md"
+    href="https://github.com/creativecommons/vue-vocabulary/blob/master/CONTRIBUTING.md"
     style="margin-right: 1em;">
     <img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
   </a>
@@ -50,18 +50,17 @@ develop consistent applications.
 
 ### Availability
 
-Vocabulary is a collection of UI components, available both as 
-**CSS stylesheets** and **minified JS** distributed via unpkg, as well the more
-versatile and flexible (and preferred) **Vue components** distributed via `npm`.
-A lot of features available via `npm` packages might not be supported via UMD.
+Vocabulary is available as
+- [stylesheets](https://github.com/creativecommons/vocabulary)
+- Vue components _(this repo)_
 
 
 ### Demo
 
 The showcase of the true extent of Vocabulary can be found in the
-**[live styleguide](https://creativecommons.github.io/cc-vocabulary/styleguide)**
+**[live styleguide](https://vue-vocabulary.netlify.com/styleguide)**
 and the
-**[interactive storybook](https://creativecommons.github.io/cc-vocabulary/storybook)**
+**[interactive storybook](https://vue-vocabulary.netlify.com/storybook)**
 for the library, showcasing the components therein and variants thereof, on GitHub
 Pages. Search for a particular component using the search field or just explore
 the collection of components. If you find one that catches your fancy, play with
@@ -81,6 +80,9 @@ contribute in some way.
 </p>
 
 ### Contributing
+
+
+**[GitHub repository](https://github.com/creativecommons/vue-vocabulary")**
 
 We're always looking for contributors to help us find and fix bugs, build new 
 features, help us improve the project documentation or translate the project to
