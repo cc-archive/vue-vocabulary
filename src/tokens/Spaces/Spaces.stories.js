@@ -1,19 +1,15 @@
-import { storiesOf } from '@storybook/vue'
+import Spaces from '@/tokens/Spaces/Spaces'
 
-import Spaces from './Spaces'
+export default { title: 'Tokens|Spaces' }
 
-const stories = storiesOf('Tokens/Spaces', module)
+export const remBased = () => ({
+  render: (h) => <Spaces category="rem"/>
+})
 
-stories
-  .add('rem-based', () => ({
-    components: { Spaces },
-    template: '<Spaces category="rem"/>'
-  }))
-  .add('em-based', () => ({
-    components: { Spaces },
-    template: '<Spaces category="em"/>'
-  }))
-  .add('Special', () => ({
-    components: { Spaces },
-    template: '<Spaces category="special"/>'
-  }))
+export const emBased = () => ({
+  render: (h) => <Spaces category="em"/>
+})
+
+export const special = () => ({
+  render: (h) => <Spaces category="special"/>
+})

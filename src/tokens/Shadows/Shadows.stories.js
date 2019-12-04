@@ -1,11 +1,7 @@
-import { storiesOf } from '@storybook/vue'
+import Shadows from '@/tokens/Shadows/Shadows'
 
-import Shadows from './Shadows'
+export default { title: 'Tokens|Shadows' }
 
-const stories = storiesOf('Tokens/Shadows', module)
-
-stories
-  .add('Default', () => ({
-    components: { Shadows },
-    template: '<Shadows/>'
-  }))
+export const standard = () => ({
+  render: (h) => <Shadows/>
+})

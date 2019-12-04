@@ -1,15 +1,11 @@
-import { storiesOf } from '@storybook/vue'
+import Fonts from '@/tokens/Fonts/Fonts'
 
-import Fonts from './Fonts'
+export default { title: 'Tokens|Fonts' }
 
-const stories = storiesOf('Tokens/Fonts', module)
+export const sizes = () => ({
+  render: (h) => <Fonts property="size"/>
+})
 
-stories
-  .add('Sizes', () => ({
-    components: { Fonts },
-    template: '<Fonts property="size"/>'
-  }))
-  .add('Weights', () => ({
-    components: { Fonts },
-    template: '<Fonts property="weight"/>'
-  }))
+export const weights = () => ({
+  render: (h) => <Fonts property="weight"/>
+})

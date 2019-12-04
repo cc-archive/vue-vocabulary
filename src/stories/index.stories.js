@@ -1,11 +1,7 @@
-import { storiesOf } from '@storybook/vue'
-
 import Welcome from '@/stories/Welcome.vue'
 
-const stories = storiesOf('Vocabulary', module)
+export default { title: 'Vocabulary|Welcome' }
 
-stories
-  .add('Welcome', () => ({
-    components: { Welcome },
-    template: '<Welcome/>'
-  }))
+export const welcome = () => ({
+  render: (h) => <Welcome/>
+})

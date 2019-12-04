@@ -1,19 +1,15 @@
-import { storiesOf } from '@storybook/vue'
+import Radii from '@/tokens/Radii/Radii'
 
-import Radii from './Radii'
+export default { title: 'Tokens|Radii' }
 
-const stories = storiesOf('Tokens/Radii', module)
+export const remBased = () => ({
+  render: (h) => <Radii category="rem"/>
+})
 
-stories
-  .add('rem-based', () => ({
-    components: { Radii },
-    template: '<Radii category="rem"/>'
-  }))
-  .add('em-based', () => ({
-    components: { Radii },
-    template: '<Radii category="em"/>'
-  }))
-  .add('Special', () => ({
-    components: { Radii },
-    template: '<Radii category="special"/>'
-  }))
+export const emBased = () => ({
+  render: (h) => <Radii category="em"/>
+})
+
+export const special = () => ({
+  render: (h) => <Radii category="special"/>
+})
