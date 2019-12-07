@@ -9,7 +9,7 @@
   export default {
     name: 'Twemoji',
     mounted () {
-      twemoji.parse(this.$refs.emoji, this.option)
+      twemoji.parse(this.$refs.emoji)
     }
   }
 </script>
