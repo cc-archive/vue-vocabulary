@@ -1,16 +1,21 @@
-// Generate given property for all colors and their shades
+// Generate given property for all colors and their opacitys
 
 colors(property)
   &.inherit-colored
     {property} inherit
 
-  $colors = 'tomato' 'blue' 'green' 'orange' 'gold' 'turquoise'
+  $colors = 'red' 'yellow' 'grey' 'cyan' 'violet' 'teal' 'indigo' 'pink' 'grape' 'green' 'blue' 'orange' 'lime' 'negative' 'positive'
+  $opacities = 0 1 2 3 4 5 6 7 8 9 
   $shades = 'lighter' 'light' 'normal' 'dark' 'darker'
 
   for color in $colors
     &.{color}-colored
-      {property} lookup('$color-' + color + '-default')
+      {property} lookup('$color-' + color ) || lookup('$color-' + color + '-9') 
 
-      for shade in $shades
-        &.{shade}-shaded
-          {property} lookup('$color-' + color + '-' + shade)
+      for opacity in $opacities
+        &.{opacity}-opacity
+          {property} lookup('$color-' + color + '-' + opacity)
+
+          for shade in $shades
+            &.{shade}-shaded
+              {property} lookup('$color-' + color + '-' + shade)
