@@ -3,6 +3,7 @@ import Button from '@/elements/Button/Button'
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
+import Invertible from '@/knobs/invertible'
 
 export default { title: 'Elements|Button' }
 
@@ -27,5 +28,13 @@ export const indicating = () => ({
   components: { Button },
   template: `
     <Button :indication="indication">{{ indication }}</Button>
+  `
+})
+
+export const invertible = () => ({
+  mixins: [Invertible],
+  components: { Button },
+  template: `
+    <Button :isInverted="isInverted">{{ isInverted}}</Button>
   `
 })
