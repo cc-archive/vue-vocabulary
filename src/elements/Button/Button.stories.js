@@ -5,6 +5,7 @@ import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
 import Invertible from '@/knobs/invertible'
 import Unactionable from '@/knobs/unactionable'
+import Simplified from '@/knobs/simplified'
 
 export default { title: 'Elements|Button' }
 
@@ -36,7 +37,7 @@ export const invertible = () => ({
   mixins: [Invertible],
   components: { Button },
   template: `
-    <Button :isInverted="isInverted">{{ isInverted}}</Button>
+    <Button :isInverted="isInverted">Click Me</Button>
   `
 })
 
@@ -45,5 +46,13 @@ export const unactionable = () => ({
   components: { Button },
   template: `
     <Button :isDisabled="isDisabled"> Click Me</Button>
+  `
+})
+
+export const simplified = () => ({
+  mixins: [ Simplified, Colored ],
+  components: { Button },
+  template: `
+    <Button :simplicity="simplicity" :color="color" :shade="shade">Click Me</Button>
   `
 })
