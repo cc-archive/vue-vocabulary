@@ -4,13 +4,13 @@ import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
 import Invertible from '@/knobs/invertible'
-import Unactionable from '@/knobs/unactionable'
+import Disable from '@/knobs/disable'
 import Simplified from '@/knobs/simplified'
 import Scale from '@/knobs/scaled'
 import Roundness from '@/knobs/rounded'
 import Text from '@/knobs/text'
 
-export default { title: 'Elements|Button|Playground' }
+export default { title: 'Elements|Button' }
 
 export const colored = () => ({
   mixins: [Colored],
@@ -44,8 +44,8 @@ export const invertible = () => ({
   `
 })
 
-export const unactionable = () => ({
-  mixins: [Unactionable],
+export const disabled = () => ({
+  mixins: [Disable],
   components: { Button },
   template: `
     <Button :isDisabled="isDisabled"> Click Me</Button>
