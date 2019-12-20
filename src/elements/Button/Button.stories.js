@@ -11,7 +11,7 @@ import Roundness from '@/knobs/rounded'
 import Raisable from '@/knobs/raisable'
 import Circleable from '@/knobs/circleable'
 
-export default { title: 'Elements|Button' }
+export default { title: 'Elements|Button|Playground' }
 
 export const colored = () => ({
   mixins: [Colored],
