@@ -6,6 +6,7 @@ import Indicating from '@/knobs/indicating'
 import Invertible from '@/knobs/invertible'
 import Unactionable from '@/knobs/unactionable'
 import Simplified from '@/knobs/simplified'
+import Scale from '@/knobs/scaled'
 
 export default { title: 'Elements|Button' }
 
@@ -54,5 +55,13 @@ export const simplified = () => ({
   components: { Button },
   template: `
     <Button :simplicity="simplicity" :color="color" :shade="shade">Click Me</Button>
+  `
+})
+
+export const scale = () => ({
+  mixins: [ Scale ],
+  components: { Button },
+  template: `
+    <Button :size="size">Click Me</Button>
   `
 })
