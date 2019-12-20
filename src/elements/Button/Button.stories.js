@@ -10,7 +10,6 @@ import Scale from '@/knobs/scaled'
 import Roundness from '@/knobs/rounded'
 import Text from '@/knobs/text'
 import WithIcon from '@/knobs/withIcon'
-import Attribute from '@/knobs/attribute'
 
 export default { title: 'Elements|Button' }
 
@@ -91,13 +90,5 @@ export const withIcon = () => ({
   components: { Button },
   template: `
     <Button :icon="icon" :color="color">{{text}}</Button>
-  `
-})
-
-export const attribute = () => ({
-  mixins: [Attribute, Text],
-  components: { Button },
-  template: `
-    <Button :attribute=attribute>{{text}}</Button>
   `
 })
