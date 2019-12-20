@@ -4,6 +4,7 @@ import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
 import Invertible from '@/knobs/invertible'
+import Unactionable from '@/knobs/unactionable'
 
 export default { title: 'Elements|Button' }
 
@@ -36,5 +37,13 @@ export const invertible = () => ({
   components: { Button },
   template: `
     <Button :isInverted="isInverted">{{ isInverted}}</Button>
+  `
+})
+
+export const unactionable = () => ({
+  mixins: [Unactionable],
+  components: { Button },
+  template: `
+    <Button :isDisabled="isDisabled"> Click Me</Button>
   `
 })
