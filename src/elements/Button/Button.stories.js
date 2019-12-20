@@ -7,6 +7,7 @@ import Invertible from '@/knobs/invertible'
 import Unactionable from '@/knobs/unactionable'
 import Simplified from '@/knobs/simplified'
 import Scale from '@/knobs/scaled'
+import Roundness from '@/knobs/rounded'
 
 export default { title: 'Elements|Button' }
 
@@ -63,5 +64,13 @@ export const scale = () => ({
   components: { Button },
   template: `
     <Button :size="size">Click Me</Button>
+  `
+})
+
+export const roundness = () => ({
+  mixins: [ Roundness ],
+  components: { Button },
+  template: `
+    <Button :roundness="roundness">Click Me</Button>
   `
 })
