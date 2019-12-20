@@ -9,6 +9,7 @@ import Simplified from '@/knobs/simplified'
 import Scale from '@/knobs/scaled'
 import Roundness from '@/knobs/rounded'
 import Raisable from '@/knobs/raisable'
+import Circleable from '@/knobs/circleable'
 
 export default { title: 'Elements|Button' }
 
@@ -81,5 +82,13 @@ export const raisable = () => ({
   components: { Button },
   template: `
     <Button :isRaised="isRaised">Click Me</Button>
+  `
+})
+
+export const circleable = () => ({
+  mixins: [ Circleable ],
+  components: { Button },
+  template: `
+    <Button :isCircular="isCircular">Click Me</Button>
   `
 })
