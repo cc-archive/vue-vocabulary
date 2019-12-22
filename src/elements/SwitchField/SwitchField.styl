@@ -2,6 +2,7 @@
 
 @import "~@/styles/colors.styl"
 @import "~@/styles/brands.styl"
+  @import "~@/styles/indications.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
 
@@ -14,15 +15,8 @@
     --switch-field-primary $color-tone-white
 
   colors('--switch-field-primary')
-
-  &.positive-indicating.positive-indicating
-    --switch-field-primary $color-context-positive
-
-  &.probably-indicating.probably-indicating
-    --switch-field-primary $color-context-probably
-
-  &.negative-indicating.negative-indicating
-    --switch-field-primary $color-context-negative
+  brands('--switch-field-primary')
+  indications('--switch-field-primary')
 
   &.conditional-indicating.conditional-indicating
     --switch-field-primary $color-context-positive
@@ -34,15 +28,6 @@
 
   &.inverted
     --switch-field-secondary $color-tone-grey-light
-
-  &.positive-indicating.positive-indicating
-    --switch-field-secondary $color-context-positive-light
-
-  &.probably-indicating.probably-indicating
-    --switch-field-secondary $color-context-probably-light
-
-  &.negative-indicating.negative-indicating
-    --switch-field-secondary $color-context-negative-light
 
   &.conditional-indicating.conditional-indicating
     --switch-field-secondary $color-context-negative
