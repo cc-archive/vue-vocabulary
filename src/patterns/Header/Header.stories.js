@@ -1,6 +1,7 @@
 import Header from '@/patterns/Header/Header'
 import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
-import { Navigation, NavigationLink } from '@/patterns/Navigation/Navigation'
+import NavigationLink from '@/patterns/Navigation/NavigationLink'
+import Navigation from '@/patterns/Navigation/Navigation'
 
 import Colored from '@/knobs/colored'
 

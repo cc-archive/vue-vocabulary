@@ -1,4 +1,5 @@
-import { Navigation, NavigationLink } from '@/patterns/Navigation/Navigation'
+import NavigationLink from '@/patterns/Navigation/NavigationLink'
+import Navigation from '@/patterns/Navigation/Navigation'
 
 import Colored from '@/knobs/colored'
 import Invertible from '@/knobs/invertible'
