@@ -43,9 +43,14 @@ export const invertible = () => ({
   mixins: [Invertible],
   components: { Rating },
   template: `
-    <Rating :isInverted="isInverted" :value="3"/>
+    <Rating :isInverted="isInverted" :value="2"/>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const disable = () => ({
   mixins: [Disable],

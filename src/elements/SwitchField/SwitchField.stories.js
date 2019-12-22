@@ -55,6 +55,11 @@ export const invertible = () => ({
     <SwitchField :isInverted="isInverted"/>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const disable = () => ({
   mixins: [Disable],

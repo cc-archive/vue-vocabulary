@@ -45,6 +45,11 @@ export const invertible = () => ({
     <Button :isInverted="isInverted">Click Me</Button>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const disabled = () => ({
   mixins: [Disable],

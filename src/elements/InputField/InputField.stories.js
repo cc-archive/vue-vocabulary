@@ -65,6 +65,11 @@ export const invertible = () => ({
         placeholder= "Search here ..." />
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const disabled = () => ({
   mixins: [Disable],

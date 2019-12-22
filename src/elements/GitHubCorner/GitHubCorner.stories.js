@@ -30,6 +30,11 @@ export const invertible = () => ({
     <GitHubCorner :isInverted="isInverted"/>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const corner = () => ({
   components: {

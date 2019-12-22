@@ -39,9 +39,14 @@ export const invertible = () => ({
   mixins: [Invertible],
   components: { ChoiceField },
   template: `
-    <ChoiceField :isInverted="isInverted"/>
+    <ChoiceField :isInverted="!isInverted"/>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const disable = () => ({
   mixins: [Disable],

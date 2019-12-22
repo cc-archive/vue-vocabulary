@@ -102,6 +102,11 @@ export const invertible = () => ({
     </div>
   `
 })
+invertible.story = {
+  parameters: {
+    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+  }
+}
 
 export const withAddOns = () => ({
   mixins: [ Colored ],
