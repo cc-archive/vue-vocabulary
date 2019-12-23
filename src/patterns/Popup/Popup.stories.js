@@ -3,23 +3,9 @@ import LicenseIconography from '@/elements/LicenseIconography/LicenseIconography
 import Paragraph from '@/elements/Paragraph/Paragraph'
 
 import { select } from '@storybook/addon-knobs'
+import Directions from '@/knobs/direction'
 
 export default { title: 'Patterns|Popup' }
-
-const directionOptions = {
-  Top: 'top',
-  Right: 'right',
-  Bottom: 'bottom',
-  Left: 'left'
-}
-
-const Directions = {
-  props: {
-    direction: {
-      default: () => select('Directions', directionOptions, directionOptions.Top)
-    }
-  }
-}
 
 const actionOptions = {
   Hover: 'hover',
