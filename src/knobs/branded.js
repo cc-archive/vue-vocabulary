@@ -6,7 +6,8 @@ const brandOptions = {
   Gold: 'gold',
   Orange: 'orange',
   Tomato: 'tomato',
-  Turquoise: 'turquoise'
+  Turquoise: 'turquoise',
+  Gray: 'gray'
 }
 
 export default {
