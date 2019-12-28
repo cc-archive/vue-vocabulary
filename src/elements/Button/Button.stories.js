@@ -6,6 +6,94 @@ import Indicating from '@/knobs/indicating'
 
 export default { title: 'Elements|Button' }
 
+export const buttons = () => ({
+  components: { Button },
+  template: `
+    <Grid>
+      <GridCell>
+        <Button
+          brand="tomato"
+          roundness="slight"
+          size="huge">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell>
+        <Button
+          brand="tomato"
+          roundness="slight"
+          size="large">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell>
+        <Button
+          color="green"
+          roundness="slight">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell>
+        <Button
+          color="grey"
+          shade="5"
+          roundness="complete"
+          size="small">
+          Label
+        </Button>
+      </GridCell>
+      <br/><br/>
+      <GridCell>
+        <Button
+          brand="orange"
+          roundness="slight"
+          size="huge">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell>
+        <Button
+          color="grey"
+          shade="6"
+          roundness="slight"
+          size="large"
+          simplicity="slight">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell >
+        <Button
+          color="green"
+          shade="6"
+          roundness="slight">
+          Button
+        </Button>
+      </GridCell>
+      <GridCell >
+        <Button
+          color="grey"
+          shade="5"
+          roundness="complete"
+          size="small"
+          simplicity="slight">
+          Label
+        </Button>
+      </GridCell>
+      <br/><br/>
+      <GridCell>
+        <Button
+          color="grey"
+          shade="6"
+          roundness="slight"
+          size="huge"
+          simplicity="slight">
+          Button
+        </Button>
+      </GridCell>
+    </Grid>
+  `
+})
+
 export const colored = () => ({
   mixins: [Colored],
   components: { Button },
