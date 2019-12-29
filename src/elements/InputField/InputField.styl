@@ -49,6 +49,8 @@
 
   --input-field-overlay $color-overlay-white-low
 
+  --input-field-shadow $color-tone-grey-lighter
+
   &.inverted
     --input-field-overlay $color-overlay-black-low
 
@@ -110,7 +112,7 @@
   --input-field-border-radius 0
 
   &.slightly-rounded
-    --input-field-border-radius $radius-normal
+    --input-field-border-radius $rradius-normal
 
   &.completely-rounded
     --input-field-border-radius $radius-pill
@@ -138,7 +140,7 @@
   border-bottom-width var(--input-field-bottom-border-width)
   border-left-width var(--input-field-left-border-width)
   border-style solid
-  border-color var(--input-field-border-color)
+  border-color $color-tone-grey-lighter
   border-radius var(--input-field-border-radius)
 
   overflow hidden
@@ -158,7 +160,7 @@
 
     background-color inherit
 
-    padding $space-normal
+    padding $space-normal $space-large
 
     border transparent
 
@@ -267,3 +269,5 @@
 
     .field::placeholder
       text-decoration line-through
+  &.raised
+    box-shadow unquote($shadow-pronounced) var(--input-field-shadow)

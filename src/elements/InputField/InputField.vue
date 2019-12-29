@@ -52,6 +52,7 @@
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
+  import Raisable from '@/mixins/raisable'
 
   library.add(faKeyboard)
 
@@ -75,7 +76,9 @@
       Simplified,
 
       Invertible,
-      Unactionable
+      Unactionable,
+      Raisable
+
     ],
     inheritAttrs: false,
     model: {
@@ -128,6 +131,7 @@
 
           ...this.invertibleClasses,
           ...this.unactionableClasses,
+          ...this.raisableClasses,
 
           {
             'infused': this.isInfused
