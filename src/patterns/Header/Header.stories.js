@@ -1,7 +1,4 @@
 import Header from '@/patterns/Header/Header'
-import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
-import NavigationLink from '@/patterns/Navigation/NavigationLink'
-import Navigation from '@/patterns/Navigation/Navigation'
 
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
