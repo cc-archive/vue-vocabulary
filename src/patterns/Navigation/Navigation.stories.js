@@ -1,63 +1,50 @@
 import NavigationLink from '@/patterns/Navigation/NavigationLink'
 import Navigation from '@/patterns/Navigation/Navigation'
 
+import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
+
 import Invertible from '@/knobs/invertible'
 
 export default { title: 'Patterns|Navigation' }
 
-export const colorSet = () => ({
-  mixins: [Colored],
+export const branded = () => ({
+  mixins: [Branded],
   components: { Navigation, NavigationLink },
   template: `
-    <Navigation
-        :color="color"
-        :shade="shade">
-        <NavigationLink>One</NavigationLink>
-        <NavigationLink>Two</NavigationLink>
-        <NavigationLink>Three</NavigationLink>
+    <Navigation :brand="brand">
+      <NavigationLink>One</NavigationLink>
+      <NavigationLink>Two</NavigationLink>
+      <NavigationLink>Three</NavigationLink>
     </Navigation>
   `
 })
 
-export const invertedSet = () => ({
-  mixins: [Invertible, Colored],
+export const colored = () => ({
+  mixins: [Colored],
   components: { Navigation, NavigationLink },
   template: `
-    <div> 
-        <Navigation :isInverted="isInverted">
-            <NavigationLink>One</NavigationLink>
-            <NavigationLink>Two</NavigationLink>
-            <NavigationLink>Three</NavigationLink>
-        </Navigation>
-        <br/>
-        <Navigation :color="color" :isInverted="isInverted">
-            <NavigationLink>One</NavigationLink>
-            <NavigationLink>Two</NavigationLink>
-            <NavigationLink>Three</NavigationLink>
-        </Navigation>
-    </div>
+    <Navigation :color="color" :shade="shade">
+      <NavigationLink>One</NavigationLink>
+      <NavigationLink>Two</NavigationLink>
+      <NavigationLink>Three</NavigationLink>
+    </Navigation>
   `
 })
-invertedSet.story = {
+
+export const invertible = () => ({
+  mixins: [Invertible],
+  components: { Navigation, NavigationLink },
+  template: `
+    <Navigation :is-inverted="isInverted">
+      <NavigationLink>One</NavigationLink>
+      <NavigationLink>Two</NavigationLink>
+      <NavigationLink>Three</NavigationLink>
+    </Navigation>
+  `
+})
+invertible.story = {
   parameters: {
     backgrounds: [{ name: 'dark background', value: '#000', default: true }]
   }
 }
-
-export const withAddOns = () => ({
-  mixins: [Colored, Invertible],
-  components: { Navigation, NavigationLink },
-  template: ` 
-    <Navigation
-        :color="orange"
-        :isInverted="isInverted">
-        <NavigationLink icon="home" link="https://github.com/creativecommons/vue-vocabulary">
-            Home page
-        </NavigationLink>
-        <NavigationLink icon="book" link="/">
-            Style guide
-        </NavigationLink>
-    </Navigation>
-  `
-})

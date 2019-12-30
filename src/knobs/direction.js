@@ -10,7 +10,7 @@ const directionOptions = {
 export default {
   props: {
     direction: {
-      default: () => select('Directions', directionOptions, directionOptions.Top)
+      default: () => select('Direction', directionOptions, directionOptions.Top)
     }
   }
 }

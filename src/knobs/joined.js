@@ -9,7 +9,7 @@ const joinedOptions = {
 export default {
   props: {
     joinSide: {
-      default: () => select('Join', joinedOptions, joinedOptions.Left)
+      default: () => select('Join side', joinedOptions, joinedOptions.Left)
     }
   }
 }

@@ -1,52 +1,29 @@
 import Shield from '@/elements/Shield/Shield'
-import LicenseIconography from '@/elements/LicenseIconography/LicenseIconography'
 
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
-import Invertible from '@/knobs/invertible'
-import Simplified from '@/knobs/simplified'
 import Roundness from '@/knobs/rounded'
-import Scale from '@/knobs/scaled'
+import Scaled from '@/knobs/scaled'
+import Simplified from '@/knobs/simplified'
+
+import Invertible from '@/knobs/invertible'
 
 export default { title: 'Elements|Shield' }
-
-export const colored = () => ({
-  mixins: [Colored],
-  components: { Shield },
-  template: `
-    <div>
-        <Shield
-            label="Color"
-            message="Grey"/> 
-        <br/><br/>
-        <Shield 
-            :color="color" 
-            :shade="shade"
-            label="Color"
-            message="color">
-                {{color}} 
-        </Shield>
-    </div>
-  `
-})
 
 export const branded = () => ({
   mixins: [Branded],
   components: { Shield },
   template: `
-    <div>
-        <Shield
-            label="Color"
-            message="Grey"/> 
-        <br/><br/>
-        <Shield 
-            :brand="brand"
-            label="Brand"
-            message="brand">
-                {{brand}} 
-        </Shield>
-    </div>
+    <Shield :brand="brand" label="key" message="value"/>
+  `
+})
+
+export const colored = () => ({
+  mixins: [Colored],
+  components: { Shield },
+  template: `
+    <Shield :color="color" :shade="shade" label="key" message="value"/>
   `
 })
 
@@ -54,42 +31,39 @@ export const indicating = () => ({
   mixins: [Indicating],
   components: { Shield },
   template: `
-    <div>
-        <Shield
-            label="Color"
-            message="Grey"/> 
-        <br/><br/>
-        <Shield 
-            :indication="indication"
-            label="Indication"
-            message="indication">
-                {{indication}} 
-        </Shield>
-    </div>
+    <Shield :indication="indication" label="key" message="value"/>
+  `
+})
+
+export const rounded = () => ({
+  mixins: [Roundness],
+  components: { Shield },
+  template: `
+    <Shield :roundness="roundness" label="key" message="value"/>
+  `
+})
+
+export const scaled = () => ({
+  mixins: [Scaled],
+  components: { Shield },
+  template: `
+    <Shield :size="size" label="key" message="value"/>
+  `
+})
+
+export const simplified = () => ({
+  mixins: [Simplified],
+  components: { Shield },
+  template: `
+    <Shield :simplicity="simplicity" label="key" message="value"/>
   `
 })
 
 export const invertible = () => ({
-  mixins: [Invertible, Colored],
+  mixins: [Invertible],
   components: { Shield },
   template: `
-    <div>
-        <Shield
-            label="Dark?"
-            message="isInverted"
-            :isInverted="isInverted">
-                {{isInverted}} 
-        </Shield>
-        <br/><br/>
-        <Shield
-            :color="color" 
-            :shade="shade"
-            label="Dark?"
-            message="isInverted"
-            :isInverted="isInverted">
-                {{isInverted}} 
-        </Shield>
-    </div>
+    <Shield :is-inverted="isInverted" label="key" message="value"/>
   `
 })
 invertible.story = {
@@ -97,57 +71,3 @@ invertible.story = {
     backgrounds: [{ name: 'dark background', value: '#000', default: true }]
   }
 }
-
-export const simplified = () => ({
-  mixins: [ Simplified, Colored ],
-  components: { Shield },
-  template: `
-    <Shield 
-        :simplicity="simplicity" 
-        :color="color" 
-        :shade="shade"
-        label="Simplicity"
-        message="simplicity">
-            {{simplicity}}
-    </Shield>
-  `
-})
-
-export const roundness = () => ({
-  mixins: [ Roundness ],
-  components: { Shield },
-  template: `
-    <Shield 
-        :roundness="roundness" 
-        label="Roundness"
-        message="roundness">
-            {{roundness}}
-    </Shield>
-    `
-})
-
-export const scale = () => ({
-  mixins: [ Scale ],
-  components: { Shield },
-  template: `
-    <Shield 
-        :size="size" 
-        label="Size"
-        message="size">
-            {{size}}
-    </Shield>
-  `
-})
-
-export const withAddOns = () => ({
-  mixins: [ Colored ],
-  components: { Shield, LicenseIconography },
-  template: `
-    <Shield :color="color" :shade="shade">
-        <template #label>
-            <LicenseIconography :icon-list="['', 'by']"/>
-        </template>
-        <strong>Creative Commons Attribution </strong>
-    </Shield>
-`
-})

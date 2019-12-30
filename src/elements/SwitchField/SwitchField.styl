@@ -2,7 +2,7 @@
 
 @import "~@/styles/colors.styl"
 @import "~@/styles/brands.styl"
-  @import "~@/styles/indications.styl"
+@import "~@/styles/indications.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
 
@@ -19,10 +19,10 @@
   indications('--switch-field-primary')
 
   &.conditional-indicating.conditional-indicating
-    --switch-field-primary $color-context-positive
+    --switch-field-primary $color-positive-9
 
   &.anticonditional-indicating.anticonditional-indicating
-    --switch-field-primary $color-context-negative
+    --switch-field-primary $color-negative-9
 
   --switch-field-secondary $color-tone-grey-dark
 
@@ -30,10 +30,10 @@
     --switch-field-secondary $color-tone-grey-light
 
   &.conditional-indicating.conditional-indicating
-    --switch-field-secondary $color-context-negative
+    --switch-field-secondary $color-negative-9
 
   &.anticonditional-indicating.anticonditional-indicating
-    --switch-field-secondary $color-context-positive
+    --switch-field-secondary $color-positive-9
 
   --switch-field-tertiary $color-tone-white
 
@@ -57,18 +57,6 @@
       --switch-field-handle-color var(--switch-field-primary)
 
   --switch-field-text-color var(--switch-field-tertiary)
-
-  &.positive-indicating.positive-indicating
-    &:not(.checked)
-      --switch-field-text-color $color-context-positive-dark
-
-  &.probably-indicating.probably-indicating
-    &:not(.checked)
-      --switch-field-text-color $color-context-probably-dark
-
-  &.negative-indicating.negative-indicating
-    &:not(.checked)
-      --switch-field-text-color $color-context-negative-dark
 
   &.slightly-simple
     --switch-field-text-color var(--switch-field-secondary)

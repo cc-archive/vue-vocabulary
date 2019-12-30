@@ -3,7 +3,7 @@ import { text } from '@storybook/addon-knobs'
 export default {
   props: {
     text: {
-      default: () => text('Change Text', 'Edit text')
+      default: () => text('Text', 'Hello World!')
     }
   }
 }

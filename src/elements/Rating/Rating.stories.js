@@ -3,31 +3,30 @@ import Rating from '@/elements/Rating/Rating'
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
+import Scaled from '@/knobs/scaled'
+
 import Invertible from '@/knobs/invertible'
-import Disable from '@/knobs/disable'
-import ReadOnly from '@/knobs/readonly'
-import Scale from '@/knobs/scaled'
+import Unactionable from '@/knobs/unactionable'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import Iconified from '@/knobs/iconified'
 
-library.add(faTwitter)
+import { boolean, number } from '@storybook/addon-knobs'
 
 export default { title: 'Elements|Rating' }
-
-export const colored = () => ({
-  mixins: [Colored],
-  components: { Rating },
-  template: `
-    <Rating :color="color" :shade="shade" :value="3"/>
-  `
-})
 
 export const branded = () => ({
   mixins: [Branded],
   components: { Rating },
   template: `
-    <Rating :brand="brand" :value="3"/>
+    <Rating :value="3" :brand="brand"/>
+  `
+})
+
+export const colored = () => ({
+  mixins: [Colored],
+  components: { Rating },
+  template: `
+    <Rating :value="3" :color="color" :shade="shade"/>
   `
 })
 
@@ -35,7 +34,15 @@ export const indicating = () => ({
   mixins: [Indicating],
   components: { Rating },
   template: `
-    <Rating :indication="indication" :value="4"/>
+    <Rating :value="3" :indication="indication"/>
+  `
+})
+
+export const scaled = () => ({
+  mixins: [Scaled],
+  components: { Rating },
+  template: `
+    <Rating :value="3" :size="size"/>
   `
 })
 
@@ -43,7 +50,7 @@ export const invertible = () => ({
   mixins: [Invertible],
   components: { Rating },
   template: `
-    <Rating :isInverted="isInverted" :value="2"/>
+    <Rating :value="3" :is-inverted="isInverted"/>
   `
 })
 invertible.story = {
@@ -52,53 +59,47 @@ invertible.story = {
   }
 }
 
-export const disable = () => ({
-  mixins: [Disable],
+export const toggleable = () => ({
   components: { Rating },
+  props: {
+    isToggleable: {
+      default: () => boolean('Is toggleable?', true)
+    }
+  },
   template: `
-    <Rating :isDisabled="isDisabled"/>
+    <Rating color="violet" :value="3" is-toggleable="isToggleable"/>
   `
 })
 
-export const readonly = () => ({
-  mixins: [ReadOnly],
+export const unactionable = () => ({
+  mixins: [Unactionable],
   components: { Rating },
   template: `
-      <Rating :isReadOnly="isReadOnly"/>
-    `
-})
-
-export const scale = () => ({
-  mixins: [ Scale ],
-  components: { Rating },
-  template: `
-    <Rating :size="size"/>
+    <Rating :value="3" :is-disabled="isDisabled" :is-read-only="isReadOnly"/>
   `
 })
 
-export const styles = () => ({
+export const withIcon = () => ({
+  mixins: [Iconified],
   components: { Rating },
   template: `
-    <div>
-        <Rating
-            color="red"
-            :icon-set="['heart']"
-            :value="3"/>
-        <br/><br/>
-        <Rating
-            color="cyan"
-            :icon-set="[['fab', 'twitter']]"
-            :value="3"/>
-        <br/><br/>
-        <Rating
-            color="violet"
-            :value="3"
-            is-toggleable/>
-        <br/><br/>
-        <Rating
-            color="lime"
-            :max="10"
-            :value="5"/>
-    </div>
-    `
+    <Rating :value="3" :icon-set="[icon]"/>
+  `
+})
+
+export const withLimits = () => ({
+  components: { Rating },
+  props: {
+    max: {
+      default: number('Max', 5, {
+        range: true,
+        min: 5,
+        max: 10,
+        step: 1
+      })
+    }
+  },
+  template: `
+    <Rating :max="max" :value="3"/>
+  `
 })

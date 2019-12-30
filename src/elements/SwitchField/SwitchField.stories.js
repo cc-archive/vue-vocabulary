@@ -1,42 +1,34 @@
 import SwitchField from '@/elements/SwitchField/SwitchField'
-import Grid from '@/layouts/Grid/Grid'
-import GridCell from '@/layouts/Grid/GridCell'
 
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
-import Invertible from '@/knobs/invertible'
-import Disable from '@/knobs/disable'
-import ReadOnly from '@/knobs/readonly'
+import Rounded from '@/knobs/rounded'
+import Scaled from '@/knobs/scaled'
 import Simplified from '@/knobs/simplified'
-import Roundness from '@/knobs/rounded'
-import Scale from '@/knobs/scaled'
+
+import Invertible from '@/knobs/invertible'
+import Unactionable from '@/knobs/unactionable'
+
+import Iconified from '@/knobs/iconified'
+
+import { boolean } from '@storybook/addon-knobs'
 
 export default { title: 'Elements|SwitchField' }
-
-export const colored = () => ({
-  mixins: [Colored],
-  components: { SwitchField },
-  template: `
-    <div>
-        <SwitchField 
-            :color="color" 
-            :shade="shade"/>
-        <br/><br/>
-        <SwitchField 
-            :color="color" 
-            :shade="shade"
-            value= "true"/>
-    </div>
-
-  `
-})
 
 export const branded = () => ({
   mixins: [Branded],
   components: { SwitchField },
   template: `
-    <SwitchField :brand="brand"/>
+    <SwitchField :value="true" :brand="brand"/>
+  `
+})
+
+export const colored = () => ({
+  mixins: [Colored],
+  components: { SwitchField },
+  template: `
+    <SwitchField :value="true" :color="color" :shade="shade"/>
   `
 })
 
@@ -44,7 +36,39 @@ export const indicating = () => ({
   mixins: [Indicating],
   components: { SwitchField },
   template: `
-    <SwitchField :indication="indication"/>
+    <SwitchField :value="true" :indication="indication"/>
+  `
+})
+
+export const inactive = () => ({
+  mixins: [Unactionable],
+  components: { SwitchField },
+  template: `
+    <SwitchField :value="true" :is-disabled="isDisabled" :is-read-only="isReadOnly"/>
+  `
+})
+
+export const simplified = () => ({
+  mixins: [Simplified],
+  components: { SwitchField },
+  template: `
+    <SwitchField :value="true" :simplicity="simplicity"/>
+  `
+})
+
+export const rounded = () => ({
+  mixins: [Rounded],
+  components: { SwitchField },
+  template: `
+    <SwitchField :value="true" :roundness="roundness"/>
+  `
+})
+
+export const scaled = () => ({
+  mixins: [Scaled],
+  components: { SwitchField },
+  template: `
+    <SwitchField :value="true" :size="size"/>
   `
 })
 
@@ -52,7 +76,7 @@ export const invertible = () => ({
   mixins: [Invertible],
   components: { SwitchField },
   template: `
-    <SwitchField :isInverted="isInverted"/>
+    <SwitchField :value="true" :is-inverted="isInverted"/>
   `
 })
 invertible.story = {
@@ -61,73 +85,22 @@ invertible.story = {
   }
 }
 
-export const disable = () => ({
-  mixins: [Disable],
+export const labellable = () => ({
   components: { SwitchField },
+  props: {
+    isLabelled: {
+      default: () => boolean('Is labelled?', true)
+    }
+  },
   template: `
-    <SwitchField :isDisabled="isDisabled"/>
+    <SwitchField :value="true" :is-labelled="isLabelled"/>
   `
 })
 
-export const readonly = () => ({
-  mixins: [ReadOnly],
+export const withIcon = () => ({
+  mixins: [Iconified],
   components: { SwitchField },
   template: `
-      <SwitchField :isReadOnly="isReadOnly"/>
-    `
-})
-
-export const simplified = () => ({
-  mixins: [ Simplified, Colored ],
-  components: { SwitchField },
-  template: `
-    <SwitchField :simplicity="simplicity" :color="color" :shade="shade"/>
+    <SwitchField :value="true" :iconSet="[icon, icon]"/>
   `
-})
-
-export const roundness = () => ({
-  mixins: [ Roundness, Colored ],
-  components: { SwitchField },
-  template: `
-        <SwitchField :roundness="roundness" :color="color" :shade="shade"/>
-      `
-})
-
-export const scale = () => ({
-  mixins: [ Scale ],
-  components: { SwitchField },
-  template: `
-    <SwitchField :size="size"/>
-  `
-})
-
-export const withAddOns = () => ({
-  components: { SwitchField, Grid, GridCell },
-  template: `
-    <Grid>
-        <GridCell :span-set="[12, 4, 4, 4, 4]">
-        <SwitchField
-            color="yellow"
-            size="huge" 
-            :value="true"
-            is-labelled/>
-        </GridCell>
-        <GridCell :span-set="[12, 4, 4, 4, 4]">
-        <SwitchField
-            color="lime"
-            size="huge"
-            :value="true"
-            :iconSet="['times', 'check']"
-            is-labelled/>
-        </GridCell>
-        <GridCell :span-set="[12, 4, 4, 4, 4]">
-        <SwitchField
-            color="cyan"
-            size="huge"
-            :value="true"
-            :iconSet="[['fab', 'bluetooth-b'], ['fab', 'bluetooth-b']]"
-            is-labelled/>
-        </GridCell>
-    </Grid>
-      `
 })

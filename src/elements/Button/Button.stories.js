@@ -3,24 +3,18 @@ import Button from '@/elements/Button/Button'
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
-import Invertible from '@/knobs/invertible'
-import Disable from '@/knobs/disable'
+import Rounded from '@/knobs/rounded'
+import Scaled from '@/knobs/scaled'
 import Simplified from '@/knobs/simplified'
-import Scale from '@/knobs/scaled'
-import Roundness from '@/knobs/rounded'
+
+import Invertible from '@/knobs/invertible'
+import Unactionable from '@/knobs/unactionable'
+
 import Text from '@/knobs/text'
-import WithIcon from '@/knobs/withIcon'
+import Iconified from '@/knobs/iconified'
 import Attribute from '@/knobs/attribute'
 
 export default { title: 'Elements|Button' }
-
-export const colored = () => ({
-  mixins: [Colored],
-  components: { Button },
-  template: `
-    <Button :color="color" :shade="shade">{{ color }} {{ shade}}</Button>
-  `
-})
 
 export const branded = () => ({
   mixins: [Branded],
@@ -30,11 +24,43 @@ export const branded = () => ({
   `
 })
 
+export const colored = () => ({
+  mixins: [Colored],
+  components: { Button },
+  template: `
+    <Button :color="color" :shade="shade">{{ color }} {{ shade}}</Button>
+  `
+})
+
 export const indicating = () => ({
   mixins: [Indicating],
   components: { Button },
   template: `
     <Button :indication="indication">{{ indication }}</Button>
+  `
+})
+
+export const rounded = () => ({
+  mixins: [Rounded],
+  components: { Button },
+  template: `
+    <Button :roundness="roundness">Click Me</Button>
+  `
+})
+
+export const scaled = () => ({
+  mixins: [Scaled],
+  components: { Button },
+  template: `
+    <Button :size="size">Click Me</Button>
+  `
+})
+
+export const simplified = () => ({
+  mixins: [Simplified],
+  components: { Button },
+  template: `
+    <Button :simplicity="simplicity">Click Me</Button>
   `
 })
 
@@ -51,58 +77,34 @@ invertible.story = {
   }
 }
 
-export const disabled = () => ({
-  mixins: [Disable],
+export const unactionable = () => ({
+  mixins: [Unactionable],
   components: { Button },
   template: `
-    <Button :isDisabled="isDisabled"> Click Me</Button>
+    <Button :is-disabled="isDisabled"> Click Me</Button>
   `
 })
 
-export const simplified = () => ({
-  mixins: [ Simplified, Colored ],
+export const withText = () => ({
+  mixins: [Text],
   components: { Button },
   template: `
-    <Button :simplicity="simplicity" :color="color" :shade="shade">Click Me</Button>
-  `
-})
-
-export const scale = () => ({
-  mixins: [ Scale ],
-  components: { Button },
-  template: `
-    <Button :size="size">Click Me</Button>
-  `
-})
-
-export const roundness = () => ({
-  mixins: [ Roundness ],
-  components: { Button },
-  template: `
-    <Button :roundness="roundness">Click Me</Button>
-  `
-})
-
-export const text = () => ({
-  mixins: [ Text ],
-  components: { Button },
-  template: `
-    <Button>{{text}}</Button>
+    <Button>{{ text }}</Button>
   `
 })
 
 export const withIcon = () => ({
-  mixins: [WithIcon, Text, Colored],
+  mixins: [Iconified],
   components: { Button },
   template: `
-    <Button :icon="icon" :color="color">{{text}}</Button>
+    <Button :icon="icon">Click me</Button>
   `
 })
 
-export const attribute = () => ({
-  mixins: [Attribute, Indicating],
+export const withAttribute = () => ({
+  mixins: [Attribute],
   components: { Button },
   template: `
-    <Button :type="type" :value="value" :indication="indication">{{type}}</Button>
+    <Button :type="type" :value="value">Click me</Button>
   `
 })

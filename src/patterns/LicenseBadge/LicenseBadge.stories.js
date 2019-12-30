@@ -1,113 +1,32 @@
 import LicenseBadge from '@/patterns/LicenseBadge/LicenseBadge'
-import Paragraph from '@/elements/Paragraph/Paragraph'
-import Grid from '@/layouts/Grid/Grid'
-import GridCell from '@/layouts/Grid/GridCell'
+
+import { select } from '@storybook/addon-knobs'
 
 export default { title: 'Patterns|LicenseBadge' }
 
-export const styleSet = () => ({
-  components: { LicenseBadge, Paragraph },
-  template: `
-    <Paragraph>
-        The CC BY license
-        (<LicenseBadge 
-        license="by" 
-        is-centered/>)
-        is a permissive free-culture license.
-    </Paragraph>
-    `
-})
-
-export const badgeSet = () => ({
-  components: { LicenseBadge, Paragraph, Grid, GridCell },
-  template: `
-    <div>
-        <Grid style="text-align: center;">
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by"/>
-                <Paragraph>
-                CC Attribution
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by-nc"/>
-                <Paragraph>
-                CC Attribution-NonCommercial 
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by-nc-nd"/>
-                <Paragraph>
-                CC Attribution-NonCommercial-NoDerivs
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by-nc-sa"/>
-                <Paragraph>
-                CC Attribution-NonCommercial-ShareAlike
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by-nd"/>
-                <Paragraph>
-                CC Attribution-NoDerivs
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <LicenseBadge license="by-sa"/>
-                <Paragraph>
-                CC Attribution-ShareAlike
-                </Paragraph>
-            </GridCell>
-        </Grid>
-
-        <br/><br/>
-        <Grid style="text-align: center;">
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="zero"/>
-                <Paragraph>
-                CC Zero
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="pd"/>
-                <Paragraph>
-                Public domain
-                </Paragraph>
-            </GridCell>
-        </Grid>
-    </div>
-  `
-})
-
-export const versionSet = () => ({
-  components: { LicenseBadge, Grid, GridCell },
-  template: `
-    <div>
-        <Grid style="text-align: center;">
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="by-sa" version="reduced"/>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="zero" version="reduced"/>
-            </GridCell>
-        </Grid>
-            <br/><br/>
-        <Grid style="text-align: center;">
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="by-sa"/>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <LicenseBadge license="zero"/>
-            </GridCell>
-        </Grid>
-    </div>
-  `
-})
-
-export const attributeSet = () => ({
+export const licenses = () => ({
   components: { LicenseBadge },
+  props: {
+    license: {
+      default: () => select('License', {
+        'CC [BY] Attribution': 'by',
+        'CC [BY-NC] Attribution-NonCommercial': 'by-nc',
+        'CC [BY-NC-ND] Attribution-NonCommercial-NoDerivs': 'by-nc-nd',
+        'CC [BY-NC-SA] Attribution-NonCommercial-ShareAlike': 'by-nc-sa',
+        'CC [BY-ND] Attribution-NoDerivs': 'by-nd',
+        'CC [BY-SA] Attribution-ShareAlike': 'by-sa',
+        'CC [0] Zero': 'zero',
+        'Public Domain Mark': 'pd'
+      }, 'by')
+    },
+    version: {
+      default: () => select('Version', {
+        Full: 'full',
+        Reduced: 'reduced'
+      }, 'full')
+    }
+  },
   template: `
-    <LicenseBadge license="by" size="large"/>
+    <LicenseBadge :license="license" :version="version"/>
   `
 })

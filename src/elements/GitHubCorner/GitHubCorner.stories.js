@@ -1,19 +1,13 @@
 import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
-import { select } from '@storybook/addon-knobs'
 
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
+
 import Invertible from '@/knobs/invertible'
 
-export default { title: 'Elements|GitHubCorner' }
+import { select } from '@storybook/addon-knobs'
 
-export const colored = () => ({
-  mixins: [Colored],
-  components: { GitHubCorner },
-  template: `
-    <GitHubCorner :color="color" :shade="shade"/>
-  `
-})
+export default { title: 'Elements|GitHubCorner' }
 
 export const branded = () => ({
   mixins: [Branded],
@@ -23,11 +17,19 @@ export const branded = () => ({
   `
 })
 
+export const colored = () => ({
+  mixins: [Colored],
+  components: { GitHubCorner },
+  template: `
+    <GitHubCorner :color="color" :shade="shade"/>
+  `
+})
+
 export const invertible = () => ({
   mixins: [Invertible],
   components: { GitHubCorner },
   template: `
-    <GitHubCorner :isInverted="isInverted"/>
+    <GitHubCorner :is-inverted="isInverted"/>
   `
 })
 invertible.story = {
@@ -36,10 +38,8 @@ invertible.story = {
   }
 }
 
-export const corner = () => ({
-  components: {
-    GitHubCorner
-  },
+export const corners = () => ({
+  components: { GitHubCorner },
   props: {
     corner: {
       default: select(
@@ -52,14 +52,13 @@ export const corner = () => ({
       )
     }
   },
-  template: `<GitHubCorner :corner="corner"/>
+  template: `
+    <GitHubCorner :corner="corner"/>
   `
 })
 
-export const position = () => ({
-  components: {
-    GitHubCorner
-  },
+export const positions = () => ({
+  components: { GitHubCorner },
   props: {
     position: {
       default: select(
@@ -72,6 +71,7 @@ export const position = () => ({
       )
     }
   },
-  template: `<GitHubCorner :position="position"/>
-    `
+  template: `
+    <GitHubCorner :position="position"/>
+  `
 })

@@ -1,92 +1,40 @@
 import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
-import Grid from '@/layouts/Grid/Grid'
-import GridCell from '@/layouts/Grid/GridCell'
+
+import { select } from '@storybook/addon-knobs'
 
 export default { title: 'Patterns|BrandImagery' }
 
-export const basic = () => ({
+export const creativeCommons = () => ({
   components: { BrandImagery },
+  props: {
+    type: {
+      default: () => select('Type', {
+        Wordmark: 'wordmark',
+        Lettermark: 'lettermark',
+        Letterheart: 'letterheart'
+      }, 'wordmark')
+    }
+  },
   template: `
-    <BrandImagery
-        color="black"
-        type="letterheart"
-        size="big"/>
-    `
-})
-
-export const logoSet = () => ({
-  components: { BrandImagery, Grid, GridCell },
-  template: `
-    <div style="text-align: center;">
-        <Grid>
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <BrandImagery color="black"/>
-                <Paragraph>
-                CC
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 6, 6, 6, 6]">
-                <BrandImagery brand="vocabulary" color="black"/>
-                <Paragraph>
-                Vocabulary
-                </Paragraph>
-            </GridCell>
-        </Grid>
-
-        <br/><br/>
-
-        <Grid >
-            <GridCell :span-set="[12, 6, 4, 4, 4]">
-                <BrandImagery color="black"/>
-                <Paragraph>
-                Wordmark
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 3, 4, 4, 4]">
-                <BrandImagery type="lettermark" color="black"/>
-                <Paragraph>
-                Lettermark
-                </Paragraph>
-            </GridCell>
-            <GridCell :span-set="[12, 3, 4, 4, 4]">
-                <BrandImagery type="letterheart" color="black"/>
-                <Paragraph>
-                Letterheart
-                </Paragraph>
-            </GridCell>
-        </Grid>
+    <div>
+      <BrandImagery :type="type"/>
     </div>
   `
 })
 
-export const colorSet = () => ({
-  components: { BrandImagery, Grid, GridCell },
-  template: `
-    <Grid density="sparser" style="text-align: center; color: white;">
-        <GridCell :span-set="[12, 6, 6, 6, 3]">
-            <BrandImagery color="white"/>
-        </GridCell>
-        <GridCell :span-set="[12, 6, 6, 6, 3]">
-            <BrandImagery type="lettermark" color="white"/>
-        </GridCell>
-        <GridCell :span-set="[12, 6, 6, 6, 3]">
-            <BrandImagery type="letterheart" color="white"/>
-        </GridCell>
-        <GridCell :span-set="[12, 6, 6, 6, 3]">
-            <BrandImagery brand="vocabulary" color="white"/>
-        </GridCell>
-    </Grid>
-  `
-})
-colorSet.story = {
-  parameters: {
-    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
-  }
-}
-
-export const attributeSet = () => ({
+export const vocabulary = () => ({
   components: { BrandImagery },
+  props: {
+    type: {
+      default: () => select('Type', {
+        Wordmark: 'wordmark',
+        Lettermark: 'lettermark'
+      }, 'wordmark')
+    }
+  },
   template: `
-    <BrandImagery type="letterheart" color="black" size="large"/>
+    <div>
+      <BrandImagery brand="vocabulary" :type="type"/>
+    </div>
   `
 })

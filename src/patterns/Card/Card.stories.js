@@ -1,82 +1,82 @@
 import Card from '@/patterns/Card/Card'
+import Grid from '@/layouts/Grid/Grid'
+import GridCell from '@/layouts/Grid/GridCell'
 
-import Colored from '@/knobs/colored'
-import Invertible from '@/knobs/invertible'
+import { boolean, text } from '@storybook/addon-knobs'
 
 export default { title: 'Patterns|Card' }
 
-let dhruvSource = 'https://avatars0.githubusercontent.com/u/16580576'
-let dhruvAlt = 'Dhruv Bhanushali\'s profile picture'
+const widthLimit = () => ({ template: `<div style="width: 15em;"><story/></div>` })
 
-export const colored = () => ({
-  mixins: [Colored],
+export const headed = () => ({
   components: { Card },
+  props: {
+    heading: {
+      default: () => text('Heading', 'Vocabulary')
+    },
+    subheading: {
+      default: () => text('Subheading', 'Creative Commons')
+    }
+  },
   template: `
-    <div>
-        <Card 
-            heading="Colorless card"
-            subheading="No accent"
-            is-raised>
-                <template #foot>
-                    BORING!
-                </template>
-        </Card>
-        <br/><br>
-        <Card 
-            heading="Colored card"
-            subheading="No accent"
-            is-raised
-            :color="color" 
-            :shade="shade">
-                <template #foot>
-                    BORING!
-                </template>
-        </Card>
-    </div>
+    <Card :heading="heading" :subheading="subheading"/>
   `
 })
-
-export const invertible = () => ({
-  mixins: [Invertible, Colored],
-  components: { Card },
-  template: `
-    <Card 
-        heading="Colorless card"
-        subheading="No accent"
-        :isInverted="!isInverted"
-        :color="color" 
-        is-raised>
-            <template #foot>
-                BORING!
-            </template>
-    </Card>
-  `
-})
-invertible.story = {
-  parameters: {
-    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
-  }
+headed.story = {
+  decorators: [widthLimit]
 }
 
-export const style = () => ({
-  mixins: [Colored, dhruvAlt, dhruvSource],
+export const featured = () => ({
   components: { Card },
-  template: ` 
-  <Grid density="sparse">
-    <GridCell :span-set="[12, 6, 3, 3, 3]">
-      <Card
-        color="orange"
-        heading="Dhruv Bhanushali"
-        subheading="Developer"
-        :featuredImageSource="dhruvSource"
-        :featuredImageAlternateText="dhruvAlt"
-        roundness="slight"
-        is-raised>
-        <template #foot>
-          🇮🇳 India
-        </template>
-      </Card>
-    </GridCell>
-  </Grid>
+  props: {
+    featuredImageSource: {
+      default: () => text('Image source', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Hummingbird.jpg/640px-Hummingbird.jpg')
+    },
+    featuredImageAlternateText: {
+      default: () => text('Image alt text', 'Costa\'s hummingbird')
+    }
+  },
+  template: `
+    <Card
+      :featured-image-source="featuredImageSource"
+      :featured-image-alternate-text="featuredImageAlternateText"
+      heading="Featured"/>
+  `
+})
+featured.story = {
+  decorators: [widthLimit]
+}
+
+export const decked = () => ({
+  components: { Card, Grid, GridCell },
+  props: {
+    isDecked: {
+      default: () => boolean('Is decked?', true)
+    }
+  },
+  template: `
+    <Grid>
+      <GridCell :span-set="[12, 6, 6, 6, 6]">
+        <Card>
+          Delusion arises from anger.<br/>
+          The mind is bewildered by delusion.<br/>
+          Reasoning is destroyed when the mind is bewildered.<br/>
+          One falls down when reasoning is destroyed.
+          <template #foot>
+            The Bhagvad Gita
+          </template>
+        </Card>
+      </GridCell>
+
+      <GridCell :span-set="[12, 6, 6, 6, 6]">
+        <Card :is-decked="isDecked">
+          Set thy heart upon thy work but never its reward.
+          <template #foot>
+            The Bhagvad Gita
+          </template>
+        </Card>
+      </GridCell>
+    </Grid>
+
   `
 })

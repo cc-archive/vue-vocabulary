@@ -14,7 +14,7 @@ const sizeOptions = {
 export default {
   props: {
     size: {
-      default: () => select('Sizes', sizeOptions, sizeOptions.Small)
+      default: () => select('Size', sizeOptions, sizeOptions.Normal)
     }
   }
 }

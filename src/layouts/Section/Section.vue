@@ -61,7 +61,7 @@
     },
     computed: {
       processedColorSide: function () {
-        if (this.color || this.indication) {
+        if (this.brand || this.color || this.indication) {
           if (this.colorSide) {
             return this.colorSide
           } else {

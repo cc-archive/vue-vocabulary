@@ -3,68 +3,47 @@ import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
 import NavigationLink from '@/patterns/Navigation/NavigationLink'
 import Navigation from '@/patterns/Navigation/Navigation'
 
+import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faBook } from '@fortawesome/free-solid-svg-icons'
+import Text from '@/knobs/text'
 
-library.add(faHome, faBook)
+import { text } from '@storybook/addon-knobs'
 
 export default { title: 'Patterns|Header' }
 
-export const colorSet = () => ({
-  mixins: [Colored],
+export const branded = () => ({
+  mixins: [Branded],
   components: { Header },
   template: `
-    <div>
-        <Header/>
-        <br/><br/>
-        <Header 
-            :color="color" 
-            :shade="shade" />
-        <br/><br/>
-        <Header 
-            :color="color" 
-            :shade="shade" 
-            title= "Change title" />
-    </div>
+    <Header :brand="brand"/>
   `
 })
 
-export const withAddOns = () => ({
-  mixins: [ Colored ],
-  components: { Header, BrandImagery, Navigation, NavigationLink },
+export const colored = () => ({
+  mixins: [Colored],
+  components: { Header },
   template: `
-    <div>
-        <Header>
-            <template #branding>
-                <BrandImagery
-                color="white"
-                brand="vocabulary"
-                size="small"
-                is-centered/>
-            </template>
-            <div>
-                <Heading :level="6">You really mean anything?</Heading>
-                Yes, <em>literally</em> anything.
-            </div>
-        </Header>
+    <Header :color="color" :shade="shade"/>
+  `
+})
 
-        <br/><br/>
+export const titled = () => ({
+  components: { Header },
+  props: {
+    title: {
+      default: () => text('Title', 'Vocabulary')
+    }
+  },
+  template: `
+    <Header :title="title"/>
+  `
+})
 
-        <Header 
-            appName="Vocabulary" 
-            :color="color">
-            <Navigation
-                is-inverted>
-                <NavigationLink icon="home">
-                Home page
-                </NavigationLink>
-                <NavigationLink icon="book">
-                Documentation
-                </NavigationLink>
-            </Navigation>
-        </Header>
-    </div>
-     `
+export const withText = () => ({
+  mixins: [Text],
+  components: { Header },
+  template: `
+    <Header>{{ text }}</Header>
+  `
 })

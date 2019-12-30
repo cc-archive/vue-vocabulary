@@ -1,69 +1,45 @@
 import Definition from '@/patterns/Definition/Definition'
 
+import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
+import Indicating from '@/knobs/indicating'
 
 export default { title: 'Patterns|Definition' }
+
+const content = `
+  <ul>
+    <li>state or describe exactly the nature, scope, or meaning of</li>
+    <li>give the meaning of a word or phrase, especially in a dictionary</li>
+    <li>make up or establish the character or essence of</li>
+  </ul>
+`
+
+export const branded = () => ({
+  mixins: [Branded],
+  components: { Definition },
+  template: `
+    <Definition :brand="brand" word="de·fine" pronunciation="dɪˈfʌɪn" part-of-speech="verb">
+      ${content}
+    </Definition>
+  `
+})
 
 export const colored = () => ({
   mixins: [Colored],
   components: { Definition },
   template: `
-    <div>
-        <Definition
-            word="black"
-            pronunciation="blak"
-            part-of-speech="adj.">
-            of the very darkest colour owing to the absence of or complete absorption of light
-        </Definition>
-        <br/><br/>
-        <Definition
-            :color="color"
-            :shade="shade"
-            word="black"
-            pronunciation="blak"
-            part-of-speech="adj.">
-            of the very darkest colour owing to the absence of or complete absorption of light
-        </Definition>
-    </div>
-  `
-})
-
-export const withAddOns = () => ({
-  components: { Definition },
-  template: `
-    <Definition
-        pronunciation="dɛfɪˈnɪʃ(ə)n"
-        part-of-speech="n.">
-        <template #word>
-            <i>definition</i>
-        </template>
-        <ul>
-            <li>
-            a statement of the exact meaning of a word, especially in a dictionary
-            </li>
-            <li class="unimportant">
-            the degree of distinctness in outline of an object, image, or sound
-            </li>
-        </ul>
+    <Definition :color="color" word="de·fine" pronunciation="dɪˈfʌɪn" part-of-speech="verb">
+      ${content}
     </Definition>
   `
 })
 
-export const withInterpuncts = () => ({
+export const indicating = () => ({
+  mixins: [Indicating],
   components: { Definition },
   template: `
-    <Definition
-        word="vo·cab·u·lar·y"
-        pronunciation="və(ʊ)ˈkabjʊləri"
-        part-of-speech="noun">
-        <ul>
-            <li class="unimportant">
-            the body of words used in a particular language
-            </li>
-            <li>
-            a cohesive design system to unite the web facing Creative Commons 
-            </li>
-        </ul>
+    <Definition :indication="indication" word="de·fine" pronunciation="dɪˈfʌɪn" part-of-speech="verb">
+      ${content}
     </Definition>
   `
 })

@@ -9,7 +9,7 @@ const simplifiedOptions = {
 export default {
   props: {
     simplicity: {
-      default: () => select('Simplify', simplifiedOptions, simplifiedOptions.None)
+      default: () => select('Simplicity', simplifiedOptions, simplifiedOptions.None)
     }
   }
 }
