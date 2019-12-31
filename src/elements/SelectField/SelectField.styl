@@ -28,6 +28,8 @@
   &.inverted
     --select-field-overlay $color-overlay-black-low
 
+  --select-field-shadow $color-tone-grey-lighter
+
   // Color
 
   --select-field-background-color var(--select-field-primary)
@@ -66,7 +68,7 @@
   --select-field-border-radius 0
 
   &.slightly-rounded
-    --select-field-border-radius $radius-normal
+    --select-field-border-radius $rradius-normal
 
   &.completely-rounded
     --select-field-border-radius $radius-pill
@@ -95,7 +97,7 @@
 
   background-color var(--select-field-background-color)
 
-  border 1px solid var(--select-field-border-color)
+  border 1px solid $color-tone-grey-lighter
 
   border-radius var(--select-field-border-radius)
   overflow hidden
@@ -172,3 +174,6 @@
     text-decoration line-through
 
     background-image none
+
+  &.raised
+    box-shadow unquote($shadow-pronounced) var(--select-field-shadow)
