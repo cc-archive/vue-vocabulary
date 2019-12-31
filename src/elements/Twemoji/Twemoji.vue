@@ -1,11 +1,13 @@
 <template>
-  <div ref="emoji">
-    <slot></slot>
-  </div>
+  <span ref="emoji">
+    <!-- @slot Content goes here -->
+    <slot/>
+  </span>
 </template>
 
 <script>
   import twemoji from 'twemoji'
+
   export default {
     name: 'Twemoji',
     mounted () {
@@ -14,4 +16,5 @@
   }
 </script>
 
-<style lang="stylus" src="./Twemoji.styl"></style>
+<style lang="stylus" src="./Twemoji.styl">
+</style>
