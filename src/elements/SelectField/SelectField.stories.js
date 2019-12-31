@@ -2,7 +2,9 @@ import SelectField from '@/elements/SelectField/SelectField'
 
 export default { title: 'Elements|SelectField' }
 
-let optionList = [
+const picked = 'c'
+
+const optionList = [
   {
     value: 'a',
     text: 'Option A'
@@ -10,20 +12,29 @@ let optionList = [
   {
     value: 'b',
     text: 'Option B'
+  },
+  {
+    value: 'c',
+    text: 'Text'
   }
 ]
 
-export const examples = () => ({
-  data () {
+export const example = () => ({
+  data: function () {
     return {
-      optionList
+      optionList,
+      picked
     }
   },
   components: { SelectField },
   template: `
     <div>
-      <SelectField  option-list="optionList" />
+      <SelectField 
+        v-model="picked"
+        :option-list="optionList" 
+        simplicity="slight"
+        roundness="slight"
+        is-raised/>
     </div>
-
   `
 })
