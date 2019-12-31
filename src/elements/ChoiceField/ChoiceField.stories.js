@@ -74,7 +74,7 @@ export const unactionable = () => ({
   `
 })
 
-let picked = ['B']
+const picked = ['B']
 
 export const example = () => ({
   data: function () {
