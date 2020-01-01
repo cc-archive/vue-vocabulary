@@ -1,10 +1,23 @@
 <template>
   <span class="vocab license-icons">
-    <FontAwesomeIcon
-      v-for="(icon, index) in processedIconList"
+    <Popup v-bind="$attrs"
+    v-if="showsPopup">
+      <FontAwesomeIcon v-for="(icon, index) in processedIconList"
       :key="index"
       :icon="['fab', icon]"
-      fixed-width/>
+      fixed-width />
+      <template #popup>
+        <Paragraph>
+          <slot>{{ popupContent }}</slot>
+        </Paragraph>
+      </template>
+    </Popup>
+    <template v-else>
+      <FontAwesomeIcon v-for="(icon, index) in processedIconList"
+      :key="index"
+      :icon="['fab', icon]"
+      fixed-width />
+    </template>
   </span>
 </template>
 
@@ -26,6 +39,8 @@
     faCreativeCommonsShare
   } from '@fortawesome/free-brands-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+  import Popup from '@/patterns/Popup/Popup'
 
   library.add(
     faCreativeCommons,
@@ -52,9 +67,19 @@
   export default {
     name: 'LicenseIconography',
     components: {
-      FontAwesomeIcon
+      FontAwesomeIcon,
+      Popup
     },
+    inheritAttrs: false,
     props: {
+      showsPopup: {
+        type: Boolean,
+        default: false
+      },
+      popupContent: {
+        type: String,
+        default: 'Creative Commons'
+      },
       /**
        * _the list of icons to display_
        *
