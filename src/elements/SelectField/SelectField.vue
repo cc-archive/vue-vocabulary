@@ -67,6 +67,7 @@
   import { faAngleDown, faAngleUp, faBan, faEye, faVoteYea } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
   import Rounded from '@/mixins/rounded'
@@ -92,6 +93,7 @@
       FontAwesomeLayers
     },
     mixins: [
+      Branded,
       Colored,
       Indicating,
       Rounded,
@@ -138,6 +140,7 @@
     computed: {
       selectFieldClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
           ...this.roundedClasses,
