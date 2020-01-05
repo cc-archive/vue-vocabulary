@@ -13,7 +13,7 @@ const brandOptions = {
 export default {
   props: {
     brand: {
-      default: () => select('Brand', brandOptions, brandOptions.Blue)
+      default: () => select('Brand', brandOptions, brandOptions.Orange)
     }
   }
 }
