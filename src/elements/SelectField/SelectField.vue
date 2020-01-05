@@ -73,6 +73,7 @@
   import Rounded from '@/mixins/rounded'
   import Scaled from '@/mixins/scaled'
   import Simplified from '@/mixins/simplified'
+  import Toned from '@/mixins/toned'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
@@ -99,6 +100,7 @@
       Rounded,
       Scaled,
       Simplified,
+      Toned,
 
       Invertible,
       Unactionable
@@ -146,6 +148,7 @@
           ...this.roundedClasses,
           ...this.scaledClasses,
           ...this.simplifiedClasses,
+          ...this.tonedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses
