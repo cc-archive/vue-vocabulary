@@ -1,22 +1,25 @@
 <template>
   <span class="vocab license-icons">
-    <Popup v-bind="$attrs"
-    v-if="showsPopup">
-      <FontAwesomeIcon v-for="(icon, index) in processedIconList"
-      :key="index"
-      :icon="['fab', icon]"
-      fixed-width />
-      <template #popup>
-        <Paragraph>
-          <slot>{{ popupContent }}</slot>
-        </Paragraph>
+    <template v-for="(icon, index) in processedIconList">
+      <template v-if="showsPopup(index)">
+        <Popup
+          :key="index"
+          v-bind="$attrs">
+          <FontAwesomeIcon
+            :icon="['fab', icon]"
+            fixed-width/>
+          <template #popup>
+            <!-- @slot Popup content goes here -->
+            <slot :name="index">{{ computedStrings[index] }}</slot>
+          </template>
+        </Popup>
       </template>
-    </Popup>
-    <template v-else>
-      <FontAwesomeIcon v-for="(icon, index) in processedIconList"
-      :key="index"
-      :icon="['fab', icon]"
-      fixed-width />
+      <template v-else>
+        <FontAwesomeIcon
+          :key="index"
+          :icon="['fab', icon]"
+          fixed-width/>
+      </template>
     </template>
   </span>
 </template>
@@ -72,14 +75,6 @@
     },
     inheritAttrs: false,
     props: {
-      showsPopup: {
-        type: Boolean,
-        default: false
-      },
-      popupContent: {
-        type: String,
-        default: 'Creative Commons'
-      },
       /**
        * _the list of icons to display_
        *
@@ -107,6 +102,16 @@
             'pd'
           ].includes(icon)
         )
+      },
+      /**
+       * _the list of strings to show in the popups corresponding to the icons_
+       *
+       * If the length is not equal to the length of `iconList`, the list will
+       * be extended or cropped as needed.
+       */
+      stringList: {
+        type: Array,
+        default: () => []
       }
     },
     computed: {
@@ -114,6 +119,24 @@
         return this.iconList.map(icon => {
           return `creative-commons${icon ? '-' : ''}${icon}`
         })
+      },
+      computedStrings: function () {
+        let arrayLength = this.stringList.length
+        let max = this.iconList.length
+        let stringList = this.stringList.map(string => string.trim())
+        if (arrayLength < max) {
+          let addendumLength = max - arrayLength
+          return stringList.concat(
+            Array(addendumLength).fill(this.stringList[arrayLength - 1])
+          )
+        } else {
+          return stringList.slice(0, max)
+        }
+      }
+    },
+    methods: {
+      showsPopup: function (index) {
+        return this.computedStrings[index] || this.$slots[index]
       }
     }
   }
