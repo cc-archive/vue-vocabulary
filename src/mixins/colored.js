@@ -4,7 +4,7 @@ export default {
      * _the primary color for the component_
      *
      * ∈ {`'red'`, `'pink'`, `'grape'`, `'violet'`, `'indigo'`, `'cyan'`,
-     * `'teal'`, `'green'`, `'lime'`, `'yellow'`, `'grey'`}
+     * `'teal'`, `'green'`, `'lime'`, `'yellow'`}
      *
      * If the color is not specified, a default one is chosen as described.
      */
@@ -20,8 +20,7 @@ export default {
         'teal',
         'green',
         'lime',
-        'yellow',
-        'grey'
+        'yellow'
       ].includes(val)
     },
     /**

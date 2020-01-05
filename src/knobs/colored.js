@@ -10,8 +10,7 @@ const colorOptions = {
   Teal: 'teal',
   Green: 'green',
   Lime: 'lime',
-  Yellow: 'yellow',
-  Grey: 'grey'
+  Yellow: 'yellow'
 }
 
 export default {
