@@ -16,6 +16,7 @@
   import Indicating from '@/mixins/indicating'
   import Scaled from '@/mixins/scaled'
   import Simplified from '@/mixins/simplified'
+  import Toned from '@/mixins/toned'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
@@ -35,6 +36,7 @@
       Indicating,
       Scaled,
       Simplified,
+      Toned,
 
       Invertible,
       Unactionable
@@ -94,6 +96,7 @@
           ...this.indicatingClasses,
           ...this.scaledClasses,
           ...this.simplifiedClasses,
+          ...this.tonedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses

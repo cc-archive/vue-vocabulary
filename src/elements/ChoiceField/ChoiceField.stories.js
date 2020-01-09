@@ -7,6 +7,7 @@ import Colored from '@/knobs/colored'
 import Indicating from '@/knobs/indicating'
 import Simplified from '@/knobs/simplified'
 import Scaled from '@/knobs/scaled'
+import Toned from '@/knobs/toned'
 
 import Invertible from '@/knobs/invertible'
 import Unactionable from '@/knobs/unactionable'
@@ -52,6 +53,14 @@ export const simplified = () => ({
   components: { ChoiceField },
   template: `
     <ChoiceField :simplicity="simplicity"/>
+  `
+})
+
+export const toned = () => ({
+  mixins: [Toned],
+  components: { ChoiceField },
+  template: `
+    <ChoiceField :tone="tone"/>
   `
 })
 
