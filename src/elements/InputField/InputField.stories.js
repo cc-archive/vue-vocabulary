@@ -95,21 +95,19 @@ export const example = () => ({
         type="text"
         size="big"
         roundness="slight"
-        placeholder="Placeholder..."
-        is-raised />
+        placeholder="Placeholder..."/>
       <br/><br/>
       <InputField
         v-model="value1"
         type="text"
         size="big"
-        roundness="slight"
-        is-raised/>
+        roundness="slight"/>
       <br/><br/>
       <InputField
         v-model="value2"
         type="text"
-        roundness="slight"
-        is-raised />
+        size="big"
+        roundness="slight"/>
     </div>
     `
 })

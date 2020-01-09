@@ -27,28 +27,9 @@ const optionList = [
   },
   {
     value: 'c',
-    text: 'Text'
+    text: 'Option C'
   }
 ]
-
-export const example = () => ({
-  data: function () {
-    return {
-      optionList,
-      picked
-    }
-  },
-  components: { SelectField },
-  template: `
-    <div>
-      <SelectField 
-        v-model="picked"
-        :option-list="optionList" 
-        simplicity="slight"
-        roundness="slight"
-        is-raised/>
-    </div>`
-})
 
 export const branded = () => ({
   mixins: [Branded],
@@ -183,4 +164,22 @@ export const withIcon = () => ({
   template: `
     <SelectField :icon="icon" :option-list="optionList"/>
   `
+})
+
+export const example = () => ({
+  data: function () {
+    return {
+      optionList,
+      picked
+    }
+  },
+  components: { SelectField },
+  template: `
+    <div>
+      <SelectField 
+        v-model="picked"
+        :option-list="optionList" 
+        simplicity="slight"
+        roundness="slight"/>
+    </div>`
 })
