@@ -80,7 +80,6 @@
 
       Invertible,
       Unactionable
-
     ],
     inheritAttrs: false,
     model: {
