@@ -77,7 +77,6 @@
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
-  import Raisable from '@/mixins/raisable'
 
   library.add(faVoteYea, faCaretDown, faCaretUp, faBan, faEye)
 
@@ -104,8 +103,7 @@
       Toned,
 
       Invertible,
-      Unactionable,
-      Raisable
+      Unactionable
     ],
     inheritAttrs: false,
     model: {
@@ -153,8 +151,7 @@
           ...this.tonedClasses,
 
           ...this.invertibleClasses,
-          ...this.unactionableClasses,
-          ...this.raisableClasses
+          ...this.unactionableClasses
         ]
       },
       fieldClasses: function () {
