@@ -11,6 +11,8 @@ import Scaled from '@/knobs/scaled'
 import Invertible from '@/knobs/invertible'
 import Unactionable from '@/knobs/unactionable'
 
+import { boolean } from '@storybook/addon-knobs'
+
 export default { title: 'Elements|ChoiceField' }
 
 export const branded = () => ({
@@ -74,7 +76,17 @@ export const unactionable = () => ({
   `
 })
 
-const picked = ['B']
+export const unstyleable = () => ({
+  components: { ChoiceField },
+  props: {
+    isUnstyled: {
+      default: boolean('Is unstyled?', true)
+    }
+  },
+  template: `
+    <ChoiceField :is-unstyled="isUnstyled"/>
+  `
+})
 
 export const example = () => ({
   data: function () {

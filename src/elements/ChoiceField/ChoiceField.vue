@@ -2,10 +2,9 @@
   <!-- Attach label with ID when using -->
   <input
     v-bind="$attrs"
-    class="vocab choice-field"
+    :class="choiceFieldClasses"
     :value="value"
     :checked="isChecked"
-    :class="choiceFieldClasses"
     :disabled="isDisabled || isReadOnly"
     :type="inputType"
     @change="emitChange">
@@ -57,6 +56,15 @@
         default: false
       },
       /**
+       * _whether to remove all styling from the choice field_
+       *
+       * This makes the choice field appears as the OS and browser default_
+       */
+      isUnstyled: {
+        type: Boolean,
+        default: false
+      },
+      /**
        * _the value of this field_
        *
        * Whether it is equal to `modelValue` (radio) or belongs to `modelValue`
@@ -79,6 +87,8 @@
     computed: {
       choiceFieldClasses: function () {
         return [
+          ...(this.isUnstyled ? [] : ['vocab', 'choice-field']),
+
           ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
