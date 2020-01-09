@@ -2,6 +2,7 @@
 
 @import "~@/styles/colors.styl"
 @import "~@/styles/brands.styl"
+@import "~@/styles/tones.styl"
 @import "~@/styles/indications.styl"
 @import "~@/styles/font-reset.styl"
 @import "~@/styles/sizes.styl"
@@ -14,8 +15,9 @@
   &.inverted
     --select-field-primary $color-tone-grey-light
 
-  colors('--select-field-primary')
   brands('--select-field-primary')
+  colors('--select-field-primary')
+  tones('--select-field-primary')
   indications('--select-field-primary')
 
   --select-field-secondary $color-tone-white
@@ -65,7 +67,7 @@
 
   // Border radius
 
-  --select-field-border-radius 0
+  --select-field-border-radius $radius-zero
 
   &.slightly-rounded
     --select-field-border-radius $rradius-normal
@@ -97,7 +99,11 @@
 
   background-color var(--select-field-background-color)
 
+<<<<<<< HEAD
   border 1px solid $color-tone-grey-lighter
+=======
+  border 2px solid var(--select-field-border-color)
+>>>>>>> e898a1d6e4babe2990d75ee457ee9ea32a29daf1
 
   border-radius var(--select-field-border-radius)
   overflow hidden
