@@ -4,17 +4,17 @@ import { withKnobs } from '@storybook/addon-knobs'
 
 import i18n from '@/i18n'
 
-import vocabularyTheme from './theme'
-import newViewports from './viewport'
+import theme from './theme'
+import viewports from './viewport'
 
 // Customise storybook
 
 addParameters({
   options: {
-    theme: vocabularyTheme
+    theme
   },
   viewport: {
-    viewports: newViewports
+    viewports
   }
 })
 

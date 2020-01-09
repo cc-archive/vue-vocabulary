@@ -1,6 +1,6 @@
 // Configuration of addon-viewport
 
-export const newViewports = {
+export default {
   // Mobiles
   ClassicPhone: {
     name: 'Classic phone',
