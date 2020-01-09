@@ -14,8 +14,6 @@ import Iconified from '@/knobs/iconified'
 
 export default { title: 'Elements|SelectField' }
 
-const picked = 'c'
-
 const optionList = [
   {
     value: 'a',
@@ -24,10 +22,6 @@ const optionList = [
   {
     value: 'b',
     text: 'Option B'
-  },
-  {
-    value: 'c',
-    text: 'Option C'
   }
 ]
 
@@ -164,22 +158,4 @@ export const withIcon = () => ({
   template: `
     <SelectField :icon="icon" :option-list="optionList"/>
   `
-})
-
-export const example = () => ({
-  data: function () {
-    return {
-      optionList,
-      picked
-    }
-  },
-  components: { SelectField },
-  template: `
-    <div>
-      <SelectField 
-        v-model="picked"
-        :option-list="optionList" 
-        simplicity="slight"
-        roundness="slight"/>
-    </div>`
 })
