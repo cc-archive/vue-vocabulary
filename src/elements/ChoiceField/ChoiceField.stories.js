@@ -1,6 +1,4 @@
 import ChoiceField from '@/elements/ChoiceField/ChoiceField'
-import Grid from '@/layouts/Grid/Grid'
-import GridCell from '@/layouts/Grid/GridCell'
 
 import Branded from '@/knobs/branded'
 import Colored from '@/knobs/colored'
@@ -97,40 +95,53 @@ export const unstyleable = () => ({
   `
 })
 
-export const example = () => ({
-  data: function () {
-    return {
-      picked
+export const modes = () => ({
+  components: { ChoiceField },
+  props: {
+    isSingleSelect: {
+      default: () => boolean('Is single select?', false)
     }
   },
-  components: { ChoiceField, Grid, GridCell },
+  data: function () {
+    const options = ['A', 'B']
+    return {
+      options,
+      picked: null
+    }
+  },
+  watch: {
+    isSingleSelect: function (from, to) {
+      if (from !== to) {
+        this.resetPicked()
+      }
+    }
+  },
+  methods: {
+    resetPicked: function () {
+      this.picked = this.isSingleSelect
+        ? this.options[0]
+        : this.options
+    }
+  },
+  created: function () {
+    this.resetPicked()
+  },
   template: `
-    <Grid>
-        <GridCell :span-set="[12, 6, 6, 6, 6]">
-            <ChoiceField
-                v-model="picked"
-                id="a"
-                name="choice"
-                value="A"
-                simplicity="slight"/>
-            <label for="a">Option text</label>
-            <br/>
-            <ChoiceField
-                v-model="picked"
-                id="b"
-                brand="blue"
-                name="choice"
-                value="B" />
-            <label for="b">Option text</label>
-            <br/>
-            <ChoiceField
-                v-model="picked"
-                id="c"
-                name="choice"
-                value="C"
-                is-disabled/>
-            <label for="c">Option text</label>
-        </GridCell>
-    </Grid>
-    `
+    <div>
+      <template v-for="(option, index) in options">
+        <ChoiceField
+          :key="index"
+          v-model="picked"
+          :id="index"
+          name="choice"
+          :value="option"
+          :is-single-select="isSingleSelect"/>
+        <label :for="index">
+          Option {{ option }}
+        </label>
+      </template>
+      <br/>
+      Selected: {{ picked }}
+    </div>
+  `
 })
