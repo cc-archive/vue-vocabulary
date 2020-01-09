@@ -1,9 +1,7 @@
 // Configuration of addon-viewport
 
 export const newViewports = {
-
   // Mobiles
-
   iPhoneSE: {
     name: 'Apple iPhone SE',
     styles: {
@@ -54,7 +52,6 @@ export const newViewports = {
   },
 
   // Tablets
-
   iPadMini: {
     name: 'Apple iPad Mini',
     styles: {
@@ -89,7 +86,6 @@ export const newViewports = {
   },
 
   // Desktops
-
   AsusChromebook: {
     name: 'Asus Chrombook',
     styles: {
@@ -130,5 +126,4 @@ export const newViewports = {
     },
     type: 'monitor'
   }
-
 }
