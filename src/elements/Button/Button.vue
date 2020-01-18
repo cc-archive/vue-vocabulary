@@ -16,14 +16,6 @@
           fixed-width/>
       </slot>
     </div>
-
-    <div
-      v-if="$slots.default"
-      class="content"
-      :class="contentClasses">
-      <!-- @slot Content goes here -->
-      <slot/>
-    </div>
   </button>
 </template>
 
