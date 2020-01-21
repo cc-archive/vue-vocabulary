@@ -16,6 +16,8 @@
           fixed-width/>
       </slot>
     </div>
+    <!-- @slot Content goes here -->
+    <slot/>
   </button>
 </template>
 
