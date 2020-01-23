@@ -6,14 +6,15 @@ RUN mkdir codebase
 WORKDIR /codebase
 
 # Load the package.json and package-lock.json files
-COPY package*.json .
+COPY package*.json /codebase
 
 # Install packages
 RUN npm install
-RUN npm install -g @vue.cli
+RUN npm install -g @vue/cli
 
 # Copy over all project files to container
-COPY . .
+COPY . /codebase
 
-# This might not be needed here
+# Review needed
+EXPOSE 8080
 RUN npm run serve:website
