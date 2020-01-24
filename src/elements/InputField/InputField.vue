@@ -43,12 +43,14 @@
   import { faKeyboard } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
   import Joined from '@/mixins/joined'
   import Rounded from '@/mixins/rounded'
   import Scaled from '@/mixins/scaled'
   import Simplified from '@/mixins/simplified'
+  import Toned from '@/mixins/toned'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
@@ -67,12 +69,14 @@
       FontAwesomeIcon
     },
     mixins: [
+      Branded,
       Colored,
       Indicating,
       Joined,
       Rounded,
       Scaled,
       Simplified,
+      Toned,
 
       Invertible,
       Unactionable
@@ -119,12 +123,14 @@
     computed: {
       inputFieldClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
           ...this.joinClasses,
           ...this.roundedClasses,
           ...this.scaledClasses,
           ...this.simplifiedClasses,
+          ...this.tonedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses,
@@ -179,5 +185,5 @@
   }
 </script>
 
-<style lang="stylus" src="./InputField.styl">
+<style src="@creativecommons/vocabulary/css/elements/InputField.css">
 </style>

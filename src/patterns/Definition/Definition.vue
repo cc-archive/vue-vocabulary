@@ -3,8 +3,10 @@
     <div class="heading">
       <Heading
         class="word"
+        :brand="brand"
         :color="color"
         :shade="shade"
+        :indication="indication"
         :level="4">
         <!-- @slot Word goes here -->
         <slot name="word">
@@ -44,7 +46,9 @@
   import Heading from '@/elements/Heading/Heading'
   import Paragraph from '@/elements/Paragraph/Paragraph'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
+  import Indicating from '@/mixins/indicating'
 
   /**
    * ### Definitions explain words with words.
@@ -61,7 +65,9 @@
       Paragraph
     },
     mixins: [
-      Colored
+      Branded,
+      Colored,
+      Indicating
     ],
     props: {
       /**
@@ -86,14 +92,16 @@
     computed: {
       headingClasses: function () {
         return [
-          ...this.coloredClasses
+          ...this.brandedClasses,
+          ...this.coloredClasses,
+          ...this.indicatingClasses
         ]
       }
     }
   }
 </script>
 
-<style lang="stylus" src="./Definition.styl">
+<style src="@creativecommons/vocabulary/css/patterns/Definition.css">
 </style>
 
 <i18n src="./lang.json">

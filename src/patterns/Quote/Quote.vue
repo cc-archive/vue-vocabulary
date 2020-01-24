@@ -27,7 +27,9 @@
   import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
+  import Indicating from '@/mixins/indicating'
 
   import Invertible from '@/mixins/invertible'
 
@@ -47,7 +49,9 @@
       FontAwesomeIcon
     },
     mixins: [
+      Branded,
       Colored,
+      Indicating,
 
       Invertible
     ],
@@ -76,7 +80,9 @@
     computed: {
       quoteClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
+          ...this.indicatingClasses,
 
           ...this.invertibleClasses,
 
@@ -90,5 +96,5 @@
   }
 </script>
 
-<style lang="stylus" src="./Quote.styl">
+<style src="@creativecommons/vocabulary/css/patterns/Quote.css">
 </style>

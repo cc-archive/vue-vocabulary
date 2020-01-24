@@ -63,12 +63,12 @@
 
       svgSource: function () {
         return require(
-          `@/assets/icons/license/badges_${this.version}/${this.license}.svg`
+          `@creativecommons/vocabulary/assets/icons/license/badges_${this.version}/${this.license}.svg`
         )
       }
     }
   }
 </script>
 
-<style lang="stylus" src="./LicenseBadge.styl">
+<style src="@creativecommons/vocabulary/css/patterns/LicenseBadge.css">
 </style>

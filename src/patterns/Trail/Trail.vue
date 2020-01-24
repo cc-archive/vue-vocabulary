@@ -45,6 +45,7 @@
 
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
 
   import Invertible from '@/mixins/invertible'
@@ -61,6 +62,7 @@
   export default {
     name: 'Trail',
     mixins: [
+      Branded,
       Colored,
 
       Invertible
@@ -91,6 +93,7 @@
     computed: {
       trailClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
 
           ...this.invertibleClasses
@@ -100,5 +103,5 @@
   }
 </script>
 
-<style lang="stylus" src="./Trail.styl">
+<style src="@creativecommons/vocabulary/css/patterns/Trail.css">
 </style>

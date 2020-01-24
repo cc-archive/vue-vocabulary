@@ -39,12 +39,12 @@
           <FontAwesomeIcon
             class="icon"
             :class="{active: isContentVisible}"
-            :icon="['fas', 'angle-up']"
+            :icon="['fas', 'caret-up']"
             fixed-width/>
           <FontAwesomeIcon
             class="icon"
             :class="{active: !isContentVisible}"
-            :icon="['fas', 'angle-down']"
+            :icon="['fas', 'caret-down']"
             fixed-width/>
         </template>
         <template v-else>
@@ -64,19 +64,21 @@
 
 <script>
   import { library } from '@fortawesome/fontawesome-svg-core'
-  import { faAngleDown, faAngleUp, faBan, faEye, faVoteYea } from '@fortawesome/free-solid-svg-icons'
+  import { faCaretDown, faCaretUp, faBan, faEye, faVoteYea } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon, FontAwesomeLayers } from '@fortawesome/vue-fontawesome'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
   import Rounded from '@/mixins/rounded'
   import Scaled from '@/mixins/scaled'
   import Simplified from '@/mixins/simplified'
+  import Toned from '@/mixins/toned'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
 
-  library.add(faVoteYea, faAngleDown, faAngleUp, faBan, faEye)
+  library.add(faVoteYea, faCaretDown, faCaretUp, faBan, faEye)
 
   /**
    * ### Select fields offer a choice between many options.
@@ -92,11 +94,13 @@
       FontAwesomeLayers
     },
     mixins: [
+      Branded,
       Colored,
       Indicating,
       Rounded,
       Scaled,
       Simplified,
+      Toned,
 
       Invertible,
       Unactionable
@@ -138,11 +142,13 @@
     computed: {
       selectFieldClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
           ...this.roundedClasses,
           ...this.scaledClasses,
           ...this.simplifiedClasses,
+          ...this.tonedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses
@@ -179,7 +185,7 @@
   }
 </script>
 
-<style lang="stylus" src="./SelectField.styl">
+<style src="@creativecommons/vocabulary/css/elements/SelectField.css">
 </style>
 
 <i18n src="./lang.json">

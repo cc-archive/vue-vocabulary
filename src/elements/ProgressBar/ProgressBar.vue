@@ -40,6 +40,7 @@
   import { faHourglassHalf } from '@fortawesome/free-solid-svg-icons'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
   import Rounded from '@/mixins/rounded'
@@ -61,6 +62,7 @@
       FontAwesomeIcon
     },
     mixins: [
+      Branded,
       Colored,
       Indicating,
       Rounded,
@@ -105,6 +107,7 @@
     computed: {
       progressBarClasses: function () {
         return [
+          ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
           ...this.roundedClasses,
@@ -140,5 +143,5 @@
   }
 </script>
 
-<style lang="stylus" src="./ProgressBar.styl">
+<style src="@creativecommons/vocabulary/css/elements/ProgressBar.css">
 </style>

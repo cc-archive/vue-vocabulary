@@ -2,20 +2,21 @@
   <!-- Attach label with ID when using -->
   <input
     v-bind="$attrs"
-    class="vocab choice-field"
+    :class="choiceFieldClasses"
     :value="value"
     :checked="isChecked"
-    :class="choiceFieldClasses"
     :disabled="isDisabled || isReadOnly"
     :type="inputType"
     @change="emitChange">
 </template>
 
 <script>
+  import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
   import Scaled from '@/mixins/scaled'
   import Simplified from '@/mixins/simplified'
+  import Toned from '@/mixins/toned'
 
   import Invertible from '@/mixins/invertible'
   import Unactionable from '@/mixins/unactionable'
@@ -30,10 +31,12 @@
   export default {
     name: 'ChoiceField',
     mixins: [
+      Branded,
       Colored,
       Indicating,
       Scaled,
       Simplified,
+      Toned,
 
       Invertible,
       Unactionable
@@ -51,6 +54,15 @@
        * This essentially toggles between radio and checkbox behaviour.
        */
       isSingleSelect: {
+        type: Boolean,
+        default: false
+      },
+      /**
+       * _whether to remove all styling from the choice field_
+       *
+       * This makes the choice field appears as the OS and browser default_
+       */
+      isUnstyled: {
         type: Boolean,
         default: false
       },
@@ -77,10 +89,14 @@
     computed: {
       choiceFieldClasses: function () {
         return [
+          ...(this.isUnstyled ? [] : ['vocab', 'choice-field']),
+
+          ...this.brandedClasses,
           ...this.coloredClasses,
           ...this.indicatingClasses,
           ...this.scaledClasses,
           ...this.simplifiedClasses,
+          ...this.tonedClasses,
 
           ...this.invertibleClasses,
           ...this.unactionableClasses
@@ -141,5 +157,5 @@
   }
 </script>
 
-<style lang="stylus" src="./ChoiceField.styl">
+<style src="@creativecommons/vocabulary/css/elements/ChoiceField.css">
 </style>
