@@ -27,7 +27,7 @@ services:
       - 8080:8080
 
   # The documentation is the guide on how to use CC Vocabulary components
-  documentation:
+  styleguide:
     # Use the CC Vocabulary image
     image: ccvocabulary:latest
     # If the image is not found, build it
