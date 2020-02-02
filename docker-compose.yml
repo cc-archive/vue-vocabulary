@@ -46,6 +46,23 @@ services:
       # Map 6060 in the container to the same port on the host
       - 6060:6060
 
+  storybook:
+    # Use the CC Vocabulary image
+    image: ccvocabulary:latest
+    # If the image is not found, build it
+    build: .
+
+    # The command to run in the container
+    command: npm run serve:storybook
+    
+    # Volumes attached to the container
+    volumes:
+      - .:/codebase
+      - node_modules:/codebase/node_modules
+    ports:
+      # Map 6006 in the container to the same port on the host
+      - 6006:6006
+
 volumes:
   # Holds the node_modules directory
   # Prevents the host node_modules from being mounted and used
