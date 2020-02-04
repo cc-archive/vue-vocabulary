@@ -12,7 +12,7 @@ COPY package-lock.json ./
 # Install packages
 RUN npm install
 
-# Expose ports for conatiner to listen on
+# Expose ports on the container
 # 8080 - Website
 # 6006 - Storybook
 # 6060 - Styleguide
