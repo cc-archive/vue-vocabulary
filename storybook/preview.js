@@ -7,8 +7,8 @@ import i18n from '@/i18n'
 
 import viewports from './viewport'
 
-import '@/root.styl'
-import '@/index.styl'
+import '@creativecommons/vocabulary/styl/root.styl'
+import '@creativecommons/vocabulary/styl/index.styl'
 
 // Customise storybook
 
