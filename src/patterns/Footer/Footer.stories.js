@@ -1,6 +1,5 @@
 import Footer from '@/patterns/Footer/Footer'
 
-import Heading from '@/elements/Heading/Heading'
 import Paragraph from '@/elements/Paragraph/Paragraph'
 
 import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
@@ -19,7 +18,6 @@ export const customised = () => ({
   components: {
     Footer,
 
-    Heading,
     Paragraph,
 
     BrandImagery,
@@ -94,7 +92,7 @@ export const customised = () => ({
         </ul>
       </template>
 
-      <Heading :level="6">You really mean anything?</Heading>
+      <h4>You really mean anything?</h4>
       <Paragraph>
         Yes, <em>literally</em> anything.
       </Paragraph>
