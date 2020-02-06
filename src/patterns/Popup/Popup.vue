@@ -8,7 +8,7 @@
       <slot/>
     </div>
 
-    <Section
+    <section
       v-show="isVisible"
       v-bind="$attrs"
       class="content"
@@ -16,14 +16,12 @@
       is-compact>
       <!-- #slot Popup content goes here -->
       <slot name="popup"/>
-    </Section>
+    </section>
   </div>
 </template>
 
 <script>
   import { debounce } from 'lodash'
-
-  import Section from '@/layouts/Section/Section'
 
   /**
    * ### Popups reveal hidden content.
@@ -33,9 +31,6 @@
    */
   export default {
     name: 'Popup',
-    components: {
-      Section
-    },
     props: {
       /**
        * _the direction in which the popup should appear_

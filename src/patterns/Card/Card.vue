@@ -1,5 +1,5 @@
 <template>
-  <Section
+  <section
     v-bind="$attrs"
     class="card"
     :class="cardClasses"
@@ -42,13 +42,11 @@
         <slot name="foot"/>
       </div>
     </div>
-  </Section>
+  </section>
 </template>
 
 <script>
   import ImageView from '@/elements/ImageView/ImageView'
-
-  import Section from '@/layouts/Section/Section'
 
   /**
    * ### Cards describe singular subjects.
@@ -60,8 +58,7 @@
   export default {
     name: 'Card',
     components: {
-      ImageView,
-      Section
+      ImageView
     },
     props: {
       /**
