@@ -1,29 +1,10 @@
 import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
 
-import Branded from '@/knobs/branded'
-import Colored from '@/knobs/colored'
-
 import Invertible from '@/knobs/invertible'
 
 import { select } from '@storybook/addon-knobs'
 
 export default { title: 'Elements|GitHubCorner' }
-
-export const branded = () => ({
-  mixins: [Branded],
-  components: { GitHubCorner },
-  template: `
-    <GitHubCorner :brand="brand"/>
-  `
-})
-
-export const colored = () => ({
-  mixins: [Colored],
-  components: { GitHubCorner },
-  template: `
-    <GitHubCorner :color="color" :shade="shade"/>
-  `
-})
 
 export const invertible = () => ({
   mixins: [Invertible],
