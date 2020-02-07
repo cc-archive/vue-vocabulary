@@ -15,7 +15,10 @@ export const invertible = () => ({
 })
 invertible.story = {
   parameters: {
-    backgrounds: [{ name: 'dark background', value: '#000', default: true }]
+    backgrounds: [
+      { name: 'dark background', value: '#000', default: true }, 
+      { name: 'light background', value: '#fff', default: false}
+    ]
   }
 }
 
