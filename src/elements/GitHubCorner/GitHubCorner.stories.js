@@ -37,22 +37,3 @@ export const corners = () => ({
     <GitHubCorner :corner="corner"/>
   `
 })
-
-export const positions = () => ({
-  components: { GitHubCorner },
-  props: {
-    position: {
-      default: select(
-        'Position',
-        {
-          Relative: 'relative',
-          Absolute: 'absolute'
-        },
-        'relative'
-      )
-    }
-  },
-  template: `
-    <GitHubCorner :position="position"/>
-  `
-})
