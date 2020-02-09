@@ -2,7 +2,7 @@ Here's a sample button. If you intuitively feel to click it, it's working.
 
 ```jsx
 <Button 
-  color="orange" 
+  style = "background-color:orange;" 
   is-call-to-action>
   <template #addons>
     <LicenseIconography :icon-list="['', 'by']"/>

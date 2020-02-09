@@ -13,7 +13,7 @@ let optionList = [
 ];
 
 <SelectField
-  color="orange"
+   style = "color : orange;"
   icon="vote-yea"
   :option-list="optionList"
   simplicity="slight"/>

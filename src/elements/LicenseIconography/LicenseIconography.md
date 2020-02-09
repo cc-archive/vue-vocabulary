@@ -4,7 +4,7 @@ color of their surrounding content.
 
 ```jsx
 <Heading
-  color="orange"
+   style = "color : orange;"
   :level="3">
   The CC BY license
   <LicenseIconography :icon-list="['', 'by']"/>:

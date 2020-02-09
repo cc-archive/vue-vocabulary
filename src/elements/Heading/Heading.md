@@ -3,7 +3,7 @@ Headings are supposed to preside over content.
 ```jsx
 <Heading
   :level="1"
-  color="orange">
+  style = "color : orange;">
   I am a title...
 </Heading>
 <Paragraph>

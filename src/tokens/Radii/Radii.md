@@ -4,7 +4,7 @@
   is-compact>
   <Heading 
     :level="1"
-    color="orange">
+     style = "color : orange;">
     Hello World!
   </Heading>
   <Paragraph>

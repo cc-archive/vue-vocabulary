@@ -1,7 +1,7 @@
 ```jsx
 <Heading
   :level="1"
-  style = "color : orange;">
+   style = "color : orange;">
   Hello World!
 </Heading>
 <Paragraph>

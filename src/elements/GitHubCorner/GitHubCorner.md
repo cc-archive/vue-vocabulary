@@ -4,7 +4,7 @@ repository on GitHub.
 ```jsx
 <GitHubCorner 
   repo="creativecommons/vue-vocabulary"
-  color="orange"> 
+  style = "color:orange;"> 
 </GitHubCorner>
 ```
 
