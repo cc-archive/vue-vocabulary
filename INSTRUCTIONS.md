@@ -71,6 +71,10 @@ the changes are in alignment with the short and long term goals of the project.
 **Step 1:** 
 Create a branch named after the changes. Use underscores. Be descriptive.
 
+```
+$ git checkout -b"branch_name"
+```
+
 **Step 2:**
 Resolve the issue by changing the code. Update tests if need be.
 
@@ -97,3 +101,9 @@ New locales must be manually added to the `Locale` component.
 **Step 4:**
 Push the commits to your branch on the fork and submit a PR. Fill all relevant 
 fields in the PR template.
+
+```
+$ git add file_name
+$ git commit
+$ git push --set-upstream origin branch-name
+```
