@@ -66,9 +66,9 @@
           :attribution="$t('communication.rumi')">
           <span v-html="$t('communication.quote')"/>
         </Quote>
-        <Paragraph>
+        <p>
           {{ $t('communication.ie') }}
-        </Paragraph>
+        </p>
       </template>
 
       <template #contacts>
@@ -114,7 +114,6 @@
 
 <script>
   import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
-  import Paragraph from '@/elements/Paragraph/Paragraph'
 
   import Container from '@/layouts/Container/Container'
 
@@ -133,7 +132,6 @@
     name: 'Index',
     components: {
       GitHubCorner,
-      Paragraph,
       Container,
       BrandImagery,
       Definition,

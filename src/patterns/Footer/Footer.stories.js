@@ -1,7 +1,5 @@
 import Footer from '@/patterns/Footer/Footer'
 
-import Paragraph from '@/elements/Paragraph/Paragraph'
-
 import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
 import Locale from '@/patterns/Locale/Locale'
 
@@ -17,8 +15,6 @@ export const standard = () => ({
 export const customised = () => ({
   components: {
     Footer,
-
-    Paragraph,
 
     BrandImagery,
     Locale
@@ -77,9 +73,9 @@ export const customised = () => ({
           When you are everywhere, you are nowhere.<br/>
           When you are somewhere, you are everywhere.
         </Quote>
-        <Paragraph>
+        <p>
           That is to say, all work is done on GitHub.
-        </Paragraph>
+        </p>
       </template>
 
       <template #contacts>
@@ -93,12 +89,12 @@ export const customised = () => ({
       </template>
 
       <h4>You really mean anything?</h4>
-      <Paragraph>
+      <p>
         Yes, <em>literally</em> anything.
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <Locale/>
-      </Paragraph>
+      </p>
     </Footer>
   `
 })
