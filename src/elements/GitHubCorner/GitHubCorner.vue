@@ -29,9 +29,6 @@
 </template>
 
 <script >
-  import Branded from '@/mixins/branded'
-  import Colored from '@/mixins/colored'
-
   import Invertible from '@/mixins/invertible'
 
   /**
@@ -43,9 +40,6 @@
   export default {
     name: 'GitHubCorner',
     mixins: [
-      Branded,
-      Colored,
-
       Invertible
     ],
     props: {
@@ -91,9 +85,6 @@
       },
       gitHubCornerClasses: function () {
         return [
-          ...this.brandedClasses,
-          ...this.coloredClasses,
-
           ...this.invertibleClasses,
 
           `${this.corner}-cornered`,
