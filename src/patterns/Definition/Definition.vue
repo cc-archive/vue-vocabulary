@@ -1,7 +1,7 @@
 <template>
   <div class="vocab definition">
     <div class="heading">
-      <Heading
+      <h4
         class="word"
         :brand="brand"
         :color="color"
@@ -12,8 +12,8 @@
         <slot name="word">
           {{ word }}
         </slot>
-      </Heading>
-      <Paragraph class="usage">
+      </h4>
+      <p class="usage">
         <span
           v-if="pronunciation"
           class="pronunciation">
@@ -24,7 +24,7 @@
           class="part-of-speech">
           {{ partOfSpeech }}
         </span>
-      </Paragraph>
+      </p>
     </div>
 
     <div class="definitions">
@@ -43,9 +43,6 @@
 </template>
 
 <script>
-  import Heading from '@/elements/Heading/Heading'
-  import Paragraph from '@/elements/Paragraph/Paragraph'
-
   import Branded from '@/mixins/branded'
   import Colored from '@/mixins/colored'
   import Indicating from '@/mixins/indicating'
@@ -60,10 +57,6 @@
    */
   export default {
     name: 'Definition',
-    components: {
-      Heading,
-      Paragraph
-    },
     mixins: [
       Branded,
       Colored,

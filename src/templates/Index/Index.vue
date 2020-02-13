@@ -21,8 +21,6 @@
             </li>
           </ul>
           <template #seeAlso>
-            <a :href="styleguideHref">
-              {{ $t('definition.seealso.styleguide') }}</a>,
             <a :href="storybookHref">
               {{ $t('definition.seealso.storybook') }}</a>
           </template>
@@ -66,9 +64,9 @@
           :attribution="$t('communication.rumi')">
           <span v-html="$t('communication.quote')"/>
         </Quote>
-        <Paragraph>
+        <p>
           {{ $t('communication.ie') }}
-        </Paragraph>
+        </p>
       </template>
 
       <template #contacts>
@@ -85,7 +83,7 @@
 
       <div class="panel">
         <div>
-          <Heading :level="6">{{ $t('panel.credits') }}</Heading>
+          <h6>{{ $t('panel.credits') }}</h6>
           <i18n path="panel.builtusing" tag="span">
             <a :href="vueLibraryHref">
               {{ $t('vue') }} {{ $t('vocabulary') }}</a> <!-- for the fullstops -->
@@ -114,8 +112,6 @@
 
 <script>
   import GitHubCorner from '@/elements/GitHubCorner/GitHubCorner'
-  import Heading from '@/elements/Heading/Heading'
-  import Paragraph from '@/elements/Paragraph/Paragraph'
 
   import Container from '@/layouts/Container/Container'
 
@@ -134,8 +130,6 @@
     name: 'Index',
     components: {
       GitHubCorner,
-      Heading,
-      Paragraph,
       Container,
       BrandImagery,
       Definition,
@@ -144,7 +138,6 @@
       Quote
     },
     data: function () {
-      const styleguideHref = 'styleguide'
       const storybookHref = 'storybook'
 
       const baseLibraryHref = 'https://creativecommons.github.io/cc-vocabulary'
@@ -174,7 +167,6 @@
         }
       ]
       return {
-        styleguideHref,
         storybookHref,
         baseLibraryHref,
         vueLibraryHref,
