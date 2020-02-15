@@ -66,16 +66,6 @@
         type: String,
         default: 'right',
         validator: val => ['left', 'right'].includes(val)
-      },
-      /**
-       * _the positioning of GitHub corner_
-       *
-       * ∈ {`'absolute'`, `'relative'`}
-       */
-      position: {
-        type: String,
-        default: 'relative',
-        validator: val => ['absolute', 'relative'].includes(val)
       }
     },
     computed: {
@@ -87,8 +77,7 @@
         return [
           ...this.invertibleClasses,
 
-          `${this.corner}-cornered`,
-          `${this.position}ly-positioned`
+          `${this.corner}-cornered`
         ]
       },
       target: function () {
