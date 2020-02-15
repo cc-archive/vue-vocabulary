@@ -8,18 +8,6 @@ repository on GitHub.
 </GitHubCorner>
 ```
 
-### Positioning set
-
-A GitHubCorner can be have absolute or `relative` positioning. By default, it
-has relative positioning. Using `absolute` positioning will position the GitHub
-corner relative to its first relatively positioned parent.
-
-```html
-<GitHubCorner  
-  position="absolute">
-</GitHubCorner>
-```
-
 ### Corner set
 
 A GitHub corner can be the left or right corner type. By default, you get the
@@ -44,8 +32,8 @@ A GitHub corner without color is black.
 <GitHubCorner/> 
 ```
 
-GitHub corners can be colored with any color from the set provided by
-Vocabulary. Black, in one of rare cases like this, looks best though.
+GitHub corners can be colored with either a black or white backgorund. 
+Black, in one of rare cases like this, looks best though.
 
 Also you may use one of the four shades, namely `lighter`, `light`, `dark` and `darker`, 
 to accentuate the color.
