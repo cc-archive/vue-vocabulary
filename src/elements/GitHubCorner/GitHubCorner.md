@@ -35,9 +35,6 @@ A GitHub corner without color is black.
 GitHub corners can be colored with either a black or white backgorund. 
 Black, in one of rare cases like this, looks best though.
 
-Also you may use one of the four shades, namely `lighter`, `light`, `dark` and `darker`, 
-to accentuate the color.
-
 ```jsx
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFillDrip, faSwatchbook } from '@fortawesome/free-solid-svg-icons'
@@ -47,22 +44,6 @@ library.add(faFillDrip, faSwatchbook);
 let color = '';
 let colorOptions = [
   { value: '', text: 'None' },
-  { value: 'tomato', text: 'Tomato' },
-  { value: 'gold', text: 'Gold' },
-  { value: 'green', text: 'Green' },
-  { value: 'blue', text: 'Blue' },
-  { value: 'orange', text: 'Orange' },
-  { value: 'turquoise', text: 'Turquoise' },
-];
-
-let shade = '';
-let shadeOptions = [
-  { value: '', text: 'Default' },
-  { value: 'lighter', text: 'Lighter' },
-  { value: 'light', text: 'Light' },
-  { value: 'normal', text: 'Normal' },
-  { value: 'dark', text: 'Dark' },
-  { value: 'darker', text: 'Darker' }
 ];
 
 <SelectField
@@ -95,17 +76,6 @@ inverted variant.
   <GridCell :span-set="[12, 6, 6, 6, 6]">
     <GitHubCorner
       corner="left"
-      is-inverted/>
-  </GridCell>
-  <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <GitHubCorner  
-      color="turquoise" 
-      is-inverted/>
-  </GridCell>
-  <GridCell :span-set="[12, 6, 6, 6, 6]">
-    <GitHubCorner  
-      color="turquoise"
-      corner="left" 
       is-inverted/>
   </GridCell>
 </Grid>
