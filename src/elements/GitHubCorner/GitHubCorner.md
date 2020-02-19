@@ -51,18 +51,10 @@ let colorOptions = [
   :color="color ? color : null"
   icon="fill-drip"
   :option-list="colorOptions"/>
-<SelectField
-  v-model="shade"
-  :color="color ? color : null"
-  :shade="shade ? shade : null"
-  icon="swatchbook"
-  :option-list="shadeOptions"
-  :is-disabled="color === ''"/>
 <br/>
 <br/>
 <GitHubCorner  
-  :color="color ? color : null" 
-  :shade="shade ? shade : null"/>
+  :color="color ? color : null" />
 ```
 
 If the GitHub corner is to be placed on a dark or non-white background, use the 
