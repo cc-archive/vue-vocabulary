@@ -82,9 +82,9 @@ contribute in some way.
   Documentation powered by Netlify.
 </p>
 
-###  FOR Contribution
+###  For Contribution
 
-**[Getting Started](INSTRUCTIONS.md)**
+**[Instruction Manual](INSTRUCTIONS.md)**
 
 We're always looking for contributors to help us find and fix bugs, build new 
 features, help us improve the project documentation or translate the project to
