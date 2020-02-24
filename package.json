@@ -7,8 +7,8 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "build": "node library/build.js",
-    "storybook": "vue-cli-service storybook:serve -s ./src/assets -p 8080",
-    "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs"
+    "storybook": "npm run lint && vue-cli-service storybook:serve -s ./src/assets -p 8080",
+    "build:documentation": " npm run lint && vue-cli-service storybook:build -s ./src/assets -o ./docs"
   },
   "dependencies": {
     "@creativecommons/vocabulary": "^1.0.0-beta.2",

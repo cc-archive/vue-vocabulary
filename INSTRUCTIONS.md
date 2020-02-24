@@ -75,10 +75,9 @@ $ git checkout -b branch_name
 Resolve the issue by changing the code. Update tests if need be.
 
 **Step 3:**
-Run the `lint` and `test:unit` tasks to ensure code quality and functionality.
+Run the `test:unit` tasks to ensure code quality and functionality.
 
 ```
-$ npm run lint
 $ npm run test:unit
 ```
 

@@ -63,7 +63,7 @@ Vocabulary is available as
 ### Demo
 
 The showcase of the true extent of Vocabulary can be found in the
-**[interactive storybook](https://cc-vue-vocabulary.netlify.com/storybook)**
+**[interactive storybook](https://cc-vue-vocabulary.netlify.com/)**
 for the library, showcasing the components therein and variants thereof, on GitHub
 Pages. Search for a particular component using the search field or just explore
 the collection of components. If you find one that catches your fancy, play with
@@ -82,10 +82,9 @@ contribute in some way.
   Documentation powered by Netlify.
 </p>
 
-### Contributing
+###  FOR Contribution
 
-
-**[GitHub repository](https://github.com/creativecommons/vue-vocabulary)**
+**[a relative link](INSTRUCTIONS.md)**
 
 We're always looking for contributors to help us find and fix bugs, build new 
 features, help us improve the project documentation or translate the project to
@@ -103,8 +102,6 @@ project in a number of ways.
 | **Write**     | If you have a knack for writing technical articles, you could be the voice of the library's documentation, making it easy to use and understand. |
 | **Share**     | If you can't contribute in these ways, you can refer the project to a friend who might be able to. Spreading the word is the easiest way to help out. |
 
-If you're interested, read the file `INSTRUCTIONS.md` in the 
-repository for instructions regarding contributing to the project.
 
 
 ### Disclaimer
