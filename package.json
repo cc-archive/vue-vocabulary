@@ -11,7 +11,7 @@
     "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs"
   },
     "lint-staged": {
-      "*.vue": "vue-cli-service lint"
+      "*.{vue,js}": "vue-cli-service lint --fix"
     },
   "dependencies": {
     "@creativecommons/vocabulary": "^1.0.0-beta.2",
