@@ -73,7 +73,9 @@
   "license": "MIT",
   "repository": "github:creativecommons/vue-vocabulary",
   "husky":{
-    "precommit":"yarn precommit"
+    "hooks":{
+      "precommit":"yarn precommit" 
+    }
   }
 }
 
