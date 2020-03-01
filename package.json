@@ -11,6 +11,14 @@
     "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs",
     "precommit": "lint-staged"
   },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,jsx,json,css}": [
+        "prettier --single-quote --write",
+        "git add"
+      ]
+    }
+  },
   "dependencies": {
     "@creativecommons/vocabulary": "^1.0.0-beta.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -25,11 +33,6 @@
     "twemoji": "^12.1.4",
     "vue": "^2.6.10",
     "vue-i18n": "^8.15.1"
-  },
-  "lint-staged":{
-    "*.{ts,js,css,json}":[
-      "vue-cli-service lint",
-    ]
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
@@ -80,7 +83,7 @@
   "repository": "github:creativecommons/vue-vocabulary",
   "husky": {
     "hooks": {
-      "precommit": "yarn precommit"
+      "pre-commit": "yarn run precommit"
     }
   }
 }
