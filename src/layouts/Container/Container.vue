@@ -17,6 +17,5 @@
   }
 </script>
 
-
 <style src="@creativecommons/vocabulary/css/layouts/Container.css">
 </style>
