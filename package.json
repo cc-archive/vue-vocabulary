@@ -9,7 +9,7 @@
     "build": "node library/build.js",
     "storybook": "vue-cli-service storybook:serve -s ./src/assets -p 8080",
     "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs",
-    "precommit": "yarn run test:unit && yarn run lint"
+    "precommit": "vue-cli-service lint"
   },
   "dependencies": {
     "@creativecommons/vocabulary": "^1.0.0-beta.2",
