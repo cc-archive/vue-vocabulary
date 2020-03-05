@@ -77,7 +77,7 @@
   "repository": "github:creativecommons/vue-vocabulary",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn run test:unit"
     }
   }
 }
