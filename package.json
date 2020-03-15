@@ -10,9 +10,6 @@
     "storybook": "vue-cli-service storybook:serve -s ./src/assets -p 8080",
     "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs"
   },
-    "lint-staged": {
-      "*.{vue,js}": "vue-cli-service lint --fix"
-    },
   "dependencies": {
     "@creativecommons/vocabulary": "^1.0.0-beta.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -54,7 +51,6 @@
     "fs-extra": "^8.1.0",
     "husky": "^4.2.3",
     "lerna": "^3.19.0",
-    "lint-staged": "^10.0.8",
     "react": "^16.12.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
@@ -77,7 +73,7 @@
   "repository": "github:creativecommons/vue-vocabulary",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test:unit"
+      "pre-commit": "npm run lint && npm run test:unit"
     }
   }
 }
