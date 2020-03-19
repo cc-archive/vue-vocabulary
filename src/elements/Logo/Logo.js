@@ -1,11 +1,11 @@
-import BrandImagery from '@/patterns/BrandImagery/BrandImagery'
+import Logo from '@/patterns/Logo/Logo'
 
 import { select } from '@storybook/addon-knobs'
 
-export default { title: 'Patterns|BrandImagery' }
+export default { title: 'Patterns|Logo' }
 
 export const creativeCommons = () => ({
-  components: { BrandImagery },
+  components: { Logo },
   props: {
     type: {
       default: () => select('Type', {
@@ -17,25 +17,25 @@ export const creativeCommons = () => ({
   },
   template: `
     <div>
-      <BrandImagery :type="type"/>
+      <Logo :type="type"/>
     </div>
   `
 })
 
 export const vocabulary = () => ({
-  components: { BrandImagery },
+  components: { Logo },
   template: `
     <div>
-      <BrandImagery brand="vocabulary" type="wordmark"/>
+      <Logo brand="vocabulary" type="wordmark"/>
     </div>
   `
 })
 
 export const fonts = () => ({
-  components: { BrandImagery },
+  components: { Logo },
   template: `
     <div>
-      <BrandImagery brand="fonts" type="wordmark"/>
+      <Logo brand="fonts" type="wordmark"/>
     </div>
   `
 })

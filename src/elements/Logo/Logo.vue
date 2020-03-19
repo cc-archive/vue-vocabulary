@@ -18,7 +18,7 @@
    * is worth your entire brand.
    */
   export default {
-    name: 'BrandImagery',
+    name: 'Logo',
     components: {
       ImageView
     },
