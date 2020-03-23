@@ -11,7 +11,7 @@
     "build:documentation": "vue-cli-service storybook:build -s ./src/assets -o ./docs"
   },
   "dependencies": {
-    "@creativecommons/vocabulary": "^1.0.0-beta.2",
+    "@creativecommons/vocabulary": "^1.0.0-beta.6",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
@@ -21,6 +21,8 @@
     "@vue/babel-preset-jsx": "^1.1.2",
     "core-js": "^3.4.4",
     "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "twemoji": "^12.1.4",
     "vue": "^2.6.10",
     "vue-i18n": "^8.15.1"
@@ -52,8 +54,6 @@
     "husky": "^4.2.3",
     "lerna": "^3.19.0",
     "react": "^16.12.0",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
     "vue-cli-plugin-i18n": "^0.6.0",
     "vue-cli-plugin-storybook": "^1.2.0",
     "vue-template-compiler": "^2.6.10"
