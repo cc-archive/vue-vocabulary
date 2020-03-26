@@ -3,24 +3,30 @@ import TableCell from '@/layouts/Table/TableCell'
 
 import Indicating from '@/knobs/indicating'
 
-export default { title: 'Layouts|TableCell' }
+export default {
+  title: 'Layouts|TableCell'
+}
 
 const content = `
   <template #head>
     <tr>
-      <TableCell is-heading>Prop</TableCell>
-      <TableCell is-heading>Effect</TableCell>
+      <TableCell is-heading>Column name</TableCell>
     </tr>
-  </template>
-  <tr>
-    <TableCell is-heading label="Prop:">Indication</TableCell>
-    <TableCell label="Effect:" :indication="indication">{{ indication }}</TableCell>
-</tr>
+    </template>
+    <tr>
+      <TableCell>Text</TableCell>
+    </tr>
+    <tr>
+      <TableCell isNumber>0</TableCell>
+    </tr>
 `
 
-export const indicating = () => ({
+export const BasicCell = () => ({
   mixins: [Indicating],
-  components: { Table, TableCell },
+  components: {
+    Table,
+    TableCell
+  },
   template: `
     <Table is-fixed>${content}</Table>
   `

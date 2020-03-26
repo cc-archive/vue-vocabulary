@@ -1,8 +1,7 @@
 <template>
   <div
     :is="tag"
-    class="cell"
-    :class="cellClasses">
+    :class="numberCell">
     <span class="label">
       {{ label }}
     </span>
@@ -50,6 +49,13 @@
       isActionable: {
         type: Boolean,
         default: false
+      },
+      /**
+       * _whether the cell is a number
+       */
+      isNumber: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -61,7 +67,9 @@
           }
         ]
       },
-
+      numberCell: function () {
+        return this.isNumber ? 'number-cell' : ''
+      },
       tag: function () {
         return this.isHeading ? 'th' : 'td'
       }
@@ -69,5 +77,5 @@
   }
 </script>
 
-<style src="@creativecommons/vocabulary/css/layouts/TableCell.css">
+<style src="@creativecommons/vocabulary/css/vocabulary.css">
 </style>

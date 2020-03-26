@@ -1,0 +1,21 @@
+import TableCell from '@/layouts/Table/TableCell'
+
+<Meta title="Table/Table Cell" components={TableCell}/>
+
+<Props of={TableCell} />
+
+<Preview>
+    <Story name="Table Cell">{`
+        {
+        template: '
+        
+    <tr>
+      <TableCell is-heading>Prop</TableCell>
+      </tr>
+    
+      <tr>
+      <TableCell isNumber>0</TableCell>
+    </tr>
+        '}
+    `}</Story>
+</Preview>
