@@ -28,7 +28,8 @@ addDecorator(
 const order = {
   'Vue Vocabulary': [
     'Introduction',
-    'Contribution'
+    'Contribution',
+    'Usage'
   ],
 }
 const families = Object.keys(order)
