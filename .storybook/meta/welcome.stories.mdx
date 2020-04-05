@@ -1,6 +1,9 @@
-export default { title: 'Vue Vocabulary' }
+import {Preview,Meta,Story} from '@storybook/addon-docs'
 
-export const Welcome = () => ({
+<Meta title = 'Vue Vocabulary'/>
+
+<Preview>
+<Story name = "Introduction">{{
   template: `
 <div class="welcome" style="text-align: center;">
   <!-- TODO Add logo from Vocabulary assets -->
@@ -15,5 +18,6 @@ export const Welcome = () => ({
     <img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>
   </a>
 </div>
-`
-})
+`}}
+</Story>
+</Preview>

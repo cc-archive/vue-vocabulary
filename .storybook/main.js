@@ -1,6 +1,6 @@
 module.exports = {
   stories: [
-    './welcome.stories.js',
+    './meta/*.stories.mdx',
   ],
   addons: [
     '@storybook/addon-knobs',
@@ -9,5 +9,6 @@ module.exports = {
     '@storybook/addon-backgrounds',
     '@storybook/addon-viewport',
     '@storybook/addon-docs'
-  ]
-}
+  ],
+};
+
