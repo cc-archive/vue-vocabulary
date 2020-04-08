@@ -9,28 +9,12 @@ import viewports from './viewport'
 
 import '@creativecommons/vocabulary/css/vocabulary.css'
 
-// Customise storybook
-
-// Customise stories
-
-addDecorator(withA11y)
-addDecorator(withKnobs)
-addDecorator(
-  () => ({
-    i18n,
-    template: '<story/>',
-    // https://github.com/storybookjs/storybook/issues/6548#issuecomment-504336665
-    beforeCreate: function () {
-      this.$root._i18n = this.$i18n
-    }
-  })
-)
 const order = {
   'Vue Vocabulary': [
     'Introduction',
     'Contribution',
     'Usage'
-  ],
+  ]
 }
 const families = Object.keys(order)
 
@@ -54,7 +38,25 @@ addParameters({
       }
     }
   },
+  backgrounds: [
+    { name: 'canvas', value: '#f5f5f5', default: true },
+    { name: 'white', value: '#ffffff' },
+    { name: 'black', value: '#000000' }
+  ],
   viewport: {
     viewports
   }
 })
+
+addDecorator(withA11y)
+addDecorator(withKnobs)
+addDecorator(
+  () => ({
+    i18n,
+    template: '<story/>',
+    // https://github.com/storybookjs/storybook/issues/6548#issuecomment-504336665
+    beforeCreate: function () {
+      this.$root._i18n = this.$i18n
+    }
+  })
+)
