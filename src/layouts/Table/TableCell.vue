@@ -1,17 +1,25 @@
 <template>
-  <div
-    :is="tag"
-    :class="numberCell">
-    <span class="label">
-      {{ label }}
-    </span>
-    <!-- Content goes here -->
-    <slot/>
-  </div>
+  <thead v-if="isHeading">
+    <th>
+      <span class="label">
+        {{ label }}
+      </span>
+      <!-- Content goes here -->
+      <slot/>
+    </th>
+  </thead>
+  <tr v-else>
+    <td :class="numberCell">
+      <span class="label">
+        {{ label }}
+      </span>
+      <!-- Content goes here -->
+      <slot/>
+    </td>
+  </tr>
 </template>
 
 <script>
-  import Indicating from '@/mixins/indicating'
 
   /**
    * ### Cells are the pillars of tables.
@@ -23,9 +31,6 @@
    */
   export default {
     name: 'TableCell',
-    mixins: [
-      Indicating
-    ],
     props: {
       /**
        * _the label for the content of the cell_
@@ -44,13 +49,6 @@
         default: false
       },
       /**
-       * _whether the cell does something on click_
-       */
-      isActionable: {
-        type: Boolean,
-        default: false
-      },
-      /**
        * _whether the cell is a number
        */
       isNumber: {
@@ -59,19 +57,10 @@
       }
     },
     computed: {
-      cellClasses: function () {
-        return [
-          ...this.indicatingClasses,
-          {
-            actionable: this.isActionable
-          }
-        ]
-      },
       numberCell: function () {
-        return this.isNumber ? 'number-cell' : ''
-      },
-      tag: function () {
-        return this.isHeading ? 'th' : 'td'
+        return [
+          this.isNumber ? 'number-cell' : ''
+        ]
       }
     }
   }
