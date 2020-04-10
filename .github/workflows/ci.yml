@@ -48,8 +48,6 @@ jobs:
         key: node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
-      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
-      if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm install --prefer-offline --no-audit
 
     - name: Run lint
@@ -76,8 +74,6 @@ jobs:
         key: node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
-      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
-      if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm install --prefer-offline --no-audit
 
     - name: Run unit tests
@@ -104,8 +100,6 @@ jobs:
         key: node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
-      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
-      if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm install --prefer-offline --no-audit
 
     - name: Run snapshot tests
