@@ -1,0 +1,140 @@
+name: vue-vocabulary-ci
+
+on: [push, pull_request]
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.16.1'
+
+      - id: cache-node-modules
+        name: Cache Node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm   # npm caches files in ~/.npm
+          key: node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm install --no-audit
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup 
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.1'
+
+    - id: cache-node-modules
+      name: Cache Node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm   # npm caches files in ~/.npm
+        key: node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm install --prefer-offline --no-audit
+
+    - name: Run lint
+      run: npm run lint
+
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.1'
+
+    - id: cache-node-modules
+      name: Cache Node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm   # npm caches files in ~/.npm
+        key: node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm install --prefer-offline --no-audit
+
+    - name: Run tests
+      run: npm run test:unit
+
+  snapshots:
+    name: Visual tests
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.1'
+
+    - id: cache-node-modules
+      name: Cache Node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm  # npm caches files in ~/.npm
+        key: node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      run: npm install --prefer-offline --no-audit
+
+    - name: Run tests
+      run: npm run test:snapshot
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: setup
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.1'
+
+    - id: cache-node-modules
+      name: Cache Node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm  # npm caches files in ~/.npm
+        key: node-${{ hashFiles('**/package-lock.json') }}
+
+    - name: Install dependencies
+      # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
+      if: steps.cache-node-modules.outputs.cache-hit != 'true' 
+      run: npm install --prefer-offline --no-audit
+
+    - name: Run build
+      run: npm run build
