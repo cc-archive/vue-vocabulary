@@ -1,6 +1,16 @@
 name: vue-vocabulary-ci
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  CI: true
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
 
 jobs:
   setup:
@@ -10,21 +20,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12.16.1'
 
       - id: cache-node-modules
-        name: Cache Node modules
+        name: Cache Node.js modules
         uses: actions/cache@v1
         with:
-          path: ~/.npm   # npm caches files in ~/.npm
+          path: ~/.npm  # npm caches files in ~/.npm
           key: node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        # Using the cache-hit output, subsequent steps can be skipped when a cache hit occurs on the key.
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install --no-audit
 
   lint:
@@ -35,16 +43,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Node
+    - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '12.16.1'
 
     - id: cache-node-modules
-      name: Cache Node modules
+      name: Cache Node.js modules
       uses: actions/cache@v1
       with:
-        path: ~/.npm   # npm caches files in ~/.npm
+        path: ~/.npm  # npm caches files in ~/.npm
         key: node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
@@ -61,21 +69,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Node
+    - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '12.16.1'
 
     - id: cache-node-modules
-      name: Cache Node modules
+      name: Cache Node.js modules
       uses: actions/cache@v1
       with:
-        path: ~/.npm   # npm caches files in ~/.npm
+        path: ~/.npm  # npm caches files in ~/.npm
         key: node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install dependencies
       run: npm install --prefer-offline --no-audit
 
-    - name: Run unit tests
+    - name: Run tests
       run: npm run test:unit
 
