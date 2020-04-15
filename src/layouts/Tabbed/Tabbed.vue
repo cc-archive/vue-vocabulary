@@ -23,7 +23,7 @@
         :key="index"
         :component="tabPane"
         tag="div"
-        :classList="['is-active', {active: tabPane.isActive}]"/>
+        :classList="['tabs-panel', {'is-active': tabPane.isActive}]"/>
     </Section>
     <div v-show="false">
       <!-- @slot [`TabbedPane`](#/Layouts/TabbedPane) components go here -->
@@ -34,7 +34,6 @@
 
 <script>
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
-
   /**
    * ### Tabbed views show menu-selected content.
    *
