@@ -1,0 +1,34 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks'
+import Footer from '../patterns/Footer/Footer.vue'
+
+<Meta title="Patterns/Footer" component={ Footer }/>
+
+# Footer
+
+<Preview>
+<Story name='Basic'>{{
+  components: { Footer },
+  template: `<Footer>
+  <ul class="menu" slot="footer-navigation">
+  <li>
+    <a class="menu-item" href="!#">Item1</a>
+  </li>
+  <li>
+    <a class="menu-item" href="!#">Item2</a>
+  </li>
+  <li>
+    <a class="menu-item" href="!#">Item3</a>
+  </li>
+  <li>
+    <a class="menu-item" href="!#">Item4</a>
+  </li>
+  <li>
+    <a class="menu-item" href="!#">Item5</a>
+  </li>
+  <li>
+    <a class="menu-item" href="!#">Item6</a>
+  </li>
+</ul>
+  </Footer>`,
+}}</Story>
+</Preview>
