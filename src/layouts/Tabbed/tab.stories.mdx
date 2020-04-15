@@ -1,17 +1,20 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { figmaConfig } from './helpers'
 import Tabbed from '@/layouts/Tabbed/Tabbed'
 import TabbedPane from '@/layouts/Tabbed/TabbedPane'
 
+<Meta title="Layouts/Tabs" />
 
-
-export default { title: 'Layouts|Tabbed' }
-
-export const tab = () => ({
+<Preview>
+  <Story name="Tab" parameters={{
+    design: figmaConfig('933%3A1')
+  }}>{({
   components: { Tabbed, TabbedPane },
   template: `
     <Tabbed>
       <TabbedPane title="Music">This is the first tab.</TabbedPane>
       <TabbedPane title="Pictures">This is the second tab.</TabbedPane>
       <TabbedPane title="Document">This is the third tab.</TabbedPane>
-    </Tabbed>
-  `
-})s
+    </Tabbed>`
+})}</Story>
+</Preview>
