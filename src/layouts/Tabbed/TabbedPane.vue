@@ -8,10 +8,6 @@
 </template>
 
 <script>
-  import Branded from '@/mixins/branded'
-  import Colored from '@/mixins/colored'
-  import Indicating from '@/mixins/indicating'
-
   /**
    * ### Panes are the content of tabbed views.
    *
@@ -24,11 +20,6 @@
    */
   export default {
     name: 'TabbedPane',
-    mixins: [
-      Branded,
-      Colored,
-      Indicating
-    ],
     inject: [
       'tabPaneList'
     ],
