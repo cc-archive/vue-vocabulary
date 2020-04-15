@@ -14,7 +14,8 @@ const order = {
     'Introduction',
     'Contribution',
     'Usage'
-  ]
+  ],
+  'Patterns' : []
 }
 const families = Object.keys(order)
 
