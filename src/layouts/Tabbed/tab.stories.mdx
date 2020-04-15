@@ -1,0 +1,17 @@
+import Tabbed from '@/layouts/Tabbed/Tabbed'
+import TabbedPane from '@/layouts/Tabbed/TabbedPane'
+
+
+
+export default { title: 'Layouts|Tabbed' }
+
+export const tab = () => ({
+  components: { Tabbed, TabbedPane },
+  template: `
+    <Tabbed>
+      <TabbedPane title="Music">This is the first tab.</TabbedPane>
+      <TabbedPane title="Pictures">This is the second tab.</TabbedPane>
+      <TabbedPane title="Document">This is the third tab.</TabbedPane>
+    </Tabbed>
+  `
+})s
