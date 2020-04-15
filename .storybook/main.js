@@ -1,6 +1,6 @@
 module.exports = {
   stories: [
-    './welcome.stories.js',
+    './meta/*.stories.mdx',
     '../src/layouts/Tabbed/**.stories.mdx'
   ],
   addons: [
