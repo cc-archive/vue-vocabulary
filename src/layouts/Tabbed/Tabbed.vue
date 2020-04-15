@@ -1,28 +1,30 @@
 <template>
-  <div class="vocab tabbed" :class="tabbedClasses">
-    <ul class="tabs">
+  <div>
+  <div class="tabs">
+    <ul>
       <li
         v-for="(tabPane, index) in tabPaneList"
         :key="index"
-        class="tab"
-        :class="{ active: index === activeTabIndex}"
+        :class="{ 'is-active': tabPane.isActive}"
         @click="changeTab(index)">
         <SlotRenderer
           :component="tabPane"
           name="tab"
-          tag="span">
+          tag="span"><a>
           {{ tabPane.title }}
+          </a>
         </SlotRenderer>
       </li>
     </ul>
-    <div>
+    </div>
+   <Section>
       <SlotRenderer
         v-for="(tabPane, index) in tabPaneList"
         :key="index"
         :component="tabPane"
         tag="div"
-        :classList="['content', {active: tabPane.isActive}]"/>
-    </div>
+        :classList="['is-active', {active: tabPane.isActive}]"/>
+    </Section>
     <div v-show="false">
       <!-- @slot [`TabbedPane`](#/Layouts/TabbedPane) components go here -->
       <slot/>
@@ -32,15 +34,6 @@
 
 <script>
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
-
-  import Branded from '@/mixins/branded'
-  import Colored from '@/mixins/colored'
-  import Indicating from '@/mixins/indicating'
-  import Rounded from '@/mixins/rounded'
-  import Simplified from '@/mixins/simplified'
-
-  import Invertible from '@/mixins/invertible'
-  import Raisable from '@/mixins/raisable'
 
   /**
    * ### Tabbed views show menu-selected content.
@@ -52,16 +45,6 @@
    */
   export default {
     name: 'Tabbed',
-    mixins: [
-      Branded,
-      Colored,
-      Indicating,
-      Rounded,
-      Simplified,
-
-      Invertible,
-      Raisable
-    ],
     provide: function () {
       return {
         tabPaneList: this.tabPaneList
@@ -79,13 +62,6 @@
       initialActiveTabIndex: {
         type: Number,
         default: 0
-      },
-      /**
-       * _whether to have curvature on the vertices of the component_
-       */
-      isRounded: {
-        type: Boolean,
-        default: false
       }
     },
     data: function () {
@@ -95,100 +71,6 @@
       }
     },
     computed: {
-      processedBrandedClasses: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.brand) {
-            return activeTab.brandedClasses
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.brandedClasses
-      },
-      processedColoredClasses: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.color) {
-            return activeTab.coloredClasses
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.coloredClasses
-      },
-      processedIndicatingClasses: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.indication) {
-            return activeTab.indicatingClasses
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.indicatingClasses
-      },
-
-      tabbedClasses: function () {
-        return [
-          ...this.simplifiedClasses,
-
-          ...this.invertibleClasses,
-
-          ...this.processedBrandedClasses,
-          ...this.processedColoredClasses,
-          ...this.processedIndicatingClasses,
-          {
-            'rounded': this.isRounded
-          }
-        ]
-      },
-
-      processedBrand: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.brand) {
-            return activeTab.brand
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.brand
-      },
-      processedColor: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.color) {
-            return activeTab.color
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.color
-      },
-      processedShade: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.shade) {
-            return activeTab.shade
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.shade
-      },
-      processedIndication: function () {
-        try {
-          let activeTab = this.activeTab
-          if (activeTab.indication) {
-            return activeTab.indication
-          }
-        } catch (e) {
-          // Do nothing
-        }
-        return this.indication
-      },
-
       activeTab: function () {
         return this.tabPaneList[this.activeTabIndex]
       }
@@ -205,3 +87,6 @@
     }
   }
 </script>
+
+<style src="@creativecommons/vocabulary/css/vocabulary.css">
+</style>
