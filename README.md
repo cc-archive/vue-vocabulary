@@ -23,10 +23,10 @@
     style="margin-right: 1em;">
     <img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/vue-vocabulary.svg?color=brightgreen"/>
   </a>
-  <a 
-    href="https://circleci.com/gh/creativecommons/vue-vocabulary/tree/master"
+  <a
+    href="https://github.com/creativecommons/vue-vocabulary/actions"
     style="margin-right: 1em;">
-    <img alt="Circle CI" src="https://circleci.com/gh/creativecommons/vue-vocabulary/tree/master.svg?style=shield"/>
+    <img alt="GitHub Actions" src="https://img.shields.io/github/workflow/status/creativecommons/vue-vocabulary/vue-vocabulary-ci/master?label=vue-vocabulary-ci"/>
   </a>
   <a 
     href="https://github.com/creativecommons/vue-vocabulary/blob/master/CONTRIBUTING.md"
