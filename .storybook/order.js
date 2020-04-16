@@ -4,7 +4,8 @@ const order = {
     'Contribution',
     'Usage'
   ],
-  'Layouts': []
+  'Layouts': [],
+  'Patterns': []
 }
 const families = Object.keys(order)
 
