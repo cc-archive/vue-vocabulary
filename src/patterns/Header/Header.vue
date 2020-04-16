@@ -70,5 +70,4 @@
     }
   }
 </script>
-<style src="@creativecommons/vocabulary/css/vocabulary.css">
-</style>
+
