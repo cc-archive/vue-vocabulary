@@ -7,8 +7,8 @@
 
 import SlotRenderer from './utils/SlotRenderer/SlotRenderer'
 
-import Tabs from './layouts/Tabs/Tabs'
-import Tab from './layouts/Tabs/Tab'
+import Tabbed from './layouts/Tabbed/Tabbed'
+import TabbedPane from './layouts/Tabbed/TabbedPane'
 import Table from './layouts/Table/Table'
 import TableCell from './layouts/Table/TableCell'
 
@@ -20,8 +20,8 @@ import Locale from './patterns/Locale/Locale'
 export {
   SlotRenderer,
 
-  Tabs,
-  Tab,
+  Tabbed,
+  TabbedPane,
   Table,
   TableCell,
 
@@ -35,8 +35,8 @@ export default {
   install: function (Vue) {
     Vue.component('SlotRenderer', SlotRenderer)
 
-    Vue.component('Tabs', Tabs)
-    Vue.component('Tab', Tab)
+    Vue.component('Tabbed', Tabbed)
+    Vue.component('TabbedPane', TabbedPane)
     Vue.component('Table', Table)
     Vue.component('TableCell', TableCell)
 
