@@ -1,30 +1,30 @@
 <template>
   <div>
-  <div class="tabs">
-    <ul>
-      <li
-        v-for="(tabPane, index) in tabPaneList"
-        :key="index"
-        :class="{ 'is-active': tabPane.isActive}"
-        @click="changeTab(index)">
-        <SlotRenderer
-          :component="tabPane"
-          name="tab"
-          tag="span"><a>
-          {{ tabPane.title }}
-          </a>
-        </SlotRenderer>
-      </li>
-    </ul>
+    <div class="tabs">
+      <ul>
+        <li
+          v-for="(tabPane, index) in tabPaneList"
+          :key="index"
+          :class="{ 'is-active': index === activeTabIndex }"
+          @click="changeTab(index)">
+          <SlotRenderer
+            :component="tabPane"
+            name="tab"
+            tag="a">
+            {{ tabPane.title }}
+          </SlotRenderer>
+        </li>
+      </ul>
     </div>
-   <Section>
+    <div class="tabs-content">
       <SlotRenderer
         v-for="(tabPane, index) in tabPaneList"
         :key="index"
+        class="tabs-panel"
         :component="tabPane"
         tag="div"
-        :classList="['tabs-panel', {'is-active': tabPane.isActive}]"/>
-    </Section>
+        :classList="['tabs-panel', {'is-active': index === activeTabIndex }]"/>
+    </div>
     <div v-show="false">
       <!-- @slot [`TabbedPane`](#/Layouts/TabbedPane) components go here -->
       <slot/>
@@ -34,6 +34,7 @@
 
 <script>
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
+
   /**
    * ### Tabbed views show menu-selected content.
    *
