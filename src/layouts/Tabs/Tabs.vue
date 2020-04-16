@@ -34,14 +34,6 @@
 <script>
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
 
-  /**
-   * ### Tabs views show menu-selected content.
-   *
-   * When there is a slot of data with the element of choice, a tabs view
-   * allows the user to choose a part of the information by making a selection
-   * out of several tabs. Tabs can act as pseudo-navigation or in-page
-   * navigation.
-   */
   export default {
     name: 'Tabs',
     provide: function () {

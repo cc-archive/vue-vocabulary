@@ -8,16 +8,6 @@
 </template>
 
 <script>
-  /**
-   * ### Panes are the content of tabs views.
-   *
-   * A pane is a part of a tabbed view consisting of content in a
-   * [Section](#/Layouts/Section) and a tab that allows switching to it. The
-   * content of the pane is not visible unless it is activated by clicking on
-   * its tab.
-   *
-   * @see For example usage, see [Tabbs](#/Layouts/Tabs).
-   */
   export default {
     name: 'Tab',
     inject: [
