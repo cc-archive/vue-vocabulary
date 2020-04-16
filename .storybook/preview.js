@@ -1,25 +1,31 @@
 import { addDecorator, addParameters } from '@storybook/vue'
 
-import { withA11y } from '@storybook/addon-a11y'
+import { withDesign } from 'storybook-addon-designs'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import i18n from '@/i18n'
 
 import viewports from './viewport'
+import order from './order'
 
 import '@creativecommons/vocabulary/css/vocabulary.css'
 
-// Customise storybook
-
 addParameters({
+  options: {
+    showRoots: true,
+    storySort: order
+  },
+  backgrounds: [
+    { name: 'canvas', value: '#f5f5f5', default: true },
+    { name: 'white', value: '#ffffff' },
+    { name: 'black', value: '#000000' }
+  ],
   viewport: {
     viewports
   }
 })
 
-// Customise stories
-
-addDecorator(withA11y)
+addDecorator(withDesign)
 addDecorator(withKnobs)
 addDecorator(
   () => ({
