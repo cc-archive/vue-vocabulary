@@ -3,7 +3,8 @@
     "SlotRenderer"
   ],
   "layouts": [
-    "Tabs",
+    "Tab",
+    ["Tab","s"],
     "Table",
     ["Table", "Cell"]
   ],
