@@ -37,29 +37,11 @@
 </template>
 
 <script>
-  /**
-   * ### Header opens the page.
-   *
-   * The header displays information about the site such as its branding and
-   * name as well as navigation links.
-   */
   export default {
     name: 'Header',
     props: {
       size: {
         type: Number
-      },
-      height: {
-        type: Number,
-        default: 200
-      }
-    },
-    computed: {
-      bgrndcolor () {
-        return {
-          'background-color': this.bgColor,
-          height: `${this.height}px`
-        }
       }
     }
   }
