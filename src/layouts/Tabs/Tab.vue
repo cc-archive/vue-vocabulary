@@ -9,19 +9,19 @@
 
 <script>
   /**
-   * ### Panes are the content of tabbed views.
+   * ### Panes are the content of tabs views.
    *
    * A pane is a part of a tabbed view consisting of content in a
    * [Section](#/Layouts/Section) and a tab that allows switching to it. The
    * content of the pane is not visible unless it is activated by clicking on
    * its tab.
    *
-   * @see For example usage, see [Tabbed](#/Layouts/Tabbed).
+   * @see For example usage, see [Tabbs](#/Layouts/Tabs).
    */
   export default {
-    name: 'TabbedPane',
+    name: 'Tab',
     inject: [
-      'tabPaneList'
+      'tabList'
     ],
     props: {
       /**
@@ -39,12 +39,12 @@
       }
     },
     created: function () {
-      this.tabPaneList.push(this)
+      this.tabList.push(this)
     },
     beforeDestroy: function () {
-      const index = this.tabPaneList.indexOf(this)
+      const index = this.tabList.indexOf(this)
       if (index >= 0) {
-        this.tabPaneList.splice(index, 1)
+        this.tabList.splice(index, 1)
       }
     }
   }

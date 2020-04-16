@@ -3,30 +3,29 @@
     <div class="tabs">
       <ul>
         <li
-          v-for="(tabPane, index) in tabPaneList"
+          v-for="(tab, index) in tabList"
           :key="index"
           :class="{ 'is-active': index === activeTabIndex }"
           @click="changeTab(index)">
           <SlotRenderer
-            :component="tabPane"
+            :component="tab"
             name="tab"
             tag="a">
-            {{ tabPane.title }}
+            {{ tab.title }}
           </SlotRenderer>
         </li>
       </ul>
     </div>
     <div class="tabs-content">
       <SlotRenderer
-        v-for="(tabPane, index) in tabPaneList"
+        v-for="(tab, index) in tabList"
         :key="index"
-        class="tabs-panel"
-        :component="tabPane"
+        :component="tab"
         tag="div"
         :classList="['tabs-panel', {'is-active': index === activeTabIndex }]"/>
     </div>
     <div v-show="false">
-      <!-- @slot [`TabbedPane`](#/Layouts/TabbedPane) components go here -->
+      <!-- @slot [`Tab`](#/Layouts/Tab) components go here -->
       <slot/>
     </div>
   </div>
@@ -36,18 +35,18 @@
   import SlotRenderer from '@/utils/SlotRenderer/SlotRenderer'
 
   /**
-   * ### Tabbed views show menu-selected content.
+   * ### Tabs views show menu-selected content.
    *
-   * When there is a slot of data with the element of choice, a tabbed view
+   * When there is a slot of data with the element of choice, a tabs view
    * allows the user to choose a part of the information by making a selection
    * out of several tabs. Tabs can act as pseudo-navigation or in-page
    * navigation.
    */
   export default {
-    name: 'Tabbed',
+    name: 'Tabs',
     provide: function () {
       return {
-        tabPaneList: this.tabPaneList
+        tabList: this.tabList
       }
     },
     components: {
@@ -66,24 +65,24 @@
     },
     data: function () {
       return {
-        tabPaneList: [],
+        tabList: [],
         activeTabIndex: this.initialActiveTabIndex
       }
     },
     computed: {
       activeTab: function () {
-        return this.tabPaneList[this.activeTabIndex]
+        return this.tabList[this.activeTabIndex]
       }
     },
     methods: {
       changeTab: function (index) {
-        this.tabPaneList[this.activeTabIndex].isActive = false
+        this.tabList[this.activeTabIndex].isActive = false
         this.activeTabIndex = index
-        this.tabPaneList[this.activeTabIndex].isActive = true
+        this.tabList[this.activeTabIndex].isActive = true
       }
     },
     mounted: function () {
-      this.tabPaneList[this.activeTabIndex].isActive = true
+      this.tabList[this.activeTabIndex].isActive = true
     }
   }
 </script>
