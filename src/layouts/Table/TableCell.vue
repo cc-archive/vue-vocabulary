@@ -1,22 +1,18 @@
 <template>
-  <thead v-if="isHeading">
-    <th>
+    <th v-if="isHeading">
       <span class="label">
         {{ label }}
       </span>
       <!-- Content goes here -->
       <slot/>
     </th>
-  </thead>
-  <tr v-else>
-    <td :class="numberCell">
+    <td v-else :class="numberCell">
       <span class="label">
         {{ label }}
       </span>
       <!-- Content goes here -->
       <slot/>
     </td>
-  </tr>
 </template>
 
 <script>
@@ -40,9 +36,6 @@
       },
       /**
        * _whether the cell is of a heading type_
-       *
-       * This switches the component to the `th` tag instead of the default `td`
-       * tag.
        */
       isHeading: {
         type: Boolean,
