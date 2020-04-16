@@ -1,5 +1,4 @@
 <template>
-<div>
   <header>
       <nav class="navbar" :class="size">
         <div class="navbar-brand">
@@ -35,8 +34,6 @@
         </div>
       </nav>
     </header>
-    <div :style="bgrndcolor"></div>
-    </div>
 </template>
 
 <script>
@@ -51,9 +48,6 @@
     props: {
       size: {
         type: Number
-      },
-      bgColor: {
-        type: String
       },
       height: {
         type: Number,
