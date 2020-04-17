@@ -42,19 +42,15 @@
     props: {
       size: {
         type: Number
-      }
-    },
-    data: function () {
-      return {
-        drop: [
-          { title: 'Dropdown',
-            items: ['ITEM 1', 'ITEM 2', 'ITEM 3']
-          }
-        ],
-        nonDrop: [
-          { title: 'No Dropdown' }
-        ]
-      }
+      },
+      nonDrop:
+        {
+          type: Array
+        },
+      drop:
+        {
+          type: Array
+        }
     }
   }
 </script>
