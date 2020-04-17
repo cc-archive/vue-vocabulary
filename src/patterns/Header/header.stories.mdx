@@ -20,11 +20,7 @@ CC Search.
   components: { Header },
   template: `
   <div>
-    <Header size="350px"  :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[
-          { title: 'Dropdown',
-            items: ['ITEM 1', 'ITEM 2', 'ITEM 3']
-          }
-        ]"/>
+    <Header size="350px" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
     <div style="background-color: rgb(237, 89, 47); height: 200px;" />
   </div>
     `
@@ -41,7 +37,7 @@ interact more within the same page or section. It is not recommended for website
   components: { Header },
   template: `
   <div>
-    <Header size="350px" />
+    <Header size="350px" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
     <div style="background-color: rgb(4, 166, 53); height: 200px;" />
   </div>
     `

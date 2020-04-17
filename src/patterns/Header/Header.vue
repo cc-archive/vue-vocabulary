@@ -43,14 +43,12 @@
       size: {
         type: Number
       },
-      nonDrop:
-        {
-          type: Array
-        },
-      drop:
-        {
-          type: Array
-        }
+      nonDrop: {
+        type: Array
+      },
+      drop: {
+        type: Array
+      }
     }
   }
 </script>
