@@ -1,6 +1,6 @@
 <template>
   <header>
-      <nav class="navbar" :class="size">
+      <nav class="navbar" :class = size>
         <div class="navbar-brand">
           <a class="has-text-black">
             <svg
@@ -20,15 +20,15 @@
         <div class="navbar-menu is-active">
           <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link is-arrowless">Dropdown<i class="icon caret-down"></i></a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item">Item 1</a>
-                <a class="navbar-item">Item 2</a>
-                <a class="navbar-item">Item 3</a>
+              <div v-for="item in drop" :key="item">
+                <a class="navbar-link is-arrowless"> {{ item.title }} <i class="icon caret-down"></i></a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" v-for="item in item.items" :key="item">{{ item }}</a>
+                </div>
               </div>
             </div>
-            <a class="navbar-item">
-              No dropdown
+            <a class="navbar-item" v-for="item in nonDrop" :key="item.title">
+              {{ item.title }}
             </a>
           </div>
         </div>
@@ -42,6 +42,18 @@
     props: {
       size: {
         type: Number
+      }
+    },
+    data: function () {
+      return {
+        drop: [
+          { title: 'Dropdown',
+            items: ['ITEM 1', 'ITEM 2', 'ITEM 3']
+          }
+        ],
+        nonDrop: [
+          { title: 'No Dropdown' }
+        ]
       }
     }
   }
