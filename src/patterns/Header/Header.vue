@@ -8,7 +8,6 @@
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="xMidyMid meet"
               viewBox="0 0 304 73">
-              <use href="logos/cc/logomark.svg#logomark"></use>
             </svg>
           </a>
           <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
