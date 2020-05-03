@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar" :class = size>
+    <nav class="navbar isSmall ? 320px:350px">
       <div class="navbar-brand">
         <a class="has-text-black">
           <svg
@@ -41,8 +41,8 @@
   export default {
     name: 'Header',
     props: {
-      size: {
-        type: Number
+      isSmall: {
+        type: Boolean
       },
       nonDrop: {
         type: Array
