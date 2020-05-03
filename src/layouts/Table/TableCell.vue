@@ -1,13 +1,13 @@
 <template>
-    <th v-if="isHeading">
-      <span class="label">
+    <th v-if="isHeading" class="has-background-grey-lighter">
+      <span>
         {{ label }}
       </span>
       <!-- Content goes here -->
       <slot/>
     </th>
     <td v-else :class="numberCell">
-      <span class="label">
+      <span>
         {{ label }}
       </span>
       <!-- Content goes here -->
