@@ -6,7 +6,7 @@
             <svg
               class="logo"
               xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidyMid meet"
+              preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 304 73">
               <use :href="`${svg}#logomark`"></use>
             </svg>
