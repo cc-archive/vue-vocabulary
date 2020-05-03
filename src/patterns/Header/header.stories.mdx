@@ -14,13 +14,13 @@ can access and move from page to page easily. This version is not recommended fo
 CC Search.
 
 <Preview>
-  <Story name="Big" isSmall="false" parameters={{
+  <Story name="Big" height="350px" parameters={{
     design: figmaConfig('179%3A0')
   }}>{{
   components: { Header },
   template: `
   <div>
-    <Header size="350px" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
+    <Header isSmall="false" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
     <div style="background-color: rgb(237, 89, 47); height: 200px;" />
   </div>
     `
@@ -31,13 +31,13 @@ The small header version was created for products where functionalities prevail 
 interact more within the same page or section. It is not recommended for website like Summit nor Global Network.
 
 <Preview>
-  <Story name="Small" isSmall="true"  parameters={{
+  <Story name="Small" height="320px" parameters={{
     design: figmaConfig('179%3A0')
   }}>{{
   components: { Header },
   template: `
   <div>
-    <Header size="350px" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
+    <Header isSmall="true" :nonDrop= "[{ title: 'No Dropdown' }]" :drop= "[{ title: 'Dropdown',items: ['ITEM 1', 'ITEM 2', 'ITEM 3']}]" />
     <div style="background-color: rgb(4, 166, 53); height: 200px;" />
   </div>
     `
