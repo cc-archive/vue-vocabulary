@@ -27,5 +27,5 @@ export default create({
   // Branding
   brandTitle: 'Vue Vocabulary',
   brandUrl: 'https://opensource.creativecommons.org/cc-vue-vocabulary',
-  brandImage: 'logos/products/vocabulary.svg#vocabulary'
+  brandImage: 'https://raw.githubusercontent.com/creativecommons/vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true'
 })
