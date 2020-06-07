@@ -1,0 +1,27 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+import { figmaConfig } from '../../utils/helpers'
+
+import Locale from '@/patterns/Locale/Locale'
+
+<Meta title="Patterns/Locale" />
+
+# Locale
+
+<Preview>
+  <Story name="Default">{{
+      data () {
+      return{
+        configs:{
+          locales:{
+          English:'en',
+          Hindu: 'hi',
+          },
+          defaultLang: 'en'
+        }
+      }
+    },
+  components: {Locale},
+  template: `
+    <Locale :langs="configs"></Locale>`
+}}</Story>
+</Preview>
