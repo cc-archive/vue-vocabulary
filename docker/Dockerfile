@@ -6,8 +6,8 @@ RUN mkdir codebase
 WORKDIR /codebase
 
 # Load the package.json and package-lock.json files
-COPY package.json ./
-COPY package-lock.json ./
+COPY ./package.json ./
+COPY ./package-lock.json ./
 
 # Install packages
 RUN npm install
