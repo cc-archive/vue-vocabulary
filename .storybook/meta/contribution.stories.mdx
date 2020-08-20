@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks'
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Vue Vocabulary/Contribution" />
 
@@ -11,13 +11,13 @@ another language.
 Vue Vocabulary is continuously evolving and improving. You can contribute to the
 project in a number of ways.
 
-| What | How |
-|-|-|
-| **Code**      | If you are a developer, feel free to resolve open issues, proof PRs, add new features to existing components or add new components altogether. |
-| **Design**    | If you are a designer, your inputs on making every component more intuitive, aesthetic and joyful will reverberate through the entire ecosystem. |
-| **Test**      | If you are a user of these components, your feedback, bug reports and feature requests will drive the project forward so that we can meet your needs. |
-| **Write**     | If you have a knack for writing technical articles, you could be the voice of the library's documentation, making it easy to use and understand. |
-| **Share**     | If you can't contribute in these ways, you can refer the project to a friend who might be able to. Spreading the word is the easiest way to help out. |
+| What       | How                                                                                                                                                   |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Code**   | If you are a developer, feel free to resolve open issues, proof PRs, add new features to existing components or add new components altogether.        |
+| **Design** | If you are a designer, your inputs on making every component more intuitive, aesthetic and joyful will reverberate through the entire ecosystem.      |
+| **Test**   | If you are a user of these components, your feedback, bug reports and feature requests will drive the project forward so that we can meet your needs. |
+| **Write**  | If you have a knack for writing technical articles, you could be the voice of the library's documentation, making it easy to use and understand.      |
+| **Share**  | If you can't contribute in these ways, you can refer the project to a friend who might be able to. Spreading the word is the easiest way to help out. |
 
 Interested?
 
@@ -25,9 +25,9 @@ The following instructions are in addition to the processes in our general [Cont
 [Pull Request][pull_request] guidelines on the Creative Common Open Source website, and [those] in Vocabulary. If you
 haven't read them already, read them first.
 
-[contribution]:https://creativecommons.github.io/contributing-code/
-[pull_request]:https://opensource.creativecommons.org/contributing-code/pr-guidelines/
-[those]:https://cc-vocabulary.netlify.com/?path=/docs/vocabulary-contribution--page
+[contribution]: https://creativecommons.github.io/contributing-code/
+[pull_request]: https://opensource.creativecommons.org/contributing-code/pr-guidelines/
+[those]: https://cc-vocabulary.netlify.com/?path=/docs/vocabulary-contribution--page
 
 These instructions are a port of the general guidelines, tailored specifically for Vue Vocabulary.
 
@@ -52,7 +52,7 @@ Install Docker and Docker Compose, if you don't already have them on your comput
 Bring up all services.
 
 ```bash
-$ docker-compose up -d
+$ docker-compose -f ./docker/docker-compose.yml up -d
 ```
 
 To run `npm` commands, you'll need to enter a Vue Vocabulary container.
@@ -65,9 +65,9 @@ docker-desktop:/codebase$ ...
 If you install new packages, you'll need to rebuild a few things.
 
 ```bash
-$ docker-compose down
+$ docker-compose -f ./docker/docker-compose.yml down
 $ docker volume prune
-$ docker-compose build storybook
+$ docker-compose -f ./docker/docker-compose.yml build storybook
 ```
 
 ### Manual setup
@@ -75,6 +75,7 @@ $ docker-compose build storybook
 Install Node.js and NPM, if you don't already have them on your computer.
 
 Install dependencies.
+
 ```
 $ npm install
 ```
@@ -90,4 +91,4 @@ $ npm run storybook
 
 See [Vocabulary guidelines].
 
-[Vocabulary guidelines]:https://cc-vocabulary.netlify.com/?path=/docs/vocabulary-contribution--page
+[vocabulary guidelines]: https://cc-vocabulary.netlify.com/?path=/docs/vocabulary-contribution--page

@@ -2,8 +2,8 @@
 
 ## Setting up the project
 
-**Step 0:** 
-Fork the project. This will be useful if you intend to submit PRs. 
+**Step 0:**
+Fork the project. This will be useful if you intend to submit PRs.
 
 **Step 1:** Clone the project to your computer. If you chose to fork the
 repository in step 1, clone the fork instead.
@@ -30,7 +30,7 @@ _Requires Docker and Docker Compose to be installed._
 Start the Docker containers for the project.
 
 ```
-$ docker-compose up
+$ docker-compose -f ./docker/docker-compose.yml up
 ```
 
 ### Manual setup
@@ -60,11 +60,11 @@ the proposed idea before any work is done.
 
 ## Submitting changes
 
-**Step 0:** 
+**Step 0:**
 Discuss on the issue. If not already being worked on, take it up. Make sure that
 the changes are in alignment with the short and long term goals of the project.
 
-**Step 1:** 
+**Step 1:**
 Create a branch named after the changes. Use underscores. Be descriptive.
 
 ```
@@ -82,14 +82,14 @@ $ npm run lint
 $ npm run test:unit
 ```
 
-If translations are to be changed, update the `.json` files under individual 
-components for component-level translations or the `.json` files in `locales/` 
+If translations are to be changed, update the `.json` files under individual
+components for component-level translations or the `.json` files in `locales/`
 for global-level translations.
 
 New locales must be manually added to the `Locale` component.
 
 **Step 4:**
-Push the commits to your branch on the fork and submit a PR. Fill all relevant 
+Push the commits to your branch on the fork and submit a PR. Fill all relevant
 fields in the PR template.
 
 ```
