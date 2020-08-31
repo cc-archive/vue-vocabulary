@@ -1,7 +1,13 @@
+# Important: This repository is archived and has moved to the [main vocabulary monorepo](https://github.com/creativecommons/vocabulary).
+
+You should clone that repository instead. Note that npm package names have remained the same, only the codebase has moved.
+
+---
+
 <p align="center">
   <a href="https://creativecommons.github.io/vue-vocabulary/" class="readme-vocabulary-logo">
-    <img 
-      alt="Vocabulary logo" 
+    <img
+      alt="Vocabulary logo"
       src="https://raw.githubusercontent.com/creativecommons/vue-vocabulary/master/readme_assets/vocabulary_logo.svg?sanitize=true"
       height="40px"/>
   </a>
@@ -10,12 +16,12 @@
 > Vue Vocabulary is a Vue component library implementing a cohesive design system to unite the web facing Creative Commons.
 
 <p align="center">
-  <a 
+  <a
     href="https://github.com/creativecommons/vue-vocabulary/blob/master/LICENSE"
     style="margin-right: 1em;">
     <img alt="MIT license" src="https://img.shields.io/github/license/creativecommons/vue-vocabulary.svg?color=brightgreen"/>
   </a>
-  <a 
+  <a
     href="https://github.com/creativecommons/vue-vocabulary/blob/master/CONTRIBUTING.md"
     style="margin-right: 1em;">
     <img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/>
@@ -25,7 +31,7 @@
     style="margin-right: 1em;">
     <img alt="GitHub Actions" src="https://img.shields.io/github/workflow/status/creativecommons/vue-vocabulary/vue-vocabulary-ci/master?label=vue-vocabulary-ci"/>
   </a>
-  <a 
+  <a
     href="https://cc-vue-vocabulary.netlify.com"
     style="margin-right: 1em;">
     <img alt="Netlify" src="https://img.shields.io/netlify/262faad2-c93b-4bca-94e2-3c16f85f8a64"/>
