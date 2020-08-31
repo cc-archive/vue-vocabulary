@@ -36,7 +36,7 @@
     "@storybook/addon-viewport": "^6.0.15",
     "@storybook/addons": "^6.0.15",
     "@storybook/components": "^6.0.15",
-    "@storybook/theming": "^6.0.15",
+    "@storybook/theming": "^6.0.20",
     "@storybook/vue": "^6.0.16",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-eslint": "^4.4.6",
